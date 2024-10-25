@@ -14,6 +14,8 @@
         <link rel="prev" href="../../introduction/terminology/">
       
       
+        <link rel="next" href="../nodes/always/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
@@ -402,6 +404,70 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nodes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Nodes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/always/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Always
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -479,46 +545,46 @@ and parameters.</p>
 <p>Each node as an optional set of input and output <em>Ports</em> which can be
 of different types depending on their purpose, and a set of
 <em>Parameters</em> which configure the operation of the <em>Node</em>.</p>
-<p><a class="glightbox" href="../../assets/int_compare_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="A Node" src="../../assets/int_compare_node.png" /></a> This is a
-relatively simple <em>Node</em> that demonstrates most of the key features of a
-logic Node. Here you can see on the left of the <em>Node</em>; 3 input <em>Ports</em>,
-one with a double arrow at the top, and two green ones below. The double
-arrow port is a <em>Flow</em> port, it is connected to other ports of the same
-type to control the flow of execution. A <em>Node</em> will only have at most 1
-<em>Flow</em> input ports. The green ports are data inputs, they provide
-integer numerical values to the node from some other node. You'll notice
-that the "B" <em>Port</em> also has a numerical input field alongside it, this
-is because in this particular case the value that the <em>Node</em> uses can
-either be provided by another node via the <em>Port</em> or specified as a
-fixed value. In this example, you may want to compare the input from
-another <em>Node</em> at A with either an input from another <em>Node</em> or with 0
-for example. If you connect another <em>Node</em> to the input <em>Port</em> B, the
-numerical input field will be hidden as it is no longer necessary. On
-the right of the <em>Node</em> are the output ports, in this example there are
-two <em>Flow Ports</em>, True and False. This <em>Node</em> is a "branching" node, it
-will perform a comparison of the two values A and B using the specified
-comparison type, for example "equal". If the comparison results in a
-positive result, i.e. the two values are equal, the flow will follow
-whatever is connected to the True output <em>Port</em>, if anything. If the
-comparison is negative, A and B are not equal, the flow will follow the
-False output <em>Port</em>. Below the B port is a <em>Parameter</em>, in this case it
-is the type of comparison to be made between A and B, equal, greater
-than, less than, etc. A <em>Parameter</em> can be identified by the lack of any
-input or output ports. It is a means of configuring the operation of a
-<em>Node</em> in a way that doesn't require input from another <em>Node</em>. To
-summarise, on this <em>Node</em> A is a <em>Port</em> only, it requires an input wire
-to work, B is an input <em>Port</em> <strong>or</strong> <em>Parameter</em> you can choose how this
-value is set depeneding upon your needs, and the comparison type is a
-<em>Parameter</em>, you must choose this value when editing and it cannot
-change at runtime.</p>
-<p><a class="glightbox" href="../../assets/math_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Math Node" src="../../assets/math_node.png" /></a> Some nodes will have
-no <em>Flow</em> ports at all, this means the <em>Node</em> is not meant to be part of
-the flow, but instead is meant to provide data to other nodes that are
-part of the flow. These <em>Nodes</em> will have output data <em>Ports</em> that can
-be connected to the input data <em>Ports</em> of other <em>Nodes</em>, when a <em>Node</em>
-that is part of a flow has a wire connecting one of its input <em>Ports</em> to
-the output <em>Port</em> of another <em>Node</em>, it will request the value from the
-other <em>Node</em> when it needs it.</p>
+<p><a class="glightbox" href="../../assets/nodes/intcomparison_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="A Node" src="../../assets/nodes/intcomparison_node.png" /></a> This is
+a relatively simple <em>Node</em> that demonstrates most of the key features of
+a logic Node. Here you can see on the left of the <em>Node</em>; 3 input
+<em>Ports</em>, one with a double arrow at the top, and two green ones below.
+The double arrow port is a <em>Flow</em> port, it is connected to other ports
+of the same type to control the flow of execution. A <em>Node</em> will only
+have at most 1 <em>Flow</em> input ports. The green ports are data inputs, they
+provide integer numerical values to the node from some other node.
+You'll notice that the "B" <em>Port</em> also has a numerical input field
+alongside it, this is because in this particular case the value that the
+<em>Node</em> uses can either be provided by another node via the <em>Port</em> or
+specified as a fixed value. In this example, you may want to compare the
+input from another <em>Node</em> at A with either an input from another <em>Node</em>
+or with 0 for example. If you connect another <em>Node</em> to the input <em>Port</em>
+B, the numerical input field will be hidden as it is no longer
+necessary. On the right of the <em>Node</em> are the output ports, in this
+example there are two <em>Flow Ports</em>, True and False. This <em>Node</em> is a
+"branching" node, it will perform a comparison of the two values A and B
+using the specified comparison type, for example "equal". If the
+comparison results in a positive result, i.e. the two values are equal,
+the flow will follow whatever is connected to the True output <em>Port</em>, if
+anything. If the comparison is negative, A and B are not equal, the flow
+will follow the False output <em>Port</em>. Below the B port is a <em>Parameter</em>,
+in this case it is the type of comparison to be made between A and B,
+equal, greater than, less than, etc. A <em>Parameter</em> can be identified by
+the lack of any input or output ports. It is a means of configuring the
+operation of a <em>Node</em> in a way that doesn't require input from another
+<em>Node</em>. To summarise, on this <em>Node</em> A is a <em>Port</em> only, it requires an
+input wire to work, B is an input <em>Port</em> <strong>or</strong> <em>Parameter</em> you can
+choose how this value is set depeneding upon your needs, and the
+comparison type is a <em>Parameter</em>, you must choose this value when
+editing and it cannot change at runtime.</p>
+<p><a class="glightbox" href="../../assets/nodes/math_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Math Node" src="../../assets/nodes/math_node.png" /></a> Some nodes will
+have no <em>Flow</em> ports at all, this means the <em>Node</em> is not meant to be
+part of the flow, but instead is meant to provide data to other nodes
+that are part of the flow. These <em>Nodes</em> will have output data <em>Ports</em>
+that can be connected to the input data <em>Ports</em> of other <em>Nodes</em>, when a
+<em>Node</em> that is part of a flow has a wire connecting one of its input
+<em>Ports</em> to the output <em>Port</em> of another <em>Node</em>, it will request the
+value from the other <em>Node</em> when it needs it.</p>
 <p><em>Nodes</em> that are in a logic graph but not connected to a valid <em>Flow</em> or
 have output <em>Ports</em> that are not connected to anything, will not
 contribute to the program and will not be exported.</p>

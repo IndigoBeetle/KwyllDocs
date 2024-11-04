@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.kwyll.com/introduction/intro/">
+        <link rel="canonical" href="https://docs.kwyll.com/logic/process_order/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../intro/">
       
       
-        <link rel="next" href="../terminology/">
+        <link rel="next" href="../nodes/always/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Introduction - Kwyll User Documentation</title>
+        <title>Logic Order of Processing - Kwyll User Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#logic-order-of-processing" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Logic Order of Processing
             
           </span>
         </div>
@@ -217,19 +217,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -243,7 +241,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Introduction
@@ -254,19 +252,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../introduction/intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -275,7 +264,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -288,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminology/" class="md-nav__link">
+      <a href="../../introduction/terminology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -313,17 +301,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -337,7 +327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Logic
@@ -351,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logic/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,10 +359,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../logic/process_order/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -381,6 +380,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -428,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logic/nodes/always/" class="md-nav__link">
+      <a href="../nodes/always/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -490,11 +490,50 @@
                   
 
 
-<h1 id="introduction">Introduction</h1>
-<p>Kwyll is very much a 2D game development tool, and while every effort is
-made to ensure that it remains flexible enought to adapt to a variety of
-game styles, it will always have some limitations, typically imposed by
-the target platforms. </p>
+<h1 id="logic-order-of-processing">Logic Order of Processing</h1>
+<pre class="mermaid"><code>graph TD 
+    A[Start Game/Reset Game] --&gt; G1;
+    subgraph G1[Global];
+        B([Initialise]);
+    end;
+    G1 --&gt; S;
+    subgraph S[For Each Screen];
+        SA([Initialise]);
+    end;
+    S --&gt; R;
+    subgraph R[For Each Room];
+        direction LR;
+        RA([Initialise]) --&gt; RO;
+        subgraph RO[For Each Room Object];
+            RB([Initialise]);
+        end;
+    end;
+    R --&gt; G2;
+    subgraph G2[For Each Global Object];
+        C([Initialise]);
+    end;
+    G2 --&gt; FR;
+    subgraph FR[Each Frame];
+        subgraph G3[Global];
+            E([Always]);
+        end;
+        subgraph CS[Current Screen];
+            F([Always]);
+        end;
+        subgraph CR[Current Room];
+            G([Always]);
+            subgraph RO2[For Each Room Object];
+                H([Always]);
+            end;
+            G --&gt; RO2;
+        end;
+        subgraph GO[For Each Global Object];
+            J([Always]);
+        end;
+        G3 --&gt; CS;
+        CS --&gt; CR;
+        CR --&gt; GO;
+    end;</code></pre>
 
 
 

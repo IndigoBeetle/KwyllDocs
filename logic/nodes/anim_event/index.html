@@ -513,6 +513,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Animation Event
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -522,6 +533,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Out
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      T
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1382,6 +1454,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Out
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      T
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1396,7 +1518,26 @@
 
 
 <h1 id="animation-event">Animation Event<a class="headerlink" href="#animation-event" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/animationevent_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Animation Event Node" src="../../../assets/nodes/animationevent_node.png" /></a></p>
+<p><a class="glightbox" href="../../../assets/nodes/animationevent_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Animation Event Node" src="../../../assets/nodes/animationevent_node.png" /></a>
+The <em>Animation Event Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Animation
+Event</em> trigger is connected to the timeline animation feature in the <a href="rooms_editor.md">Rooms
+Editor</a>. It will run the flow that follows on from it's <strong>Flow
+Out</strong> port when a the current timeline animation for this object hits a
+keyframe that has the <em>Trigger Event</em> checkbox selected. The <strong>Frame</strong> and
+<strong>T</strong> output ports provide the frame number of the keyframe in the timeline,
+and the <em>T</em> value specified in the editor respectively.</p>
+<h2 id="ports" style="clear:left">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<h3 id="flow-out">Flow Out<a class="headerlink" href="#flow-out" title="Permanent link">&para;</a></h3>
+<p>As with all trigger nodes, an <em>Animation Event Node</em> has only a single flow
+port on the output side. There is no input flow to a trigger node as it is the
+origin of a flow.</p>
+<h3 id="frame">Frame<a class="headerlink" href="#frame" title="Permanent link">&para;</a></h3>
+<p>An integer output port that provides the frame number of the triggering
+keyframe in the timeline.</p>
+<h3 id="t">T<a class="headerlink" href="#t" title="Permanent link">&para;</a></h3>
+<p>An integer output port that provides the <em>T</em> value set in the timeline editor,
+in the range 0-127.</p>
 
 
 

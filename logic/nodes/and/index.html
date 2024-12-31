@@ -492,6 +492,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    And
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -501,6 +512,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-and-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      A and B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Out
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1382,6 +1454,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-and-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      A and B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Out
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1396,7 +1518,20 @@
 
 
 <h1 id="and">And<a class="headerlink" href="#and" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/and_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="And Node" src="../../../assets/nodes/and_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/and_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="And Node" src="../../../assets/nodes/and_node.png" /></a> The <em>And Node</em> takes
+two inputs of type integer and compares them with 0. If both are not 0, the
+output will be 1, if either or both are 0, the output will be 0. </p>
+<p>This is useful to combine checks, in particular with the <a href="../integer_compare/">Integer
+Compare</a> nodes.</p>
+<h2 id="ports" style="clear:left">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<h3 id="a-and-b">A and B<a class="headerlink" href="#a-and-b" title="Permanent link">&para;</a></h3>
+<p>The two input values, they must be linked for the node to be operational and
+can only be connected to sources that provide an integer value, such as
+<a href="../get_variable/">Get</a>.</p>
+<h3 id="out">Out<a class="headerlink" href="#out" title="Permanent link">&para;</a></h3>
+<p>The output of the node, will be either 1 or 0 depending on the result of the
+compare.</p>
 
 
 

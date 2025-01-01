@@ -8,14 +8,21 @@ entrypoint into a flow in the Kwyll logic. The *Always* trigger is the most
 commonly used trigger node, it will run the flow that follows on from it's
 __Flow Out__ port every frame of the game.  
 
+<br style="clear:left"/>
 
-## Ports {: style="clear:left" }
+-------
+
+## Ports
 
 ### Flow Out
 
 As with all trigger nodes, an *Always Node* has only a single flow port
 on the output side. There is no input flow to a trigger node as it is
 the origin of a flow.
+
+
+
+-------
 
 ## Parameters
 

@@ -10,7 +10,12 @@ This is useful to combine checks, in particular with the [Integer
 Compare](integer_compare.md) nodes.
 
 
-## Ports {: style="clear:left" }
+<br style="clear:left"/>
+
+
+-------
+
+## Ports
 
 ### A and B
 

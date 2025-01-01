@@ -6,10 +6,13 @@
 
 ![Beep FX Node](../../assets/nodes/beepfx_node.png){align=left} The *Beep FX
 Node* is used to play a beeper sound effect defined in the Beep FX panel of the
-[Sound Editor](/interface/sound_editor.md). 
+[Sound Editor](../../interface/sound_editor.md). 
 
+<br style="clear:left"/>
 
-## Ports {: style="clear:left" }
+-------
+
+## Ports
 
 ### Flow In
 
@@ -26,15 +29,17 @@ following the completion of this node's operation.
 ### FX
 
 An integer input port used to provide the index of the Beep FX sound effect in
-the list as defined by the [Sound Editor](/interface/sound_editor.md).
+the list as defined by the [Sound Editor](../../interface/sound_editor.md).
 
+
+-------
 
 ## Parameters
 
 ### FX 
 
 A dropdown selection of existing sound effects from the Beep FX tab of the
-[Sound Editor](/interface/sound_editor.md). Use this if you wish to trigger a
-specific sound effect, use the port connected to the same location in the node
-if you wish to trigger a sound effect based on some calculations elsewhere in
-the logic graph.
+[Sound Editor](../../interface/sound_editor.md). Use this if you wish to
+trigger a specific sound effect, use the port at the same level in the node if
+you wish to trigger a sound effect based on some calculations elsewhere in the
+logic graph.

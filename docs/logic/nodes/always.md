@@ -14,22 +14,19 @@ __Flow Out__ port every frame of the game.
 
 ## Ports
 
-### Flow Out
-
-As with all trigger nodes, an *Always Node* has only a single flow port
-on the output side. There is no input flow to a trigger node as it is
-the origin of a flow.
-
+Flow Out
+: As with all trigger nodes, an *Always Node* has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow.
 
 
 -------
 
 ## Parameters
 
-### Order 
-
-*Always Nodes* have a single additional parameter, __order__. This is
-used to define the order in which multiple *Always Nodes* in a single
-logic program will be processed, in case there is some dependency
-between flows. If there are multiple *Always Nodes* with the same order,
-they will be processed together in an arbitrary order.
+Order 
+: *Always Nodes* have a single additional parameter, __order__. This is
+  used to define the order in which multiple *Always Nodes* in a single
+  logic program will be processed, in case there is some dependency
+  between flows. If there are multiple *Always Nodes* with the same order,
+  they will be processed together in an arbitrary order.

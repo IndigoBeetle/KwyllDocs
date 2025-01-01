@@ -17,15 +17,13 @@ Compare](integer_compare.md) nodes.
 
 ## Ports
 
-### A and B
+A and B
+: The two input values, they must be linked for the node to be operational and
+  can only be connected to sources that provide an integer value, such as
+  [Get](get_variable.md).
 
-The two input values, they must be linked for the node to be operational and
-can only be connected to sources that provide an integer value, such as
-[Get](get_variable.md).
-
-### Out
-
-The output of the node, will be either 1 or 0 depending on the result of the
-compare.
+Out  
+: The output of the node, will be either 1 or 0 depending on the result of
+  the compare.
 
 

@@ -27,9 +27,41 @@ An Object in Kwyll is a type of thing that can be displayed on screen
 and respond in various ways to the input of the player or to game
 logic that is defined in Kwyll. Objects are the heart of any Kwyll
 game, without Objects, the game wouldn't actually do anything, making
-for a very dull game.
+for a very dull game. 
 
-An Object consists of two main elements.
+An Object must first be *defined*, the definition of an Object details things
+like the visual represenation via [Sprites](#sprites) and any other information
+that is required to display the object that may be platform specific, such as
+colour and draw mode, and any [Logic](#logic). To use an Object in your game
+requires creating *Object References* or *Refs*. These are instances of the
+object definition, they share the visual representation and logic code that the
+*Object Definition* holds, but each *Ref* has it's own position, logic
+variables, [Timeline Animations](#timeline-animation), and any other
+information that might be specific to a particular platform. *Object
+References* can be created in the following ways.
+
+ - Global Objects - these are created in the [Map
+   Editor](../interface/map_editor.md) and are constant throughout the game,
+   they will always exist irrespective of which [Location](#locations) you are
+   in, and will be drawn, if their position puts them on screen, and their
+   logic will be executed.
+ - Local or Room Objects - these are in each [Room Definition](#rooms) and will
+   only be active while in a [Location](#locations) that references that room,
+   so they will not be drawn or their logic executed when in another room. It's
+   worth noting that when exiting a room that contains Room Objects, the data
+   used by the Kwyll library for those objects, such as memory for
+   [Sprite](#sprites) rendering etc. will be freed, reducing the overhead for
+   both memory and performance, so it is advisable to use Room Objects where
+   appropriate over Global Objects.
+ - Dynamic Objects - these are not created in an editor during your game
+   creation, they are instead created during the game using the [Spawn
+   Object](../logic/nodes/spawn_object.md) node, and can be destroyed using the
+   [Kill Object](../logic/nodes/kill_object.md) node. They are in all other
+   respects similar to Global Objects, they are not constrained to a particular
+   [Room](#rooms), and will continue to exist across changes in
+   [Location](#locations) until they are destroyed.
+
+An *Object Definition* consists of two main elements.
 
  - Animations, which are sequences of [Sprite](#sprites) images played in order
    to create the illusion of animation. Each object can have many Animations,
@@ -83,3 +115,9 @@ elements:
 
 
 ## Logic
+
+
+## Timeline Animation
+
+
+## Locations

@@ -14,7 +14,7 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../../interface/data_editor/">
+        <link rel="next" href="../../interface/introduction/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -356,6 +356,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#timeline-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Animation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -414,27 +432,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface/data_editor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data editor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../interface/introduction/" class="md-nav__link">
         
   
@@ -456,11 +453,95 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface/logic_editor/" class="md-nav__link">
+      <a href="../../interface/screen_editor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Logic editor
+    Screen Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/data_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/sprite_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/object_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/room_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room Editor
   </span>
   
 
@@ -481,7 +562,49 @@
         
   
   <span class="md-ellipsis">
-    Map editor
+    Map Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/sound_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sound Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/logic_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logic Editor
   </span>
   
 
@@ -503,69 +626,6 @@
   
   <span class="md-ellipsis">
     Preview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface/room_editor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Room editor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface/sound_editor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sound editor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface/sprite_editor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sprite editor
   </span>
   
 
@@ -1671,6 +1731,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#timeline-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline Animation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1709,8 +1787,40 @@ must be used by an Object.</p>
 and respond in various ways to the input of the player or to game
 logic that is defined in Kwyll. Objects are the heart of any Kwyll
 game, without Objects, the game wouldn't actually do anything, making
-for a very dull game.</p>
-<p>An Object consists of two main elements.</p>
+for a very dull game. </p>
+<p>An Object must first be <em>defined</em>, the definition of an Object details things
+like the visual represenation via <a href="#sprites">Sprites</a> and any other information
+that is required to display the object that may be platform specific, such as
+colour and draw mode, and any <a href="#logic">Logic</a>. To use an Object in your game
+requires creating <em>Object References</em> or <em>Refs</em>. These are instances of the
+object definition, they share the visual representation and logic code that the
+<em>Object Definition</em> holds, but each <em>Ref</em> has it's own position, logic
+variables, <a href="#timeline-animation">Timeline Animations</a>, and any other
+information that might be specific to a particular platform. <em>Object
+References</em> can be created in the following ways.</p>
+<ul>
+<li>Global Objects - these are created in the <a href="../../interface/map_editor/">Map
+   Editor</a> and are constant throughout the game,
+   they will always exist irrespective of which <a href="#locations">Location</a> you are
+   in, and will be drawn, if their position puts them on screen, and their
+   logic will be executed.</li>
+<li>Local or Room Objects - these are in each <a href="#rooms">Room Definition</a> and will
+   only be active while in a <a href="#locations">Location</a> that references that room,
+   so they will not be drawn or their logic executed when in another room. It's
+   worth noting that when exiting a room that contains Room Objects, the data
+   used by the Kwyll library for those objects, such as memory for
+   <a href="#sprites">Sprite</a> rendering etc. will be freed, reducing the overhead for
+   both memory and performance, so it is advisable to use Room Objects where
+   appropriate over Global Objects.</li>
+<li>Dynamic Objects - these are not created in an editor during your game
+   creation, they are instead created during the game using the <a href="../../logic/nodes/spawn_object/">Spawn
+   Object</a> node, and can be destroyed using the
+   <a href="../../logic/nodes/kill_object/">Kill Object</a> node. They are in all other
+   respects similar to Global Objects, they are not constrained to a particular
+   <a href="#rooms">Room</a>, and will continue to exist across changes in
+   <a href="#locations">Location</a> until they are destroyed.</li>
+</ul>
+<p>An <em>Object Definition</em> consists of two main elements.</p>
 <ul>
 <li>Animations, which are sequences of <a href="#sprites">Sprite</a> images played in order
    to create the illusion of animation. Each object can have many Animations,
@@ -1757,6 +1867,8 @@ elements:</p>
 </ul>
 <h2 id="screens">Screens<a class="headerlink" href="#screens" title="Permanent link">&para;</a></h2>
 <h2 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">&para;</a></h2>
+<h2 id="timeline-animation">Timeline Animation<a class="headerlink" href="#timeline-animation" title="Permanent link">&para;</a></h2>
+<h2 id="locations">Locations<a class="headerlink" href="#locations" title="Permanent link">&para;</a></h2>
 
 
 

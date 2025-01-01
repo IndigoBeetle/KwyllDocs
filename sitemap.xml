@@ -2,194 +2,222 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.kwyll.com/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/nav/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/data_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/interface/introduction/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/logic_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/map_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/preview/</loc>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/room_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/sound_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.kwyll.com/interface/sprite_editor/</loc>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/introduction/terminology/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/intro/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/process_order/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/always/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/and/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/anim_event/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/beep_fx/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/change_location/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/clamp/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/comment/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/controller/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/direction/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/get_global_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/get_room_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/get_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/global_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/increment/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/initialise/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/instance_data/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/integer_compare/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/integer_constant/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/is_on_screen/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/is_type/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/kill_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/math/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/modify_tiles/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/move_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/object_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/or/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/paste_brush/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/random/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/reset_game/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/select/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/set_global_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/set_instrument/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/set_object_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/set_variable/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/spawn_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/sprite_animation/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/subgraph/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/switch_screen/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/timeline_animation/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/transport_object/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/transport_to_marker/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
     <url>
          <loc>https://docs.kwyll.com/logic/nodes/z80_out/</loc>
-         <lastmod>2024-12-31</lastmod>
+         <lastmod>2025-01-01</lastmod>
     </url>
 </urlset>

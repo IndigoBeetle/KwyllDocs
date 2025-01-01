@@ -870,6 +870,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Get Room Object
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -879,6 +890,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1571,6 +1628,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1585,7 +1677,31 @@
 
 
 <h1 id="get-room-object">Get Room Object<a class="headerlink" href="#get-room-object" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/getroomobject_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Get Room Object Node" src="../../../assets/nodes/getroomobject_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/getroomobject_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Get Room Object Node" src="../../../assets/nodes/getroomobject_node.png" /></a>
+ The <em>Get Room Object Node</em> is used to get an <a href="../../../introduction/terminology/#objects">Object
+ Reference</a> to an object in a room for
+ use further down the graph in other nodes that accept a <em>Ref</em> input. This
+ allows you to directly affect room objects, moving them, etc.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Ref</dt>
+<dd>An Object Ref output port that will provide the reference to the requested
+  global object.</dd>
+</dl>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Room</dt>
+<dd>A dropdown selector that will list all the currently available rooms.
+  When a room is selected, the contents of the <strong>Object</strong> selector will update
+  to list the object references in that room.</dd>
+<dt>Object</dt>
+<dd>A dropdown selector that will list all the currently available objects in the
+  selected room. The value selected will dictate which Ref is returned.</dd>
+</dl>
 
 
 

@@ -933,6 +933,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Increment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -942,6 +953,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1571,6 +1628,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1585,7 +1677,37 @@
 
 
 <h1 id="increment">Increment<a class="headerlink" href="#increment" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/increment_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Increment Node" src="../../../assets/nodes/increment_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/increment_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Increment Node" src="../../../assets/nodes/increment_node.png" /></a> The
+<em>Increment Node</em> is a simple way to modify the value of a variable on the
+current logic graph in one operation, avoiding the need for a
+<a href="../get_variable/">Get</a>, <a href="../math/">Math</a> and <a href="../set_variable/">Set</a>
+sequence.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>By</dt>
+<dd>An integer input port used to provide the amount that the variable will be 
+  changed by, this can be positive or negative. </dd>
+</dl>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>By</dt>
+<dd>A constant integer amount that the variable will be changed by, used when the 
+  <strong>By</strong> port is not connected.</dd>
+<dt><em>Variable</em></dt>
+<dd>A dropdown listing the defined variables associated with the current logic graph.</dd>
+</dl>
 
 
 

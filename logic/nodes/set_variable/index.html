@@ -1353,6 +1353,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Set
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1362,6 +1373,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1571,6 +1628,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1585,7 +1677,44 @@
 
 
 <h1 id="set">Set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/set_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Set Node" src="../../../assets/nodes/set_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/set_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Set Node" src="../../../assets/nodes/set_node.png" /></a> The <em>Set Node</em> is used
+to set the integer value of a variable on whatever the current logic graph is
+running, i.e. a <a href="../../../introduction/terminology/#screens">Screen</a>, a
+<a href="../../../introduction/terminology/#rooms">Room</a> or an
+<a href="../../../introduction/terminology/#objects">Object</a>.</p>
+<p>It's important to understand that the value being modified is the value for the
+chosen variable in the <a href="../../../introduction/terminology/#objects">Object
+Reference</a> that is running the logic
+code, each reference has it's own version of the variables, so changing a
+variable on one reference for a particular object type will not affect the
+value on other references, they are independent.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>Value</dt>
+<dd>An integer input port used to provide the value that will be applied to the
+  chosen variable.</dd>
+</dl>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Value</dt>
+<dd>A constant integer value to assign to the chosen variable. If the port is 
+  connected to another node, this option will become unavailable, the node
+  will use the value provided on the input port.</dd>
+<dt><em>Variable</em></dt>
+<dd>A dropdown listing the defined variables associated with the current logic graph.</dd>
+</dl>
 
 
 

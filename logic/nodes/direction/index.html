@@ -828,6 +828,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Direction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -837,6 +848,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1571,6 +1628,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1585,7 +1677,64 @@
 
 
 <h1 id="direction">Direction<a class="headerlink" href="#direction" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/direction_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Direction Node" src="../../../assets/nodes/direction_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/direction_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Direction Node" src="../../../assets/nodes/direction_node.png" /></a> The
+<em>Direction Node</em> is used to convert the typical four directional movement input
+into a single value representing the primary direction of movement. This is
+useful for things like switching sprite animation on
+<a href="../../../introduction/terminology/#objects">Objects</a> to show the correct
+animation for the movement. If the input suggests a diagonal movement, the
+output will be a single value representing the "dominant" axis as defined by
+the <strong>Vertical Priority</strong> parameter, if this is checked, then up/down will
+be chosen over left/right if diagonal movement is indicated, if it is not
+checked, left/right will get priority.</p>
+<p>Note: unlike other nodes with port/parameter pairs, in this node the direction
+rows are not port <strong>or</strong> parameter, both are required. The port is the input,
+usually from a <a href="../controller/">Controller</a> node, while the parameter
+represents the output value that will be used if that direction is determined
+to be the dominant direction. In the example here, if only the <em>right</em>
+controller is non-0, the <strong>Direction</strong> value output will be 2.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Left</dt>
+<dd>An integer input port providing the input value for the left direction, any
+  non-0 value will be considered movement in that direction. </dd>
+<dt>Right</dt>
+<dd>An integer input port providing the input value for the right direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Up</dt>
+<dd>An integer input port providing the input value for the up direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Down</dt>
+<dd>An integer input port providing the input value for the down direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Direction</dt>
+<dd>An integer output port, one of the four direction parameter values will be
+  output on this port depending on the input data and the <strong>Vertical Priority</strong>
+  parameter.</dd>
+</dl>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Vertical Priority</dt>
+<dd>A boolean value indicating which axis to give priority to if diagonal
+  movement is indicated. If checked, up/down will get priority, otherwise
+  left/right will.</dd>
+<dt>Left</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement left.</dd>
+<dt>Right</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement right.</dd>
+<dt>Up</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement up.</dd>
+<dt>Down</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement down.</dd>
+</dl>
 
 
 

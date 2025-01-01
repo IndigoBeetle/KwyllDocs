@@ -975,6 +975,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Instance Data
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -984,6 +995,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1571,6 +1619,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1585,7 +1659,42 @@
 
 
 <h1 id="instance-data">Instance Data<a class="headerlink" href="#instance-data" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/instancedata_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Instance Data Node" src="../../../assets/nodes/instancedata_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/instancedata_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Instance Data Node" src="../../../assets/nodes/instancedata_node.png" /></a> The
+<em>Instance Data Node</em> provides useful information about the current <a href="../../../introduction/terminology/#objects">Object
+Reference</a> that the logic graph is
+running on. This is information that is unique to each reference of the object
+type, much like variables, but for accessing common data that all object
+references have.</p>
+<p>Note: the position data is returned in the appropriate coordinate system for
+the object being referenced. A global or dynamic object will return coordinates
+in "map" space, a room object will return coordinates in the local space of the
+room.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Ref</dt>
+<dd>An Object Reference input port that can provide an object that will be used
+  to lookup the instance data. If this is not connected and the logic is on
+  an <a href="../../../introduction/terminology/#objects">Object</a>, the current object
+  will be used instead. If the logic is not on an object, 0 will be returned
+  on all output ports.</dd>
+<dt>Start X</dt>
+<dd>The initial X position of the object, this is constant, and used to reset the 
+  object's position at the start of the game.</dd>
+<dt>Start Y</dt>
+<dd>The initial Y position of the object, this is constant, and used to reset the 
+  object's position at the start of the game.</dd>
+<dt>X</dt>
+<dd>The current X position of the object, this is the live position of the object
+  as set by any <a href="../move_object/">Move Object</a> nodes, or other nodes that can
+  modify an object's position. </dd>
+<dt>Y</dt>
+<dd>The current Y position of the object, this is the live position of the object
+  as set by any <a href="../move_object/">Move Object</a> nodes, or other nodes that can
+  modify an object's position. </dd>
+</dl>
 
 
 

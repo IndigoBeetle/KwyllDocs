@@ -1,11 +1,11 @@
 
-# Controller
+# Controller Input
 
 
 ## Description
 
-![Controller Node](../../assets/nodes/controllerinput_node.png){align=left} The
-*Controller Node* reports on the status of the configured controller for left,
+![Controller Input Node](../../assets/nodes/controllerinput_node.png){align=left} The
+*Controller Input Node* reports on the status of the configured controller for left,
 right, up, down and jump/fire. This node will adapt to whatever has been
 configured for the input method in your game, joystick, keyboard etc. The node
 allows you to define which values to return when each input is activated,

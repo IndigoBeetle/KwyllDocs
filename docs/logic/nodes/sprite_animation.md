@@ -1,4 +1,4 @@
 
-# Sprite Animation
+# Sprite Anim.
 
-![Sprite Animation Node](../../assets/nodes/spriteanimation_node.png){align=left}
+![Sprite Anim. Node](../../assets/nodes/spriteanimation_node.png){align=left}

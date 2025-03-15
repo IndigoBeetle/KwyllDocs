@@ -1,18 +1,22 @@
 
-# Set
+# Set Variable
 
 
 ## Description
 
-![Set Node](../../assets/nodes/set_node.png){align=left} The *Set Node* is used
-to set the integer value of a variable on whatever the current logic graph is
-running, i.e. a [Screen](../../introduction/terminology.md#screens), a
+![Set Variable Node](../../assets/nodes/set_node.png){align=left} The *Set
+Variable Node* is used to set the integer value of a variable on whatever the
+current logic graph is running, i.e. a
+[Screen](../../introduction/terminology.md#screens), a
 [Room](../../introduction/terminology.md#rooms) or an
 [Object](../../introduction/terminology.md#objects).
 
-It's important to understand that the value being modified is the value for the
-chosen variable in the [Object
-Reference](../../introduction/terminology.md#objects) that is running the logic
+It's important to understand that, in the case of
+[rooms](../../introduction/terminology.md#rooms) and
+[objects](../../introduction/terminology.md#objects) the value being modified
+is the value for the chosen variable in the [Object
+Reference](../../introduction/terminology.md#objects) or
+[Location](../../introduction/terminology.md#locations), that is running the logic
 code, each reference has it's own version of the variables, so changing a
 variable on one reference for a particular object type will not affect the
 value on other references, they are independent.
@@ -48,5 +52,5 @@ Value
   will use the value provided on the input port.
 
 *Variable*
-: A dropdown listing the defined variables associated with the current logic graph.
+: A dropdown listing the defined variable names on the current logic graph.
 

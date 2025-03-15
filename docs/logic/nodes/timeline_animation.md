@@ -1,4 +1,4 @@
 
-# Timeline Animation
+# Timeline Anim.
 
-![Timeline Animation Node](../../assets/nodes/timelineanimation_node.png){align=left}
+![Timeline Anim. Node](../../assets/nodes/timelineanimation_node.png){align=left}

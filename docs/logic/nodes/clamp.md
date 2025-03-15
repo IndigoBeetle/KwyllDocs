@@ -26,13 +26,11 @@ Out
 
 Min
 : An integer input port, using this allows you to specify the minimum value from
-  elsewhere in the logic graph, such as via an [Integer
-  Constant](integer_constant.md) node.
+  elsewhere in the logic graph, such as via an [Number](number.md) node.
 
 Max
 : An integer input port, using this allows you to specify the maximum value from
-  elsewhere in the logic graph, such as via an [Integer
-  Constant](integer_constant.md) node.
+  elsewhere in the logic graph, such as via an [Number](number.md) node.
 
 
 -------

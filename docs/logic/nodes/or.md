@@ -7,8 +7,7 @@
 inputs of type integer and compares them with 0. If either or both are not 0,
 the output will be 1, if both are 0, the output will be 0. 
 
-This is useful to combine checks, in particular with the [Integer
-Compare](integer_compare.md) nodes.
+This is useful to combine checks, in particular with the [Compare](compare.md) node.
 
 
 ## Ports {: style="clear:left" }

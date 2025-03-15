@@ -7,7 +7,7 @@ two inputs of type integer and compares them with 0. If both are not 0, the
 output will be 1, if either or both are 0, the output will be 0. 
 
 This is useful to combine checks, in particular with the [Integer
-Compare](integer_compare.md) nodes.
+Compare](compare.md) node.
 
 
 <br style="clear:left"/>

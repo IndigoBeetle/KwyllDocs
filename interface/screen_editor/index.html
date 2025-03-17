@@ -398,6 +398,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Screen Editor
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -407,6 +418,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-screens-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Screens List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-instruments-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Instruments List
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1974,6 +2022,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-screens-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Screens List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-instruments-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Instruments List
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1989,6 +2063,93 @@
 
 <h1 id="screen-editor">Screen Editor<a class="headerlink" href="#screen-editor" title="Permanent link">&para;</a></h1>
 <p><a class="glightbox" href="../../assets/screen_editor.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screen Editor" src="../../assets/screen_editor.png" /></a></p>
+<p>The <em>Screen Editor</em> is where in Kwyll you get to create and modify
+<a href="../../introduction/terminology/#screens">Screens</a>. It is organised into
+four main areas, the <span style="color: green;">Screens List</span>,
+the <span style="color: blue;">Instruments List</span>, the 
+<span style="color: cyan;">Assets Section</span> and the
+<span style="color: magenta;">Main Area</span>.</p>
+<h2 id="the-screens-list">The Screens List<a class="headerlink" href="#the-screens-list" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../assets/screens_screens_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Screens List" src="../../assets/screens_screens_list.png" width="30%" /></a></p>
+<p>This is where you can select, add and remove the various
+<a href="../../introduction/terminology/#screens">screens</a> that you have in your game.
+The local toolbar below the list includes buttons to create a new screen,
+delete the currently selected screen, and duplicate the currently selected
+screen, to the left side. It also has a button to edit the screen properties to
+the right. </p>
+<p><br style="clear:left"/></p>
+<p><a class="glightbox" href="../../assets/screen_properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Screen Properties" src="../../assets/screen_properties.png" width="30%" /></a></p>
+<p>The <em>Screen Properties</em> dialog is shown when double clicking a screen in the
+screens list, or clicking the screen properties button. This is where you can 
+modify various properties of the currently selected screen that are not editable
+in the main area layout and logic tabs.</p>
+<dl>
+<dt>Name</dt>
+<dd>The name of the screen. This is used in logic for example when selecting to 
+  switch to a different screen, the <a href="../../logic/nodes/switch_screen/">Switch Screen</a>
+  node will list the screen names in a dropdown control to make it easy to select
+  which screen to switch to.</dd>
+<dt>Game Screen?</dt>
+<dd>This toggles whether the screen should contain the game window or not. Typically
+  only one screen in your game will have the game window included, but it is 
+  possible to have it in multiple screens, even in different places on the screen.
+  Some screens, such as a menu screen, a help screen, etc. will not require the
+  game window to be shown, they will consist entirely of instruments.</dd>
+<dt>Start Screen?</dt>
+<dd>This toggles if the screen should be the initial screen visible when starting 
+  your game. Only one screen can have this flag set, so selecting it here will
+  automatically clear it on all other screens. The start screen is also shown in 
+  the <a href="#the_screens_list">Screens List</a> with a flag icon.</dd>
+<dt>Ink, Paper and Bright</dt>
+<dd>These combined set the default colours for the current screen. Instruments
+  can override these values. The paper colour is used as the background to the
+  entire screen. These values are also used as the default colours for tiles in
+  the screen tilemap unless replaced by painting attributes in the tilemap, or by
+  assigning colours to tiles.</dd>
+</dl>
+<p><br style="clear:right"/></p>
+<h2 id="the-instruments-list">The Instruments List<a class="headerlink" href="#the-instruments-list" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../assets/screens_instrument_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Instruments List" src="../../assets/screens_instrument_list.png" width="30%" /></a></p>
+<p>This is where you can select, add and remove the various
+<a href="../../introduction/terminology/#instruments">Instruments</a> defined in the
+currently selected screen. The local toolbar below the list includes buttons to
+create a new instrument and delete the currently selected instrument, to the
+left side. It also has a button to edit the instrument properties to the right. </p>
+<p><br style="clear:left"/></p>
+<p><a class="glightbox" href="../../assets/instrument_properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Instrument Properties" src="../../assets/instrument_properties.png" width="30%" /></a></p>
+<p>The <em>Instrument Properties</em> dialog is shown when double clicking on an instrument or
+clicking the instrument properties button. This is where you can modify the various 
+properties of an instrument.</p>
+<dl>
+<dt>Name</dt>
+<dd>The name of the instrument. This is used in logic for example when selecting to 
+  update an instrument value, the <a href="../../logic/nodes/set_instrument/">Set Instrument</a>
+  node will list the instrument names in a dropdown control to make it easy to select
+  which instrument to update.</dd>
+<dt>Position:</dt>
+<dd>This is the position on the screen for the top left corner of the instrument. 
+  Instruments are placed on a grid of cells, each 8x8 pixels in size, so on the 
+  Spectrum, the range of these values are 0 to 31 in X and 0 to 23 in Y, any values
+  beyond this range will result in the instrument being at least partially off screen.</dd>
+<dt>Size</dt>
+<dd>The size in cells of the instrument, as with the position, the instrument size is
+  specified in terms of cells, each 8x8 pixels in size.</dd>
+<dt>Type</dt>
+<dd>The type of the instrument. An instrument will display its <a href="#value">Value</a> in 
+  different ways depending on the type of instrument. A text instrument will display
+  a string from the strings list, an integer instrument will display a numerical 
+  value, and a tile instrument will show a single tile from the tileset.</dd>
+<dt>Value</dt>
+<dd>The initial value of the instrument, the meaning of the value depends on the
+  instrument <a href="#type">type</a>.</dd>
+<dt>Color</dt>
+<dd>These controls allow you to override the default colour information defined by the
+  screen. Ink and paper can be specified separately or ignored, choosing the black 
+  colour with an "X" indicates that the instrument should not change the default for 
+  ink or colour and instead use the value specified in the screen. The brightness value 
+  can on or off, only if one of ink or paper is specified.</dd>
+</dl>
+<p><br style="clear:right"/></p>
 
 
 

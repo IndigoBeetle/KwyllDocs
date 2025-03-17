@@ -2,7 +2,7 @@
 
 ## Description
 
-![And Node](../../assets/nodes/and_node.png){align=left} The *And Node* takes
+![And Node](../../assets/nodes/and_node.png){align=left width="30%"} The *And Node* takes
 two inputs of type integer and compares them with 0. If both are not 0, the
 output will be 1, if either or both are 0, the output will be 0. 
 

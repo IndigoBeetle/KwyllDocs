@@ -2,7 +2,7 @@
 
 ## Description
 
-![Always Node](../../assets/nodes/always_node.png){align=left} The *Always
+![Always Node](../../assets/nodes/always_node.png){align=left width="30%"} The *Always
 Node* is a specific type of *Node* called a __Trigger__. A trigger *Node* is an
 entrypoint into a flow in the Kwyll logic. The *Always* trigger is the most
 commonly used trigger node, it will run the flow that follows on from it's

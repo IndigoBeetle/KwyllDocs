@@ -22,12 +22,12 @@ Each node has an optional set of input and output *Ports* which can be
 of different types depending on their purpose, and a set of
 *Parameters* which configure the operation of the *Node*.
 
-![A Node](../assets/nodes/intcomparison_node.png){ align=left } This is a
-relatively simple *Node* that demonstrates most of the key features of a logic
-Node. Here you can see on the left of the *Node*; 3 input *Ports*, one with a
-double arrow at the top, and two green ones below. The double arrow port is a
-*Flow* port, it is connected to other ports of the same type to control the
-flow of execution. A *Node* will only have at most 1 *Flow* input port. The
+![A Node](../assets/nodes/intcomparison_node.png){ align=left width="30%"} This 
+is a relatively simple *Node* that demonstrates most of the key features of a
+logic Node. Here you can see on the left of the *Node*; 3 input *Ports*, one
+with a double arrow at the top, and two green ones below. The double arrow port
+is a *Flow* port, it is connected to other ports of the same type to control
+the flow of execution. A *Node* will only have at most 1 *Flow* input port. The
 green ports are data inputs, they provide integer numerical values to the node
 from some other node. You'll notice that the "B" *Port* also has a numerical
 input field alongside it, this is a parameter, in this particular case the
@@ -53,24 +53,35 @@ __or__ *Parameter* you can choose how this value is set depeneding upon your
 needs, and the comparison type is a *Parameter*, you must choose this value
 when editing and it cannot change at runtime.
 
-![Math Node](../assets/nodes/math_node.png){align=right} Some nodes will
-have no *Flow* ports at all, this means the *Node* is not meant to be
-part of the flow, but instead is meant to provide data to other nodes
-that are part of the flow. These *Nodes* will have output data *Ports*
-that can be connected to the input data *Ports* of other *Nodes*, when a
-*Node* that is part of a flow has a wire connecting one of its input
-*Ports* to the output *Port* of another *Node*, it will request the
-value from the other *Node* when it needs it.
+![Math Node](../assets/nodes/math_node.png){align=right width="30%"} Some nodes
+will have no *Flow* ports at all, this means the *Node* is not meant to be part
+of the flow, but instead is meant to provide data to other nodes that are part
+of the flow. These *Nodes* will have output data *Ports* that can be connected
+to the input data *Ports* of other *Nodes*, when a *Node* that is part of a
+flow has a wire connecting one of its input *Ports* to the output *Port* of
+another *Node*, it will request the value from the other *Node* when it needs
+it.
 
 *Nodes* that are in a logic graph but not connected to a valid *Flow* or
 have output *Ports* that are not connected to anything, will not
 contribute to the program and will not be exported.
 
-There are currently two types of data port in Kwyll's logic, integer numerical,
-indicated by a green colour and connected by a green wire, and [Object
-Reference](../introduction/terminology.md#objects), indicated by a blue colour
-and connected by a blue wire. It is only possible to connect two ports of the
-same type to one another, be that a *Flow* port or a type of data *Port*.
+There are several types of data that can be passed between logic nodes in Kwyll, 
+each with a unique colour for the port and wires that connect them.
+
+Number
+: Shown as <span style="color:green;">green</span>, a signed 16 bit integer value, 
+  capable of representing anything between -32768 and 32767.
+
+Object
+: Shown as <span style="color:blue;">blue</span>, a reference to an object in the 
+  game, can be a Room object or a global object.
+
+Location
+: Shown as <span style="color:magenta;">magenta</span>, a reference to a location 
+  on the map.
+
+
 
 ## Editing Nodes
 

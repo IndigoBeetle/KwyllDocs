@@ -1,5 +1,7 @@
 site_name: Kwyll User Documentation
 site_url: https://docs.kwyll.com
+site_author: Paul Gregory
+copyright: Indigobeetle
 theme:
   name: material
   logo: assets/logo_large.png
@@ -7,11 +9,28 @@ theme:
     - navigation.instant
     - navigation.path
     - navigation.top
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preferences
 plugins:
   - search
   - glightbox
   - literate-nav:
       nav_file: nav.md
+  - with-pdf:
+      enabled_if_env: ENABLE_PDF_EXPORT
 markdown_extensions:
   - toc:
       permalink: true
@@ -19,6 +38,7 @@ markdown_extensions:
   - def_list
   - md_in_html
   - pymdownx.keys
+  - pymdownx.blocks.caption
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

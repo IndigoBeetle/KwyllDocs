@@ -1,4 +1,4 @@
- * [Introduction](introduction.md)
+ * [The Kwyll Interface](kwyll_interface.md)
  * [Screen Editor](screen_editor.md)
  * [Data Editor](data_editor.md)
  * [Sprite Editor](sprite_editor.md)

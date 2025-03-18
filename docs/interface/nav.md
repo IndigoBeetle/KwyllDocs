@@ -8,3 +8,5 @@
  * [Sound Editor](sound_editor.md)
  * [Logic Editor](logic_editor.md)
  * [Preview](preview.md)
+ * [Assets Panel](assets_panel.md)
+ * [Tilemap Editor](tilemap_editor.md)

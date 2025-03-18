@@ -6,7 +6,7 @@ The *Screen Editor* is where in Kwyll you get to create and modify
 [Screens](../introduction/terminology.md#screens). It is organised into
 four main areas, the <span style="color: green;">Screens List</span>,
 the <span style="color: blue;">Instruments List</span>, the 
-<span style="color: cyan;">Assets Section</span> and the
+<span style="color: cyan;">Assets Panel</span> and the
 <span style="color: magenta;">Main Area</span>.
 
 
@@ -22,6 +22,8 @@ screen, to the left side. It also has a button to edit the screen properties to
 the right. 
 
 <br style="clear:left"/>
+
+### Screen Properties
 
 ![Screen Properties](../assets/screen_properties.png){align=right width="30%"}
 
@@ -112,3 +114,61 @@ Color
   can on or off, only if one of ink or paper is specified.
 
 <br style="clear:right"/>
+
+
+## Assets Panel
+
+![Assets Panel](../assets/screen_assets.png){align=left width="30%"}
+
+The *Assets Panel* provides access to assets that can be placed in the screen editor
+view in addition to [Instruments](../introduction/terminology.md#instruments). It is a
+common element used in more than one editor in Kwyll, and as such has its ow separate 
+section of the documentation [here](./assets_panel.md). 
+
+
+<br style="clear:left"/>
+
+## Main Area
+
+![Main Area](../assets/screen_main_area.png){align=left width="60%"}
+
+The rest of the *Screen Editor* is taken up with the main area, where the
+majority of the editing of a [Screen](../introduction/terminology.md#screens)
+takes place. It consists of two tabs, Layout and Logic. The Logic tab is a
+standard [Logic Editor](./logic_editor.md) component that is used to edit logic
+that applies to the current room, see
+[Logic](../introduction/terminology.md#logic) for more details.
+
+The Layout tab contains the screen layout editing tools. It consists of two parts, a 
+standard [Tilemap Editor](./tilemap_editor.md) component, and layered on top of it a
+specific set of editing features for Screens. The Tilemap Editor is documented 
+separately as a common component.
+
+### Layout
+
+The screen *Layout Editor* works as a set of additional tools that operate in
+the same space as the *Tilemap Editor*. It provides visual tools for
+interactively placing screen elements such as
+[Instruments](../introduction/terminology.md#instruments) and the *Game
+Window*.
+
+An [Instrument](../introduction/terminology.md#instruments) is represented on the 
+grid as a yellow rectangle with a small triangle in the bottom right corner
+![Instrument](../assets/instrument.png){width="100px"}. You can click and drag the
+instrument on the grid, it will automatically conform to the grid cells, snapping
+to 8x8 increments. By carefully clicking on the small triangle in the corner, you can
+drag out the rectangle to change its size, again, it will automatically conform to 
+the grid.
+
+If the screen being edited has the *Game Screen* flag set in the
+[properties](#screen-properties), a blue rectangle will show to represent the
+*Game Window*. This element does not have a resize handle (triangle), as it's
+not possible to resize the game window in a screen, the game window size is
+fixed on all screens, the only way to modify the game window size is in the
+[Settings](./settings.md) dialog. However, the game window can be positioned
+independently on each screen it is used, so dragging the blue rectangle
+representing the game window works in much the same way as an *Instrument*, it
+will also conform to the grid as appropriate. 
+
+
+<br style="clear:left"/>

@@ -1,0 +1,2594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Paul Gregory">
+      
+      
+        <link rel="canonical" href="https://docs.kwyll.com/tutorials/simple_platformer_controller/">
+      
+      
+        <link rel="prev" href="../../logic/nodes/z80_out/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+    
+    
+      
+        <title>Simple Platformer Controller - Kwyll User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#simple-platformer-controller" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Kwyll User Documentation" class="md-header__button md-logo" aria-label="Kwyll User Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_large.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kwyll User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Simple Platformer Controller
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preferences"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preferences" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Kwyll User Documentation" class="md-nav__button md-logo" aria-label="Kwyll User Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_large.png" alt="logo">
+
+    </a>
+    Kwyll User Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/terminology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terminology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/kwyll_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Kwyll Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/screen_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/data_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/sprite_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/object_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/room_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/map_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/sound_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sound Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/logic_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logic Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/assets_panel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assets Panel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/tilemap_editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tilemap Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Logic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Logic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Logic in Kwyll?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/process_order/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logic Order of Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nodes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Nodes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/always/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Always
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/and/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    And
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/anim_event/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AnimEvent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/beep_fx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beep FX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/change_location/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change Location
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/clamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clamp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/comment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/compare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compare
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller Input
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/current_location/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Current Location
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/direction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Direction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/get_global_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Global Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/get_room_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Room Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/get_tile_information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Tile Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/get_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/global_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/if/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    If
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/increment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Increment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/initialise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initialise
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/instance_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/is_on_screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Is On Screen?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/is_type/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Is Type?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/kill_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kill Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/loop_while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loop While
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/map_to_room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map To Room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/message_room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/modify_tiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modify Tiles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/move_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Move Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/move_object_with_collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Move With Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/number/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Number
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/object_hit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/object_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/on_message/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Message
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/or/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Or
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/paste_brush/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paste Brush
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/pixel_to_tile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pixel To Tile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/repeat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repeat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/reset_game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reset Game
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/room_entered/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room Entered
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/room_exited/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/select/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Select
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/separate_colours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Separate Colours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/set_global_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Global Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/set_instrument/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Instrument
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/set_object_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Object Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/set_variable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Variable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/spawn_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spawn Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/sprite_animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite Anim.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/store_value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/subgraph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subgraphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/switch_screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Switch Screen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/tile_to_pixel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tile To Pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/timeline_animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline Anim.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/transport_object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transport Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/transport_to_marker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transport To Marker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/z80_out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z80 Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Simple Platformer Controller
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Simple Platformer Controller
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-simple-left-right-and-jump-platformer-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Create A Simple, Left, Right and Jump Platformer Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump Triggering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fall-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fall Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Landing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-simple-left-right-and-jump-platformer-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Create A Simple, Left, Right and Jump Platformer Controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-triggering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump Triggering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jump-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jump Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fall-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fall Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#landing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Landing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="simple-platformer-controller">Simple Platformer Controller<a class="headerlink" href="#simple-platformer-controller" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-create-a-simple-left-right-and-jump-platformer-controller">How To Create A Simple, Left, Right and Jump Platformer Controller<a class="headerlink" href="#how-to-create-a-simple-left-right-and-jump-platformer-controller" title="Permanent link">&para;</a></h2>
+<p>One of the most common game genres for retro computers is the platformer, a
+game where the player typically has controls to move left and right, and to
+jump onto platforms and fall down when walking off a platform. This tutorial
+guides you through creating the logic nodes to create a player object in this
+style. While this very likely won't be adequate for a fully fledged game it
+should give some insights into some of the techniques that Kwyll offers to do
+this and serve as a starting point for customisation and improvement.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h3 id="sprite">Sprite<a class="headerlink" href="#sprite" title="Permanent link">&para;</a></h3>
+<p>First, lets start by creating a sprite for our character, something simple as
+we're not focused on animation for this tutorial.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/player_sprite.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Player Sprite" src="../../assets/tutorials/simple_platformer_controller/player_sprite.png" /></a></p>
+<h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h3>
+<p>Then we'll turn this sprite into a simple object, our Player, remember to name
+it appropriately and set the draw mode to mask if you've drawn a mask for your
+player sprite. Add a single animation with one frame and choose the sprite you
+created for your character.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/player_object.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Player Object" src="../../assets/tutorials/simple_platformer_controller/player_object.png" /></a></p>
+<h3 id="room">Room<a class="headerlink" href="#room" title="Permanent link">&para;</a></h3>
+<p>Next we'll setup a simple room to test out the player. Create a single simple
+tile, in the properties dialog, make sure to set the default collision to "top"
+as this will be the tile for our platforms, we want to be able to jump up
+through it, but then land on the top and not fall through.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/tile.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Tile" src="../../assets/tutorials/simple_platformer_controller/tile.png" /></a></p>
+<p>Draw a ground and some platforms for our player to jump on using the tile we
+just created.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/room.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Room" src="../../assets/tutorials/simple_platformer_controller/room.png" /></a></p>
+<p>Drag the Player object from the objects panel onto the room. Note: normally
+the player would be a "Map" object, which allows it to travel between rooms,
+but for the purposes of this tutorial, we'll just have a single room, so we can
+just place our player in the room directly. </p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/player_in_room.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Player In Room" src="../../assets/tutorials/simple_platformer_controller/player_in_room.png" /></a></p>
+<p>Once placed, open the object properties dialog and make sure the "Collide Bg"
+flag is set so that the player object will collide with our platform tiles.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/player_object_flags.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Player Object Flags" src="../../assets/tutorials/simple_platformer_controller/player_object_flags.png" /></a></p>
+<h3 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
+<p>Finally, in order to be able to play the game, we must add the room to the map.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/map.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Map" src="../../assets/tutorials/simple_platformer_controller/map.png" /></a></p>
+<h2 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">&para;</a></h2>
+<p>Now that we've got all the pieces in place, it's time to look at the core of
+this tutorial, the logic. In order to keep things clear, the different steps of
+the logic are implemented as separate flows, some of them could potentially be
+combined if you wanted to reduce the number of nodes, that is left as an
+exercise for the reader. </p>
+<p>We break the logic down into 5 steps, movement, jump triggering, jump
+processing, fall processing and landing.</p>
+<p>Firstly, we'll need some variables to use during the logic, add the following
+variables to the Player object logic:</p>
+<ul>
+<li>speed</li>
+<li>jump_amount</li>
+<li>fall_amount</li>
+<li>can_jump</li>
+</ul>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/variables.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Variables" src="../../assets/tutorials/simple_platformer_controller/variables.png" /></a></p>
+<h3 id="movement">Movement<a class="headerlink" href="#movement" title="Permanent link">&para;</a></h3>
+<p>This flow is triggered by an "Always" trigger so will run every frame. It
+serves two purposes, checking the left right keys and altering the player's
+position in the horizontal direction, and applying any jump/fall amounts to
+adjust the player's position in the vertical direction. Once this is done, it
+will attempt to move the player to the new location.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/move_logic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Move Logic" src="../../assets/tutorials/simple_platformer_controller/move_logic.png" /></a></p>
+<p>Following the flow connections (white) you can see the first thing that happens
+after the flow is triggered is to set the "can_jump" variable to 0, this is so
+that should the move cause the player to fall off a platform they won't be able
+to jump, if the move does not cause the player to start falling, this flag will
+be reset by the <a href="#landing">Landing</a> flow described below.</p>
+<p>The next thing in the flow is the actual move, this gets the X and Y position
+to move to from a set of calculations. Let's look at X first. </p>
+<p>The "Controller Input" node is configured to return -1 for left and 1 for
+right, if either button is not pressed, it will return 0 for that direction.
+These two values are added together in a "Math" node, this is to cancel out
+should the player press both left and right simultaneously, as 1 + -1 is 0, if
+only one button is pressed, the result will be either -1 or 1 depending on
+whether left or right is pressed.</p>
+<p>The result of this calculation is then fed into another "Math" node that
+multiplies the direction by the "speed" variable (don't forget to set the speed
+to something other than 0 in the object properties back in the Room editor!).
+The result of this calculation is then fed into a third "Math" node that adds
+it to the current X position of the player, moving it in the correct direction
+by the desired speed.</p>
+<p>The Y position is calculated by subtracting the "jump_amount" variable from the
+current Y position of the player (remember negative Y is up on the screen), and
+then adding in the "fall_amount" variable to account for falling.</p>
+<h3 id="jump-triggering">Jump Triggering<a class="headerlink" href="#jump-triggering" title="Permanent link">&para;</a></h3>
+<p>Next, in a separate "Always" flow, we check the jump button, note the
+"Controller Input" is set to "Just Pressed" for this, as we don't want the jump
+to be continuous as we do for the left/right movement, this is one good reason
+to keep the flows separate. </p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/jump_logic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jump Logic" src="../../assets/tutorials/simple_platformer_controller/jump_logic.png" /></a></p>
+<p>We compare the result from the "Controller Input" to see if jump has just been
+pressed. We also check the value of the "can_jump" variable, and feed the
+result of both of these comparisons into an "AND" node. Only if the button is
+pressed, and the player can jump, do we proceed to make the player jump. This
+is done by simply setting the "jump_amount" variable to the initial jump amount
+we want, you can tweak this value to get the height you desire for your game.
+We also set the "fall_amount" to 0 and the "can_jump" to 0, this prevents the
+falling from completely overriding the jump back up in the
+<a href="#movement">Movement</a> flow, and prevents the player from jumping again until
+they have landed.</p>
+<h3 id="jump-processing">Jump Processing<a class="headerlink" href="#jump-processing" title="Permanent link">&para;</a></h3>
+<p>Next, in another "Always" flow, we continuously adjust the "jump_amount" if it
+is not zero.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/jump_logic_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Jump Processing" src="../../assets/tutorials/simple_platformer_controller/jump_logic_2.png" /></a></p>
+<p>Here we check if "jump_amount" is greater than zero, which indicates the player
+is jumping, if it is, we reduce it by 1 and then clamp the result to make sure
+that it doesn't go below zero, if it did, it would add to the falling resulting
+in the player falling faster than they should.</p>
+<h3 id="fall-processing">Fall Processing<a class="headerlink" href="#fall-processing" title="Permanent link">&para;</a></h3>
+<p>Next, in yet another "Always" flow, we continuously adjust the "fall_amount" so
+that the player falls faster up to a limit, accelerating towards the ground
+when they step off a platform.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/fall_logic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fall Processing" src="../../assets/tutorials/simple_platformer_controller/fall_logic.png" /></a></p>
+<p>This simply adds 1 to the "fall_amount" each frame and then clamps it to a
+reasonable range so the player doesn't fall too fast, you can tweak the upper
+limit of the clamp to get the desired maximum falling speed for your game.</p>
+<h3 id="landing">Landing<a class="headerlink" href="#landing" title="Permanent link">&para;</a></h3>
+<p>Finally for now, we have the logic flow that reacts when the player has
+collided with something. The "Collided" trigger is automatically run when the
+"Move Object" node in the <a href="#movement">Movement</a> flow results in the player
+hitting something. For the purposes of this tutorial, we know it can only be a
+platform or the ground, but we check the direction for completeness anyway and
+to ensure that collision in other directions is cleanly handled as you continue
+to develop your game around this controller.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/land_logic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Landing" src="../../assets/tutorials/simple_platformer_controller/land_logic.png" /></a></p>
+<p>The flow first checks if the side that was hit is 2, which indicates the player
+hit something when moving down on the screen, i.e. hit the top of a tile that
+has the top collision flag set, like our tile. If this is true, we set the
+"fall_amount" variable to 0, the <a href="#fall_processing">Fall Processing</a> flow will
+increase it to take care of falling off a platform next time round, and set the
+"can_jump" variable to 1 to indicate that the player can now jump again as they
+have landed.</p>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<p>That should be all that is required to get a basic platformer control working
+in Kwyll. Switch to the Preview tab and start the game, you should be able to
+move left and right, and jump up onto the platforms. When you walk off a
+platform the player should fall to the ground.</p>
+<p><a class="glightbox" href="../../assets/tutorials/simple_platformer_controller/preview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Preview" src="../../assets/tutorials/simple_platformer_controller/preview.png" /></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Indigobeetle
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.path", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

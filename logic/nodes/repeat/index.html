@@ -1548,6 +1548,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Repeat
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1557,6 +1568,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1998,6 +2055,69 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/simple_platformer_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Platformer Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2018,6 +2138,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2032,7 +2187,64 @@
 
 
 <h1 id="repeat">Repeat<a class="headerlink" href="#repeat" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../../../assets/nodes/repeat_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Repeat Node" src="../../../assets/nodes/repeat_node.png" /></a></p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../../../assets/nodes/repeat_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Repeat Node" src="../../../assets/nodes/repeat_node.png" /></a>
+ The <em>Repeat Node</em> will run the node flow that is connected to its <em>Body</em> output port
+ repeatedly while an index is between the <em>Start</em> and <em>Until</em> values provided, altering
+ the index value each time around the loop by the <em>Step</em> value.</p>
+<p>The index is first set to the <em>Start</em> value, and then it is compared to the <em>Until</em>
+ value, if the <em>Step</em> is positive and the index is greater than or equal to the <em>Until</em>
+ value, the loop exits, similarly, if <em>Step</em> is negative and the index is less than or
+ equal to the <em>Until</em> value, the loop exits. That is, the loop runs while the index is
+ <em>before</em> the <em>Until</em> value, it is "exclusive".</p>
+<p>During the looping, the current value of the index can be accessed by nodes in the <em>Body</em>
+ using the <em>Index</em> port. Before execution, the index port is undefined, after execution
+ it will contain the last value of the index before exiting the loop.</p>
+<p>When the loop is complete, the logic graph will continue with the flow connected to the
+ <em>Exit</em> port.</p>
+<p><br style="clear:left"/></p>
+<hr />
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Body</dt>
+<dd>The nodes that are to be repeatedly executed during the loop. Execution will 
+  continue while there is a node connected to the Flow Out of the last node
+  executed, the body ends when there is no connection to the Flow Out, at which
+  point the index is updated and the node will check if it is to run the loop 
+  again or exit.</dd>
+<dt>Start</dt>
+<dd>An integer port providing the start value of the index, this will be the value
+  of the index during the first run of the <em>Body</em>, it is "inclusive".</dd>
+<dt>Until</dt>
+<dd>An integer port providing the value to check the index against for exiting the
+  loop. The loop is exited before the index reaches this value.</dd>
+<dt>Step</dt>
+<dd>An integer port providing the value to add to the index each iteration through
+  the loop. This value can be positive or negative, allowing loops where the index
+  increases or decreases with each iteration.</dd>
+<dt>Index</dt>
+<dd>An integer output port that provides the current value of the index in the loop, 
+  typically used by nodes within the <em>Body</em> flow.</dd>
+<dt>Exit</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+</dl>
+<hr />
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>Start</dt>
+<dd>An integer input to specify a fixed value for the start of the loop index.</dd>
+<dt>Until</dt>
+<dd>An integer input to specify a fixed value for the exit point of the loop.</dd>
+<dt>Step</dt>
+<dd>An integer input to specify a fixed value to be added to the index each iteration
+  through the loop.</dd>
+</dl>
 
 
 

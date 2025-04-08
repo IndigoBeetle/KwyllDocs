@@ -2,3 +2,4 @@
  * [Introduction](introduction/)
  * [Interface](interface/)
  * [Logic](logic/)
+ * [Tutorials](tutorials/)

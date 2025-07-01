@@ -1,4 +1,4 @@
 
 # Random
 
-![Random Node](../../assets/nodes/random_node.png){align=left}
+![Random Node](../../assets/nodes/random.png){align=left width="25%"}

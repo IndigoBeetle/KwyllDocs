@@ -31,12 +31,16 @@ plugins:
       nav_file: nav.md
   - with-pdf:
       enabled_if_env: ENABLE_PDF_EXPORT
+      debug_html: true
 markdown_extensions:
   - toc:
       permalink: true
   - attr_list
   - def_list
   - md_in_html
+  - tables
+  - admonition
+  - pymdownx.details
   - pymdownx.keys
   - pymdownx.blocks.caption
   - pymdownx.superfences:

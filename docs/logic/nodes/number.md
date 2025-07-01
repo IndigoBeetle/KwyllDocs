@@ -1,4 +1,4 @@
 
 # Number
 
-![Number Node](../../assets/nodes/intconst_node.png){align=left}
+![Number Node](../../assets/nodes/number.png){align=left width="25%"}

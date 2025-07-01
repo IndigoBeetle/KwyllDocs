@@ -4,9 +4,9 @@
 
 ## Description
 
-![Beep FX Node](../../assets/nodes/beepfx_node.png){align=left} The *Beep FX
-Node* is used to play a beeper sound effect defined in the Beep FX panel of the
-[Sound Editor](../../interface/sound_editor.md). 
+![Beep FX Node](../../assets/nodes/beep_fx.png){align=left width="25%"}
+The *Beep FX Node* is used to play a beeper sound effect defined in the Beep FX
+panel of the [Sound Editor](../../interface/sound_editor.md). 
 
 <br style="clear:left"/>
 

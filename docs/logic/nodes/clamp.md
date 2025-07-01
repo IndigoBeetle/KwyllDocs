@@ -4,11 +4,12 @@
 
 ## Description
 
-![Clamp Node](../../assets/nodes/clamp_node.png){align=left} The *Clamp Node*
-takes an integer value on the __In__ port, if the value is less than or equal
-to the __Min__ port/parameter the __Min__ port/parameter value is output, if it
-is greater than or equal to the __Max__ port/parameter the __Max__
-port/parameter value is output, otherwise the value is output unmodified. 
+![Clamp Node](../../assets/nodes/clamp.png){align=left width="25%"}
+The *Clamp Node* takes an integer value on the __In__ port, if the value is
+less than or equal to the __Min__ port/parameter the __Min__ port/parameter
+value is output, if it is greater than or equal to the __Max__ port/parameter
+the __Max__ port/parameter value is output, otherwise the value is output
+unmodified. 
 
 <br style="clear:left"/>
   

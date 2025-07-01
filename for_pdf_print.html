@@ -1,0 +1,2146 @@
+<html><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Paul Gregory" name="author"/>
+<link href="https://docs.kwyll.com/" rel="canonical"/>
+<link href="file:///Volumes/Projects/Kwyll/KwyllDocs/site/introduction/terminology/" rel="next"/>
+<link href="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.36" name="generator"/>
+<title>Kwyll User Documentation</title>
+<link href="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/stylesheets/main.06209087.min.css" rel="stylesheet"/>
+<link href="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/javascripts/glightbox.min.js"></script></link><style>:root {
+  string-set: author 'Paul Gregory', copyright 'Indigobeetle', title 'Kwyll User Documentation'; }
+
+h1, h2, h3 {
+  string-set: chapter content(); }
+@page {
+  size: a4 portrait;
+  margin: 25mm 10mm 25mm 10mm;
+  counter-increment: page;
+  white-space: pre;
+  color: grey;
+  @top-right {
+    font-size: 7pt;
+    content: string(chapter); }
+  @bottom-center {
+    font-size: 8pt;
+    content: "- " counter(page) "/" counter(pages) " -"; }
+  @bottom-right {
+    font-size: 6pt;
+    content: string(copyright); } }
+
+@media print {
+  body {
+    background: none;
+    background-color: #fff; } }
+
+article,
+section + section {
+  page-break-before: always;
+  min-height: 100vh;
+  /* Defining all page breaks */ }
+  article,
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article div.tabbed-content--wrap > .tabbed-content,
+  section + section,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section div.tabbed-content--wrap > .tabbed-content {
+    clear: both; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article img,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section img {
+    page-break-after: avoid;
+    page-break-inside: avoid; }
+  article a,
+  article blockquote,
+  article table,
+  article ul,
+  article ol,
+  section + section a,
+  section + section blockquote,
+  section + section table,
+  section + section ul,
+  section + section ol {
+    page-break-before: avoid;
+    page-break-inside: avoid; }
+  article pre,
+  article dt + dd,
+  section + section pre,
+  section + section dt + dd {
+    page-break-before: avoid; }
+  article h1 + ul,
+  article h2 + ul,
+  article h3 + ul,
+  article h4 + ul,
+  article h5 + ul,
+  article h6 + ul,
+  article h1 + ol,
+  article h2 + ol,
+  article h3 + ol,
+  article h4 + ol,
+  article h5 + ol,
+  article h6 + ol,
+  section + section h1 + ul,
+  section + section h2 + ul,
+  section + section h3 + ul,
+  section + section h4 + ul,
+  section + section h5 + ul,
+  section + section h6 + ul,
+  section + section h1 + ol,
+  section + section h2 + ol,
+  section + section h3 + ol,
+  section + section h4 + ol,
+  section + section h5 + ol,
+  section + section h6 + ol {
+    page-break-inside: auto; }
+  article div.admonition,
+  section + section div.admonition {
+    page-break-inside: avoid; }
+  article div.tabbed-content--wrap,
+  section + section div.tabbed-content--wrap {
+    page-break-inside: avoid; }
+  article * + div.highlight,
+  article * + div.tabbed-set,
+  section + section * + div.highlight,
+  section + section * + div.tabbed-set {
+    page-break-before: avoid; }
+
+section.two-columns {
+  columns: 2;
+  column-gap: 1cm; }
+
+article h1 {
+  border-bottom: 2px solid #f00; }
+
+article h2 {
+  border-bottom: 1px solid #f99; }
+
+article h3 {
+  border-bottom: 0.5px solid #eee; }
+
+article h1 > .pdf-order,
+article h2 > .pdf-order,
+article h3 > .pdf-order {
+  padding-left: 6px; }
+
+article#doc-toc {
+  margin: 0 .8rem 1.2rem;
+  padding-top: .6rem;
+  font-size: 12pt;
+  line-height: 1.6; }
+  article#doc-toc > h1 {
+    margin: 0 0 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    page-break-after: auto;
+    page-break-inside: auto;
+    bookmark-level: none; }
+    article#doc-toc > h1::before {
+      display: block;
+      margin-top: -9px;
+      padding-top: 9px;
+      content: ""; }
+  article#doc-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 1em;
+    font-size: 8pt;
+    page-break-inside: auto !important; }
+  article#doc-toc li {
+    list-style: none; }
+    article#doc-toc li > a {
+      color: inherit;
+      text-decoration: none;
+      padding-top: 0.4rem;
+      border-bottom: 1px dotted #ddd;
+      display: inline-block;
+      width: 100%; }
+      article#doc-toc li > a > .pdf-order {
+        padding-right: 0.5em; }
+      article#doc-toc li > a::after {
+        float: right;
+        content: target-counter(attr(href), page); }
+
+@media print {
+  html {
+    font-size: 95%;
+    font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif; }
+  body {
+    font-size: 10.5pt;
+    font-family: 'Classico URW T OT', 'Noto Serif JP', serif; }
+  article {
+    font-size: 0.8rem;
+    line-height: 1.6; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    font-family: 'Gentium Book Basic', 'Helvetica Neue', Helvetica, Arial, 'Noto Sans JP', 'Roboto', sans-serif; }
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  tt {
+    font-family: 'Noto Sans Mono CJK JP', 'Courier New', monospace, serif;
+    font-size: 0.8em; }
+  pre code,
+  pre var,
+  pre samp,
+  pre kbd,
+  pre tt {
+    font-size: 100%; } }
+@page :first {
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-right {
+    content: normal; } }
+
+article#doc-cover {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  article#doc-cover > .wrapper {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 3rem; }
+    article#doc-cover > .wrapper.upper {
+      flex: 1 1 auto;
+      max-height: 30vh; }
+      article#doc-cover > .wrapper.upper > .logo {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain; }
+    article#doc-cover > .wrapper h1 {
+      font-size: 36pt;
+      line-height: 1.4; }
+    article#doc-cover > .wrapper h2 {
+      border: none;
+      bookmark-level: none; }
+  article#doc-cover > .properties {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 2rem; }
+    article#doc-cover > .properties p#copyright {
+      font-size: 80%; }
+
+article#doc-back_cover {
+  page: back_cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  article#doc-back_cover .wrapper {
+    flex: 1 0 auto;
+    display: inline-block;
+    background: #eee; }
+  article#doc-back_cover .qrcode {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: #eee; }
+    article#doc-back_cover .qrcode > a {
+      display: inline-block;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      background-color: #fff; }
+      article#doc-back_cover .qrcode > a img {
+        width: 100%;
+        height: auto; }
+
+@page back_cover {
+  background-color: #eee;
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    font-size: 8pt;
+    content: string(title); }
+  @bottom-right {
+    font-size: 8pt;
+    content: string(copyright); } }
+@page {
+  size: A5; }
+</style><style>@media print {
+  .md-typeset .tabbed-set {
+    display: block; }
+    .md-typeset .tabbed-set .tabbed-content--wrap {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.25rem; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > input {
+        display: none; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > label {
+        background-color: rgba(170, 170, 170, 0.2);
+        padding: 0.2rem 2rem;
+        margin: 0;
+        font-weight: 600;
+        color: #666;
+        border-radius: 3px 3px 0 0;
+        border-bottom-color: transparent; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > .tabbed-content {
+        display: block;
+        box-shadow: none; }
+  .md-typeset .admonition-title + .tabbed-set:last-child,
+  .md-typeset summary + .tabbed-set:last-child {
+    margin-top: 0.5rem; }
+  .md-typeset > details summary::after {
+    display: none; }
+  .md-typeset > div, .md-typeset > div.admonition, .md-typeset > details, .md-typeset > div.tabbed-set, .md-typeset > blockquote, .md-typeset > mark, .md-typeset > table, .md-typeset > p {
+    margin-left: 0.7rem; }
+  .md-typeset > table.highlighttable {
+    margin: 0 0 0 0.7rem; }
+  .md-typeset table.highlighttable,
+  .md-typeset table.highlighttable > tbody {
+    width: 100%; }
+  .md-typeset table.highlighttable {
+    padding-bottom: 0.5em; }
+    .md-typeset table.highlighttable .linenos {
+      padding-bottom: 0; }
+  .md-typeset > ul {
+    margin-left: 1.5rem; }
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    margin-left: 0.25rem; }
+  .md-typeset *:not(h3) + h4 {
+    margin-top: 1.5rem; }
+  .md-typeset hr {
+    border-bottom: 1px dotted #999; }
+  .md-typeset .footnote {
+    line-height: 1.1; }
+  .md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+    padding: 0.5em 1.25rem 0.4em; }
+  .md-typeset table:not([class]) td {
+    border-bottom: 1px solid #eee; }
+  .md-typeset span.twemoji {
+    vertical-align: middle;
+    height: 1.125rem;
+    display: inline-block; }
+    .md-typeset span.twemoji > img {
+      height: 1.125rem;
+      vertical-align: middle;
+      display: inline-block; } }
+.md-typeset kbd {
+  vertical-align: middle;
+  border-color: #b8b8b8;
+  border-style: outset;
+  border-width: .05rem .075rem .1rem .075rem;
+  border-radius: .25rem;
+  box-shadow: none; }
+
+:root {
+  --print-md-admonition-icon--note: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23448aff"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>');
+  --print-md-admonition-icon--abstract: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b0ff"><path d="M4 5h16v2H4V5m0 4h16v2H4V9m0 4h16v2H4v-2m0 4h10v2H4v-2z"/></svg>');
+  --print-md-admonition-icon--info: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b8d4"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z"/></svg>');
+  --print-md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300bfa5"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 01-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27z"/></svg>');
+  --print-md-admonition-icon--success: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300c853"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-admonition-icon--question: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2364dd17"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>');
+  --print-md-admonition-icon--warning: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff9100"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"/></svg>');
+  --print-md-admonition-icon--failure: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff5252"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z"/></svg>');
+  --print-md-admonition-icon--danger: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff1744"><path d="M11.5 20l4.86-9.73H13V4l-5 9.73h3.5V20M12 2c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12s-1 5.1-2.95 7.05C17.1 21 14.75 22 12 22s-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2z"/></svg>');
+  --print-md-admonition-icon--bug: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f50057"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 00-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 00-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8z"/></svg>');
+  --print-md-admonition-icon--example: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23651fff"><path d="M7 13v-2h14v2H7m0 6v-2h14v2H7M7 7V5h14v2H7M3 8V5H2V4h2v4H3m-1 9v-1h3v4H2v-1h2v-.5H3v-1h1V17H2m2.25-7a.75.75 0 01.75.75c0 .2-.08.39-.21.52L3.12 13H5v1H2v-.92L4 11H2v-1h2.25z"/></svg>');
+  --print-md-admonition-icon--quote: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239e9e9e"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z"/></svg>'); }
+
+@media print {
+  .md-typeset .admonition-title {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .admonition-title::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .note > .admonition-title, .md-typeset .note > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .note > .admonition-title::before, .md-typeset .note > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .abstract > .admonition-title, .md-typeset .tldr > .admonition-title, .md-typeset .summary > .admonition-title, .md-typeset .abstract > summary, .md-typeset .tldr > summary, .md-typeset .summary > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .abstract > .admonition-title::before, .md-typeset .tldr > .admonition-title::before, .md-typeset .summary > .admonition-title::before, .md-typeset .abstract > summary::before, .md-typeset .tldr > summary::before, .md-typeset .summary > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--abstract); }
+  .md-typeset .info > .admonition-title, .md-typeset .todo > .admonition-title, .md-typeset .info > summary, .md-typeset .todo > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .info > .admonition-title::before, .md-typeset .todo > .admonition-title::before, .md-typeset .info > summary::before, .md-typeset .todo > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--info); }
+  .md-typeset .tip > .admonition-title, .md-typeset .important > .admonition-title, .md-typeset .hint > .admonition-title, .md-typeset .tip > summary, .md-typeset .important > summary, .md-typeset .hint > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .tip > .admonition-title::before, .md-typeset .important > .admonition-title::before, .md-typeset .hint > .admonition-title::before, .md-typeset .tip > summary::before, .md-typeset .important > summary::before, .md-typeset .hint > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--tip); }
+  .md-typeset .success > .admonition-title, .md-typeset .done > .admonition-title, .md-typeset .check > .admonition-title, .md-typeset .success > summary, .md-typeset .done > summary, .md-typeset .check > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .success > .admonition-title::before, .md-typeset .done > .admonition-title::before, .md-typeset .check > .admonition-title::before, .md-typeset .success > summary::before, .md-typeset .done > summary::before, .md-typeset .check > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--success); }
+  .md-typeset .question > .admonition-title, .md-typeset .faq > .admonition-title, .md-typeset .help > .admonition-title, .md-typeset .question > summary, .md-typeset .faq > summary, .md-typeset .help > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .question > .admonition-title::before, .md-typeset .faq > .admonition-title::before, .md-typeset .help > .admonition-title::before, .md-typeset .question > summary::before, .md-typeset .faq > summary::before, .md-typeset .help > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--question); }
+  .md-typeset .warning > .admonition-title, .md-typeset .attention > .admonition-title, .md-typeset .caution > .admonition-title, .md-typeset .warning > summary, .md-typeset .attention > summary, .md-typeset .caution > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .warning > .admonition-title::before, .md-typeset .attention > .admonition-title::before, .md-typeset .caution > .admonition-title::before, .md-typeset .warning > summary::before, .md-typeset .attention > summary::before, .md-typeset .caution > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--warning); }
+  .md-typeset .failure > .admonition-title, .md-typeset .missing > .admonition-title, .md-typeset .fail > .admonition-title, .md-typeset .failure > summary, .md-typeset .missing > summary, .md-typeset .fail > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .failure > .admonition-title::before, .md-typeset .missing > .admonition-title::before, .md-typeset .fail > .admonition-title::before, .md-typeset .failure > summary::before, .md-typeset .missing > summary::before, .md-typeset .fail > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--failure); }
+  .md-typeset .danger > .admonition-title, .md-typeset .error > .admonition-title, .md-typeset .danger > summary, .md-typeset .error > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .danger > .admonition-title::before, .md-typeset .error > .admonition-title::before, .md-typeset .danger > summary::before, .md-typeset .error > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--danger); }
+  .md-typeset .bug > .admonition-title, .md-typeset .bug > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .bug > .admonition-title::before, .md-typeset .bug > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--bug); }
+  .md-typeset .example > .admonition-title, .md-typeset .example > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .example > .admonition-title::before, .md-typeset .example > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--example); }
+  .md-typeset .quote > .admonition-title, .md-typeset .cite > .admonition-title, .md-typeset .quote > summary, .md-typeset .cite > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .quote > .admonition-title::before, .md-typeset .cite > .admonition-title::before, .md-typeset .quote > summary::before, .md-typeset .cite > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--quote); } }
+
+:root {
+  --print-md-footnotes-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000de"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7h-2z"/></svg>'); }
+
+@media print {
+  .md-typeset .footnote-backref::before {
+    background-color: transparent;
+    background-image: var(--print-md-footnotes-icon); } }
+
+:root {
+  --print-md-details-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsla(0, 0%, 0%, 0.87)"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>'); }
+
+@media print {
+  .md-typeset summary::after {
+    background-color: transparent;
+    background-image: var(--print-md-details-icon);
+    -webkit-mask-image: none;
+    mask-image: none; } }
+
+:root {
+  --print-md-tasklist-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-tasklist-icon--checked: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300e676"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'); }
+
+@media print {
+  .md-typeset .task-list-control .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon); }
+  .md-typeset .task-list-control [type=checkbox]:checked + .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon--checked); } }
+
+/*# sourceMappingURL=material-polyfills.css.map*/
+</style></head><body><article id="doc-cover">
+<div class="wrapper upper">
+<div class="logo" style="background-image: url();"></div>
+</div>
+<div class="wrapper">
+<h1>Kwyll User Documentation</h1>
+<h2>None</h2>
+</div>
+<div class="properties">
+<address>
+<p id="author">Paul Gregory</p>
+<p id="copyright">Indigobeetle</p>
+</address>
+</div>
+</article><article id="doc-toc"><h1>Table of contents</h1><ul><li><a href="#./:welcome-to-kwyll"><span class="pdf-order">1. </span>Welcome to Kwyll</a><ul><li><a href="#./:what-is-kwyll"><span class="pdf-order">1.1 </span>What is Kwyll?</a></li></ul></li><li><a href="#JFXHI4TPMR2WG5DJN5XA/"><span class="pdf-order">2. </span>Introduction</a><ul><li><a href="#introduction/terminology/:terminology"><span class="pdf-order">2.1 </span>Terminology</a></li></ul></li><li><a href="#JFXHIZLSMZQWGZI/"><span class="pdf-order">3. </span>Interface</a><ul><li><a href="#interface/kwyll_interface/:the-kwyll-interface"><span class="pdf-order">3.1 </span>The Kwyll Interface</a></li><li><a href="#interface/screen_editor/:screen-editor"><span class="pdf-order">3.2 </span>Screen Editor</a></li><li><a href="#interface/data_editor/:data-editor"><span class="pdf-order">3.3 </span>Data Editor</a></li><li><a href="#interface/sprite_editor/:sprite-editor"><span class="pdf-order">3.4 </span>Sprite Editor</a></li><li><a href="#interface/object_editor/:object-editor"><span class="pdf-order">3.5 </span>Object Editor</a></li><li><a href="#interface/room_editor/:room-editor"><span class="pdf-order">3.6 </span>Room Editor</a></li><li><a href="#interface/map_editor/:map-editor"><span class="pdf-order">3.7 </span>Map Editor</a></li><li><a href="#interface/sound_editor/:sound-editor"><span class="pdf-order">3.8 </span>Sound Editor</a></li><li><a href="#interface/logic_editor/:logic-editor"><span class="pdf-order">3.9 </span>Logic Editor</a></li><li><a href="#interface/preview/:preview"><span class="pdf-order">3.10 </span>Preview</a></li><li><a href="#interface/assets_panel/:assets-panel"><span class="pdf-order">3.11 </span>Assets Panel</a></li><li><a href="#interface/tilemap_editor/:tilemap-editor"><span class="pdf-order">3.12 </span>Tilemap Editor</a></li></ul></li><li><a href="#JRXWO2LD/"><span class="pdf-order">4. </span>Logic</a><ul><li><a href="#logic/intro/:what-is-logic-in-kwyll"><span class="pdf-order">4.1 </span>What is Logic in Kwyll?</a></li><li><a href="#logic/process_order/:logic-order-of-processing"><span class="pdf-order">4.2 </span>Logic Order of Processing</a></li><li><a href="#JRXWO2LD/JZXWIZLT/"><span class="pdf-order">4.3 </span>Nodes</a></li></ul></li><li><a href="#KR2XI33SNFQWY4Y/"><span class="pdf-order">5. </span>Tutorials</a><ul><li><a href="#tutorials/simple_platformer_controller/:simple-platformer-controller"><span class="pdf-order">5.1 </span>Simple Platformer Controller</a></li></ul></li></ul></article><article class="md-content__inner md-typeset" data-url="/." id=".:">
+<h1 id="./:welcome-to-kwyll"><span class="pdf-order">1. </span>Welcome to Kwyll</h1>
+<h2 id="./:what-is-kwyll"><span class="pdf-order">1.1 </span>What is Kwyll?</h2>
+<p>If you're new to Kwyll, a quick introduction to what it is, why it is,
+and how it came about would probably be useful, so here goes.</p>
+<p>Kwyll is, at it's core, a tool for creating retro-styled games for retro
+platforms. What is "retro"? Well, in terms of Kwyll, it will initially
+include anything that existed at the start of the home computer
+revolution, so primarily 8-bit platforms, very low power, simple
+capabilities, such as the Sinclair ZX Spectrum, Commodore 64, Amstrad
+CPC, etc. It may extend beyond that in time, but that's the primary
+target. In its current form, Kwyll only targets the Sinclair ZX Spectrum
+(my personal favourite machine from the era).</p>
+<p>That covers what it is, why it is, well that's a longer story, but I'll
+try to keep it as short as I can. I've been involved with computers and
+software development since I was 14 years old (1983!), and my first,
+well actually second, my first was a ZX81, computer was a Sinclair ZX
+Spectrum, the 16K version which I later upgraded to 48K myself when I
+got the upgrade as a Christmas present from my parents. I've spent a
+good portion of my career working in games, starting on the 8-bit
+platforms of the time at Incentive Software. As such, these platforms
+hold a great deal of nostalgia for me, memories of a time I've always
+been very fond of. Fast forward to recent times, after a career working
+in the software industry, with some very complex systems including
+visual effects, VR, modern video games systems, FinTech etc. I found
+myself drawn back to the early days, when things were simpler and more
+fun, well, that's how I remember it anyway. A new wave of respect for
+retro tech. in all shapes and forms seems to be taking hold, which only
+added fuel to my desire to revisit those times. Then along comes the
+"Spectrum Next" project on Kickstarter. Unfortunately, I missed the
+first round, but definitely got in on the second. In anticipation of
+it's arrival, I determined I was going to be making some
+games like the good old days. I bought an Agon Light, a cheap Z80 based
+open source system that had gained some popularity just about the right
+time, and set to remembering how to program in Z80 again. While this was
+fun, I soon realised that this was not what I wanted to do, I guess I'd
+become too spoiled by modern tools and technologies. So, I decided the
+best way to do what I wanted to do was to make a tool to do it. I'd
+already gained some experience with this, being responsible for the 3D
+Construction Kit at Incentive, and having worked on in-house tools at
+various games companies in my career, I knew this was something I could
+do and enjoy doing. And so Kwyll was born, as with all the best
+projects, a means of scratching my own itch, that garnered some interest
+from the community and grew into something else.</p>
+</article><article class="md-content__inner md-typeset" data-url="/JFXHI4TPMR2WG5DJN5XA/" id="JFXHI4TPMR2WG5DJN5XA/:"><h1 id="JFXHI4TPMR2WG5DJN5XA/"><span class="pdf-order">2. </span>Introduction</h1><section class="md-typeset" data-url="/introduction/terminology/" id="introduction/terminology/:">
+<h2 id="introduction/terminology/:terminology"><span class="pdf-order">2.1 </span>Terminology</h2>
+<p>There are several stages to developing a game with Kwyll, each with
+their own section in the tool. Below is a short introduction to some of
+the terminology that you will come across frequently throughout this
+documentation, this is a good place to start to ensure that you have the
+best chance of understanding what is being described later in the guide.</p>
+<h3 id="introduction/terminology/:sprites"><span class="pdf-order">2.1.1 </span>Sprites</h3>
+<p>Of course, any game needs some graphics, right? In Kwyll there are two
+main places you can draw pixel graphics, Sprites, and Tiles. A Sprite in
+Kwyll is a rectangular grid of pixels, Sprites can be various sizes,
+always in increments of 8 pixels in both axes. So, for example, 8x8,
+16x16, 8x16, etc. An arbitrary limit is placed on the maximum size of 32
+in either axis just to keep things within reason for the target
+platforms to maintain performance and limit memory use. </p>
+<p>It is important to know that a Sprite doesn't actually 'do' anything in
+Kwyll, it's just an image, it has no position, it isn't by default drawn
+to the screen anywhere, in order to get a Sprite onto the screen, it
+must be used by an Object.</p>
+<h3 id="introduction/terminology/:objects"><span class="pdf-order">2.1.2 </span>Objects</h3>
+<p>An Object in Kwyll is a type of thing that can be displayed on screen
+and respond in various ways to the input of the player or to game
+logic that is defined in Kwyll. Objects are the heart of any Kwyll
+game, without Objects, the game wouldn't actually do anything, making
+for a very dull game. </p>
+<p>An Object must first be <em>defined</em>, the definition of an Object details things
+like the visual represenation via <a href="#introduction/terminology/:sprites">Sprites</a> and any other information
+that is required to display the object that may be platform specific, such as
+colour and draw mode, and any <a href="#introduction/terminology/:logic">Logic</a>. </p>
+<p>However, an <em>Object Definition</em> does not contribute to the game iself, it has to
+be used. Objects can be used in Rooms and the Map, each use shares the visual
+representation and logic code from the <em>Object Definition</em>, but each use 
+has its own position, values for the variables defined in the logic, <a href="#introduction/terminology/:timeline-animation">Timeline
+Animations</a>, and any other information that might be
+specific to a particular platform. Objects can be used in the following ways.</p>
+<ul>
+<li>Map Objects - these are created in the <a href="#interface/map_editor/:">Map
+   Editor</a> and are constant throughout the game,
+   they will always exist irrespective of which <a href="#introduction/terminology/:locations">Location</a> you are
+   in, and will be drawn, if their position puts them on screen, and their logic
+   will be run.</li>
+<li>Room Objects - these are in each <a href="#introduction/terminology/:rooms">Room Definition</a> and will only be
+   active while in a <a href="#introduction/terminology/:locations">Location</a> that uses that Room, so they will
+   not be drawn or their logic run when in location that uses another room.
+   It's worth noting that when exiting a room that contains Room Objects, the
+   data used by the Kwyll library for those objects, such as memory for
+   <a href="#introduction/terminology/:sprites">Sprite</a> etc. will be freed, reducing the overhead for
+   both memory and performance, so it is advisable to use Room Objects where
+   appropriate over Map Objects.</li>
+<li>Dynamic Objects - these are not created in an editor during your game
+   creation, they are instead created during the game using the <a href="#logic/nodes/spawn_object/:">Spawn
+   Object</a> node, and can be destroyed using the
+   <a href="#logic/nodes/kill_object/:">Kill Object</a> node. They are in all other
+   respects similar to Global Objects, they are not constrained to a particular
+   <a href="#introduction/terminology/:rooms">Room</a>, and will continue to exist across changes in
+   <a href="#introduction/terminology/:locations">Location</a> until they are destroyed.</li>
+</ul>
+<p>An <em>Object Definition</em> consists of two main elements.</p>
+<ul>
+<li>Animations, which are sequences of <a href="#introduction/terminology/:sprites">Sprite</a> images played in order
+   to create the illusion of animation. Each object can have many Animations,
+   for example, a player object might have an animation for walking left, one
+   for walking right, one for jumping, one for attacking etc. The game designer
+   can choose which Animation is played using the logic nodes based on what is
+   happening in the game at that moment.</li>
+<li><a href="#introduction/terminology/:logic">Logic</a> is the "brains" of an Object, it defines what an Object does,
+   and when. In Kwyll, logic is created using a visual programming tool, a
+   powerful means of writing code without writing code.</li>
+</ul>
+<h3 id="introduction/terminology/:tiles"><span class="pdf-order">2.1.3 </span>Tiles</h3>
+<p>Tiles are the simpler, more constrained, cousin to Sprites. They are also simple
+grid of pixels, however, a Tile is always 8x8 (unless a particular platform
+supports or requires a different size), and cannot be used in
+<a href="#introduction/terminology/:objects">Objects</a>, instead they are used in <a href="#introduction/terminology/:rooms">Rooms</a>, typically to draw
+the background of a room, over which an <a href="#introduction/terminology/:objects">Object's</a> Sprites are drawn,
+and <a href="#introduction/terminology/:screens">Screens</a>, typically to draw borders or background graphics for a
+screen be it a menu screen, a game screen or any other use, and also as the
+content of an <a href="#introduction/terminology/:instrument">Instrument</a> of the appropriate type.</p>
+<h3 id="introduction/terminology/:tilemap"><span class="pdf-order">2.1.4 </span>Tilemap</h3>
+<h3 id="introduction/terminology/:rooms"><span class="pdf-order">2.1.5 </span>Rooms</h3>
+<p>A game in Kwyll consists of a number of Rooms, each room represents a
+separate space in the game, Kwyll does not currently support scrolling so
+gameplay is constrained to a single screen at a time, rooms allow you to move
+between these spaces. Each Room contains any combination of the following
+elements:</p>
+<ul>
+<li>A Tilemap, which represents the background of the room, such as the scenery,
+   walls, platforms, etc.</li>
+<li>Room <a href="#introduction/terminology/:objects">Objects</a>, which are unique to that room definition and are
+   only active while the room is active.</li>
+<li>Room <a href="#introduction/terminology/:logic">Logic</a> that is specific to the room defintion. Logic triggers
+   on a Room only run when a <a href="#introduction/terminology/:locations">Location</a> that uses the Room is the
+   current game location.</li>
+<li>Markers, very lightweight objects that only contain position information, no
+   sprites or logic, and are used primarily within Room or Object
+   <a href="#introduction/terminology/:logic">Logic</a> to place things within a room dynamically, for example, a
+   marker may be used as a spawn point for the player, or as a position to
+   appear when entering a room from another room.</li>
+</ul>
+<p>A <em>Room Defintion</em>, much like an <em>Object Definition</em> doesn't actually contribute
+to the game itself until it is used, in the case of a Room, the definition has
+to be used in the <a href="#introduction/terminology/:map">Map</a> in a <a href="#introduction/terminology/:locations">Location</a>. The <a href="#introduction/terminology/:map">Map</a> can
+contain multiple <a href="#introduction/terminology/:locations">Locations</a> that use the same <em>Room Definition</em>,
+much like an <em>Object Definition</em> can be used multiple times for Room and Map
+objects.</p>
+<h3 id="introduction/terminology/:screens"><span class="pdf-order">2.1.6 </span>Screens</h3>
+<p>A Screen in Kwyll is a collection of <a href="#introduction/terminology/:instruments">Instruments</a>, a Tilemap, and
+optionally, the game window. A screen can also have <a href="#introduction/terminology/:logic">Logic</a> associated
+with it that is run while that screen is the current screen. </p>
+<p>There is only one screen active at any time in a Kwyll game. Uses of screens
+include the main game screen which will have the game window positioned on the
+screen accordingly, a menu screen, instructions, and many others.</p>
+<h3 id="introduction/terminology/:instruments"><span class="pdf-order">2.1.7 </span>Instruments</h3>
+<h3 id="introduction/terminology/:logic"><span class="pdf-order">2.1.8 </span>Logic</h3>
+<h3 id="introduction/terminology/:timeline-animation"><span class="pdf-order">2.1.9 </span>Timeline Animation</h3>
+<h3 id="introduction/terminology/:locations"><span class="pdf-order">2.1.10 </span>Locations</h3>
+<h3 id="introduction/terminology/:data"><span class="pdf-order">2.1.11 </span>Data</h3>
+</section></article><article class="md-content__inner md-typeset" data-url="/JFXHIZLSMZQWGZI/" id="JFXHIZLSMZQWGZI/:"><h1 id="JFXHIZLSMZQWGZI/"><span class="pdf-order">3. </span>Interface</h1><section class="md-typeset" data-url="/interface/kwyll_interface/" id="interface/kwyll_interface/:">
+<h2 id="interface/kwyll_interface/:the-kwyll-interface"><span class="pdf-order">3.1 </span>The Kwyll Interface</h2>
+<figure id="interface/kwyll_interface/:main-interface">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/main_interface.png"><img alt="Main Interface" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/main_interface.png" style=""/></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 1.</span> Main Interface</p>
+</figcaption>
+</figure>
+<p>The main interface of Kwyll consists of a single window with a menu, toolbar, a
+tabbed main area and status bar. The menu is not shown in <a href="#interface/kwyll_interface/:main-interface">Main
+Interface</a>, it is an operating system menu and as such on macOS
+displays at the top of the screen as per operating system guidelines, on Windows
+and Linux it may show at the top of the window above the toolbar.</p>
+<h3 id="interface/kwyll_interface/:toolbar"><span class="pdf-order">3.1.1 </span>Toolbar</h3>
+<p>The toolbar contains shortcuts to commonly used functionality provided by the 
+menu functions, in order from left to right:</p>
+<dl>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/new_file.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/new_file.png" style="width: 32px;"/></a> New Game</dt>
+<dd>Clear the current game and start a new empty game.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/save.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/save.png" style="width: 32px;"/></a> Save Game</dt>
+<dd>Save the current game.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/open_file.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/open_file.png" style="width: 32px;"/></a> Load Game</dt>
+<dd>Load an existing game, replacing the currently open one.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/export_project.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/export_project.png" style="width: 32px;"/></a> Export Game</dt>
+<dd>Export the current game and build for running on a device or emulator.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/review_project.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/review_project.png" style="width: 32px;"/></a> Review Export</dt>
+<dd>Display a breakdown of the exported project for review, showing important
+  information such as how much memory is used by different parts of the game.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/undo.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/undo.png" style="width: 32px;"/></a> Undo</dt>
+<dd>Undo the last action taken. Kwyll keeps a list of all actions taken up to
+  the current point, allowing you to step back in history to undo changes made
+  or redo them. Once any number of undo steps are taken and a new change is made
+  the changes that could be redone are cleared and it no longer becomes possible
+  to redo from that point.</dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/redo.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/redo.png" style="width: 32px;"/></a> Redo</dt>
+<dd>Redo the last action undone. </dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/settings.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/settings.png" style="width: 32px;"/></a> Settings</dt>
+<dd>Edit game settings. </dd>
+<dt><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/about.png"><img alt="" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/about.png" style="width: 32px;"/></a> Settings</dt>
+<dd>Show information about the version and satus of your Kwyll installation. </dd>
+</dl>
+<h3 id="interface/kwyll_interface/:tabbed-area"><span class="pdf-order">3.1.2 </span>Tabbed Area</h3>
+<p>The main body of the Kwyll window is taken up by the tabbed area. Each editor that
+Kwyll has is in a separate tab in this area, including <a href="#interface/screen_editor/:">Screen</a>,
+<a href="#interface/data_editor/:">Data</a>, <a href="#interface/sprite_editor/:">Sprites</a>, <a href="#interface/object_editor/:">Objects</a>,
+<a href="#interface/room_editor/:">Rooms</a>, <a href="#interface/map_editor/:">Map</a>, <a href="#interface/sound_editor/:">Sound</a>,
+<a href="#interface/logic_editor/:">Logic</a> and <a href="#interface/preview/:">Preview</a>.</p>
+<h3 id="interface/kwyll_interface/:status-bar"><span class="pdf-order">3.1.3 </span>Status Bar</h3>
+<p>The status bar at the very bottom of the window is used to provide information
+about the game to the designer such as memory use.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/status_bar.png"><img alt="Status Bar" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/status_bar.png" style=""/></a></p>
+<dl>
+<dt>Memory Use</dt>
+<dd>Shows how much memory, in bytes, the game data currently uses out of how much
+  is available for use. If the usage exceeds the available space, the game will not work
+  on device or emulator.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/interface/screen_editor/" id="interface/screen_editor/:">
+<h2 id="interface/screen_editor/:screen-editor"><span class="pdf-order">3.2 </span>Screen Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screen_editor.png"><img alt="Screen Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screen_editor.png" style=""/></a></p>
+<p>The <em>Screen Editor</em> is where in Kwyll you get to create and modify
+<a href="#introduction/terminology/:screens">Screens</a>. It is organised into
+four main areas, the <span style="color: green;">Screens List</span>,
+the <span style="color: blue;">Instruments List</span>, the 
+<span style="color: cyan;">Assets Panel</span> and the
+<span style="color: magenta;">Main Area</span>.</p>
+<h3 id="interface/screen_editor/:the-screens-list"><span class="pdf-order">3.2.1 </span>The Screens List</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screens_screens_list.png"><img alt="Screens List" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screens_screens_list.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a></p>
+<p>This is where you can select, add and remove the various
+<a href="#introduction/terminology/:screens">screens</a> that you have in your game.
+The local toolbar below the list includes buttons to create a new screen,
+delete the currently selected screen, and duplicate the currently selected
+screen, to the left side. It also has a button to edit the screen properties to
+the right. </p>
+
+<h4 id="interface/screen_editor/:screen-properties">Screen Properties</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screen_properties.png"><img alt="Screen Properties" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screen_properties.png" style="float: right; padding-left: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a></p>
+<p>The <em>Screen Properties</em> dialog is shown when double clicking a screen in the
+screens list, or clicking the screen properties button. This is where you can 
+modify various properties of the currently selected screen that are not editable
+in the main area layout and logic tabs.</p>
+<dl>
+<dt>Name</dt>
+<dd>The name of the screen. This is used in logic for example when selecting to 
+  switch to a different screen, the <a href="#logic/nodes/switch_screen/:">Switch Screen</a>
+  node will list the screen names in a dropdown control to make it easy to select
+  which screen to switch to.</dd>
+<dt>Game Screen?</dt>
+<dd>This toggles whether the screen should contain the game window or not. Typically
+  only one screen in your game will have the game window included, but it is 
+  possible to have it in multiple screens, even in different places on the screen.
+  Some screens, such as a menu screen, a help screen, etc. will not require the
+  game window to be shown, they will consist entirely of instruments.</dd>
+<dt>Start Screen?</dt>
+<dd>This toggles if the screen should be the initial screen visible when starting 
+  your game. Only one screen can have this flag set, so selecting it here will
+  automatically clear it on all other screens. The start screen is also shown in 
+  the <a href="#interface/screen_editor/:the_screens_list">Screens List</a> with a flag icon.</dd>
+<dt>Ink, Paper and Bright</dt>
+<dd>These combined set the default colours for the current screen. Instruments
+  can override these values. The paper colour is used as the background to the
+  entire screen. These values are also used as the default colours for tiles in
+  the screen tilemap unless replaced by painting attributes in the tilemap, or by
+  assigning colours to tiles.</dd>
+</dl>
+
+<h3 id="interface/screen_editor/:the-instruments-list"><span class="pdf-order">3.2.2 </span>The Instruments List</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screens_instrument_list.png"><img alt="Instruments List" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screens_instrument_list.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a></p>
+<p>This is where you can select, add and remove the various
+<a href="#introduction/terminology/:instruments">Instruments</a> defined in the
+currently selected screen. The local toolbar below the list includes buttons to
+create a new instrument and delete the currently selected instrument, to the
+left side. It also has a button to edit the instrument properties to the right. </p>
+
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/instrument_properties.png"><img alt="Instrument Properties" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/instrument_properties.png" style="float: right; padding-left: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a></p>
+<p>The <em>Instrument Properties</em> dialog is shown when double clicking on an instrument or
+clicking the instrument properties button. This is where you can modify the various 
+properties of an instrument.</p>
+<dl>
+<dt>Name</dt>
+<dd>The name of the instrument. This is used in logic for example when selecting to 
+  update an instrument value, the <a href="#interface/logic/nodes/set_instrument/:">Set Instrument</a>
+  node will list the instrument names in a dropdown control to make it easy to select
+  which instrument to update.</dd>
+<dt>Position:</dt>
+<dd>This is the position on the screen for the top left corner of the instrument. 
+  Instruments are placed on a grid of cells, each 8x8 pixels in size, so on the 
+  Spectrum, the range of these values are 0 to 31 in X and 0 to 23 in Y, any values
+  beyond this range will result in the instrument being at least partially off screen.</dd>
+<dt>Size</dt>
+<dd>The size in cells of the instrument, as with the position, the instrument size is
+  specified in terms of cells, each 8x8 pixels in size.</dd>
+<dt>Type</dt>
+<dd>The type of the instrument. An instrument will display its <a href="#interface/screen_editor/:value">Value</a> in 
+  different ways depending on the type of instrument. A text instrument will display
+  a string from the strings list, an integer instrument will display a numerical 
+  value, and a tile instrument will show a single tile from the tileset.</dd>
+<dt>Value</dt>
+<dd>The initial value of the instrument, the meaning of the value depends on the
+  instrument <a href="#interface/screen_editor/:type">type</a>.</dd>
+<dt>Color</dt>
+<dd>These controls allow you to override the default colour information defined by the
+  screen. Ink and paper can be specified separately or ignored, choosing the black 
+  colour with an "X" indicates that the instrument should not change the default for 
+  ink or colour and instead use the value specified in the screen. The brightness value 
+  can on or off, only if one of ink or paper is specified.</dd>
+</dl>
+
+<h3 id="interface/screen_editor/:assets-panel"><span class="pdf-order">3.2.3 </span>Assets Panel</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screen_assets.png"><img alt="Assets Panel" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screen_assets.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a></p>
+<p>The <em>Assets Panel</em> provides access to assets that can be placed in the screen editor
+view in addition to <a href="#introduction/terminology/:instruments">Instruments</a>. It is a
+common element used in more than one editor in Kwyll, and as such has its ow separate 
+section of the documentation <a href="#interface/assets_panel/:">here</a>. </p>
+
+<h3 id="interface/screen_editor/:main-area"><span class="pdf-order">3.2.4 </span>Main Area</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/screen_main_area.png"><img alt="Main Area" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/screen_main_area.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 60%;"/></a></p>
+<p>The rest of the <em>Screen Editor</em> is taken up with the main area, where the
+majority of the editing of a <a href="#introduction/terminology/:screens">Screen</a>
+takes place. It consists of two tabs, Layout and Logic. The Logic tab is a
+standard <a href="#interface/logic_editor/:">Logic Editor</a> component that is used to edit logic
+that applies to the current room, see
+<a href="#introduction/terminology/:logic">Logic</a> for more details.</p>
+<p>The Layout tab contains the screen layout editing tools. It consists of two parts, a 
+standard <a href="#interface/tilemap_editor/:">Tilemap Editor</a> component, and layered on top of it a
+specific set of editing features for Screens. The Tilemap Editor is documented 
+separately as a common component.</p>
+<h4 id="interface/screen_editor/:layout">Layout</h4>
+<p>The screen <em>Layout Editor</em> works as a set of additional tools that operate in
+the same space as the <em>Tilemap Editor</em>. It provides visual tools for
+interactively placing screen elements such as
+<a href="#introduction/terminology/:instruments">Instruments</a> and the <em>Game
+Window</em>.</p>
+<p>An <a href="#introduction/terminology/:instruments">Instrument</a> is represented on the 
+grid as a yellow rectangle with a small triangle in the bottom right corner
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/instrument.png"><img alt="Instrument" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/instrument.png" style="width: 100px;"/></a>. You can click and drag the
+instrument on the grid, it will automatically conform to the grid cells, snapping
+to 8x8 increments. By carefully clicking on the small triangle in the corner, you can
+drag out the rectangle to change its size, again, it will automatically conform to 
+the grid.</p>
+<p>If the screen being edited has the <em>Game Screen</em> flag set in the
+<a href="#interface/screen_editor/:screen-properties">properties</a>, a blue rectangle will show to represent the
+<em>Game Window</em>. This element does not have a resize handle (triangle), as it's
+not possible to resize the game window in a screen, the game window size is
+fixed on all screens, the only way to modify the game window size is in the
+<a href="#interface/settings/:">Settings</a> dialog. However, the game window can be positioned
+independently on each screen it is used, so dragging the blue rectangle
+representing the game window works in much the same way as an <em>Instrument</em>, it
+will also conform to the grid as appropriate. </p>
+
+</section><section class="md-typeset" data-url="/interface/data_editor/" id="interface/data_editor/:">
+<h2 id="interface/data_editor/:data-editor"><span class="pdf-order">3.3 </span>Data Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/data_editor.png"><img alt="Data Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/data_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/sprite_editor/" id="interface/sprite_editor/:">
+<h2 id="interface/sprite_editor/:sprite-editor"><span class="pdf-order">3.4 </span>Sprite Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/sprite_editor.png"><img alt="Sprite Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/sprite_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/object_editor/" id="interface/object_editor/:">
+<h2 id="interface/object_editor/:object-editor"><span class="pdf-order">3.5 </span>Object Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/object_editor.png"><img alt="Object Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/object_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/room_editor/" id="interface/room_editor/:">
+<h2 id="interface/room_editor/:room-editor"><span class="pdf-order">3.6 </span>Room Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/room_editor.png"><img alt="Room Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/room_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/map_editor/" id="interface/map_editor/:">
+<h2 id="interface/map_editor/:map-editor"><span class="pdf-order">3.7 </span>Map Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/map_editor.png"><img alt="Map Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/map_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/sound_editor/" id="interface/sound_editor/:">
+<h2 id="interface/sound_editor/:sound-editor"><span class="pdf-order">3.8 </span>Sound Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/beepfx_editor.png"><img alt="Beep FX Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/beepfx_editor.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/logic_editor/" id="interface/logic_editor/:">
+<h2 id="interface/logic_editor/:logic-editor"><span class="pdf-order">3.9 </span>Logic Editor</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/logic_editor.png"><img alt="Logic Editor" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/logic_editor.png" style=""/></a></p>
+<h3 id="interface/logic_editor/:editing-nodes"><span class="pdf-order">3.9.1 </span>Editing Nodes</h3>
+<p><em>Nodes</em> are created by right clicking the mouse in an empty area of the grid or
+pressing <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-a">A</kbd></span>, a pop-up menu will appear with a list of all the possible
+<em>Node</em> types as a tree organised by category. The popup has, in addition to the
+list of nodes, a text entry field that will be focused by default, typing in
+here will filter the nodes list to only those that contain the typed text, this
+is a very efficient way to find the exact node you're looking for. As you type
+in the search field, the list will instantly adapt to show only the matching
+nodes, and the first in the list will be selected. You can add the selected
+node by pressing return, or use the <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> arrow keys to move
+among the nodes that match the search term to select before pressing return. As
+you become familiar with the available nodes, this will be the most efficient
+way to add nodes to the logic graph. Initially it may be better to use the
+mouse to scroll through the list and click on the node you require directly.
+Below the list of nodes is a small text field that will change to show a short
+description of the currently selected node.</p>
+<p>When a node is added to the graph, it will appear at the current mouse position.</p>
+<p>Click and drag on <em>Nodes</em> to move them around the graph and organise your
+program. You can <span class="keys"><kbd class="key-control">Ctrl</kbd></span>/<span class="keys"><kbd class="key-command">Cmd</kbd></span> click on multiple <em>Nodes</em> to select more than
+one at a time, or click and drag in space on the grid to drag a rectangle
+around a selection of <em>Nodes</em>.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/connecting.png"><img alt="Connecting Ports" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/connecting.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem;"/></a> To connect <em>Ports</em>
+left click on one of the two <em>Ports</em> and drag, a wire will appear connected to
+the <em>Port</em> you clicked on and the mouse. Drag the mouse to the other <em>Port</em> and
+when you get close enough, it will snap to the <em>Port</em>, release the mouse to
+complete the connection. If you struggle to begin the connection operation
+because the port is too small, it can sometimes be helpful to zoom in, this can
+be achieved using the mouse wheel or pinch gesture. <em>Ports</em> can be connected in
+either direction, it makes no difference to the way they work, data only flows
+from output to input.</p>
+<p>To disconnect a port, click on the input end of the wire, the end going into
+the input port of a <em>Node</em>, drag it away from the port and it'll disconnect,
+you can reconnect to another port while still holding the mouse, or release the
+mouse with the wire disconnected to delete the wire altogether.</p>
+</section><section class="md-typeset" data-url="/interface/preview/" id="interface/preview/:">
+<h2 id="interface/preview/:preview"><span class="pdf-order">3.10 </span>Preview</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/preview.png"><img alt="Preview" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/preview.png" style=""/></a></p>
+</section><section class="md-typeset" data-url="/interface/assets_panel/" id="interface/assets_panel/:">
+<h2 id="interface/assets_panel/:assets-panel"><span class="pdf-order">3.11 </span>Assets Panel</h2>
+</section><section class="md-typeset" data-url="/interface/tilemap_editor/" id="interface/tilemap_editor/:">
+<h2 id="interface/tilemap_editor/:tilemap-editor"><span class="pdf-order">3.12 </span>Tilemap Editor</h2>
+</section></article><article class="md-content__inner md-typeset" data-url="/JRXWO2LD/" id="JRXWO2LD/:"><h1 id="JRXWO2LD/"><span class="pdf-order">4. </span>Logic</h1><section class="md-typeset" data-url="/logic/intro/" id="logic/intro/:">
+<h2 id="logic/intro/:what-is-logic-in-kwyll"><span class="pdf-order">4.1 </span>What is Logic in Kwyll?</h2>
+<p>One of the most important aspects of a game created with Kwyll is the
+ability to make objects, and other things, "do stuff", this is achieved
+with the logic system that is built into Kwyll. It is akin to the
+programming language in other game creation tools, but instead of being
+text based, it is visual, working by wiring together small items that do
+a relatively simple thing so that the whole does something more
+interesting. </p>
+<p>These "small items" are called <em>Nodes</em>, Kwyll provides a basic set of
+<em>Nodes</em> that can be combined to do a variety of things, the process of
+"wiring" them together enables each <em>Node</em> to either pass data to another
+node, or to control the flow of the "program". Some of the <em>Nodes</em> are
+very simple, such as the <em>Math Node</em>, whose only job is to take in two
+values, perform a basic mathematical operation on them, add, subtract,
+multiply or divide, and then output the result. Others are more complex
+and perform a detailed operation in and of themselves based on the input
+and parameters.</p>
+<p>Each node has an optional set of input and output <em>Ports</em> which can be
+of different types depending on their purpose, and a set of
+<em>Parameters</em> which configure the operation of the <em>Node</em>.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/nodes/intcomparison_node.png"><img alt="A Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/logic/assets/nodes/intcomparison_node.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a> This 
+is a relatively simple <em>Node</em> that demonstrates most of the key features of a
+logic Node. Here you can see on the left of the <em>Node</em>; 3 input <em>Ports</em>, one
+with a double arrow at the top, and two green ones below. The double arrow port
+is a <em>Flow</em> port, it is connected to other ports of the same type to control
+the flow of execution. A <em>Node</em> will only have at most 1 <em>Flow</em> input port. The
+green ports are data inputs, they provide integer numerical values to the node
+from some other node. You'll notice that the "B" <em>Port</em> also has a numerical
+input field alongside it, this is a parameter, in this particular case the
+value that the <em>Node</em> uses can either be provided by another node via the
+<em>Port</em> or specified as a fixed value in the parameter. In this example, you may
+want to compare the input from another <em>Node</em> at A with either an input from
+another <em>Node</em> or with a specific fixed value, 0 in this case. If you connect
+another <em>Node</em> to the input <em>Port</em> B, the numerical input field will be hidden
+as it is no longer necessary. On the right of the <em>Node</em> are the output ports,
+in this example there are two <em>Flow Ports</em>, True and False. This <em>Node</em> is a
+"branching" node, it will perform a comparison of the two values A and B using
+the specified comparison type, for example "equal". If the comparison results
+in a true result, i.e. the two values are equal, the flow will follow whatever
+is connected to the True output <em>Port</em>, if anything. If the comparison is
+false, A and B are not equal, the flow will follow the False output <em>Port</em>.
+Below the B port is another <em>Parameter</em>, in this case it is the type of
+comparison to be made between A and B, equal, greater than, less than, etc.
+This <em>Parameter</em> has no input port, so it can only have a fixed value chosen at
+deisgn time. It is a means of configuring the operation of a <em>Node</em> in a way
+that doesn't require input from another <em>Node</em>. To summarise, on this <em>Node</em> A
+is a <em>Port</em> only, it requires an input wire to work, B is an input <em>Port</em>
+<strong>or</strong> <em>Parameter</em> you can choose how this value is set depeneding upon your
+needs, and the comparison type is a <em>Parameter</em>, you must choose this value
+when editing and it cannot change at runtime.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/nodes/math_node.png"><img alt="Math Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/logic/assets/nodes/math_node.png" style="float: right; padding-left: 1rem; padding-bottom: 0.5rem; width: 30%;"/></a> Some nodes
+will have no <em>Flow</em> ports at all, this means the <em>Node</em> is not meant to be part
+of the flow, but instead is meant to provide data to other nodes that are part
+of the flow. These <em>Nodes</em> will have output data <em>Ports</em> that can be connected
+to the input data <em>Ports</em> of other <em>Nodes</em>, when a <em>Node</em> that is part of a
+flow has a wire connecting one of its input <em>Ports</em> to the output <em>Port</em> of
+another <em>Node</em>, it will request the value from the other <em>Node</em> when it needs
+it.</p>
+<p><em>Nodes</em> that are in a logic graph but not connected to a valid <em>Flow</em> or
+have output <em>Ports</em> that are not connected to anything, will not
+contribute to the program and will not be exported.</p>
+<p>There are several types of data that can be passed between logic nodes in Kwyll, 
+each with a unique colour for the port and wires that connect them.</p>
+<dl>
+<dt>Number</dt>
+<dd>Shown as <span style="color:green;">green</span>, a signed 16 bit integer value, 
+  capable of representing anything between -32768 and 32767.</dd>
+<dt>Object</dt>
+<dd>Shown as <span style="color:blue;">blue</span>, a reference to an object in the 
+  game, can be a Room object or a global object.</dd>
+<dt>Location</dt>
+<dd>Shown as <span style="color:magenta;">magenta</span>, a reference to a location 
+  on the map.</dd>
+</dl>
+<h3 id="logic/intro/:editing-nodes"><span class="pdf-order">4.1.1 </span>Editing Nodes</h3>
+<p>See the <a href="#interface/logic_editor/:">Logic Editor</a> for a detailed explanation
+of the tools for creating and editing logic graphs in Kwyll.</p>
+</section><section class="md-typeset" data-url="/logic/process_order/" id="logic/process_order/:">
+<h2 id="logic/process_order/:logic-order-of-processing"><span class="pdf-order">4.2 </span>Logic Order of Processing</h2>
+<pre class="mermaid"><code>graph TD 
+    A[Start Game/Reset Game] --&gt; G1;
+    subgraph G1[Global];
+        B([Initialise]);
+    end;
+    G1 --&gt; S;
+    subgraph S[For Each Screen];
+        SA([Initialise]);
+    end;
+    S --&gt; R;
+    subgraph R[For Each Room];
+        direction LR;
+        RA([Initialise]) --&gt; RO;
+        subgraph RO[For Each Room Object];
+            RB([Initialise]);
+        end;
+    end;
+    R --&gt; G2;
+    subgraph G2[For Each Global Object];
+        C([Initialise]);
+    end;
+    G2 --&gt; FR;
+    subgraph FR[Each Frame];
+        subgraph G3[Global];
+            E([Always]);
+        end;
+        subgraph CS[Current Screen];
+            F([Always]);
+        end;
+        subgraph CR[Current Room];
+            G([Always]);
+            subgraph RO2[For Each Room Object];
+                H([Always]);
+            end;
+            G --&gt; RO2;
+        end;
+        subgraph GO[For Each Global Object];
+            J([Always]);
+        end;
+        G3 --&gt; CS;
+        CS --&gt; CR;
+        CR --&gt; GO;
+    end;</code></pre>
+</section><section class="md-typeset" data-url="/JRXWO2LD/JZXWIZLT/" id="JRXWO2LD/JZXWIZLT/:"><h2 id="JRXWO2LD/JZXWIZLT/"><span class="pdf-order">4.3 </span>Nodes</h2><section class="md-typeset" data-url="/logic/nodes/always/" id="logic/nodes/always/:">
+<h3 id="logic/nodes/always/:always"><span class="pdf-order">4.3.1 </span>Always</h3>
+<h4 id="logic/nodes/always/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/always.png"><img alt="Always Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/always.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Always Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A trigger
+<em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Always</em> trigger is
+the most commonly used trigger node, it will run the flow that follows on from
+it's <strong>Flow Out</strong> port every frame of the game.  </p>
+
+<hr/>
+<h4 id="logic/nodes/always/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Always Node</em> has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/always/:parameters">Parameters</h4>
+<dl>
+<dt>Order</dt>
+<dd><em>Always Nodes</em> have a single additional parameter, <strong>order</strong>. This is
+  used to define the order in which multiple <em>Always Nodes</em> in a single
+  logic program will be processed, in case there is some dependency
+  between flows. If there are multiple <em>Always Nodes</em> with the same order,
+  they will be processed together in an arbitrary order.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/and/" id="logic/nodes/and/:">
+<h3 id="logic/nodes/and/:and"><span class="pdf-order">4.3.2 </span>And</h3>
+<h4 id="logic/nodes/and/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/and.png"><img alt="And Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/and.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>And Node</em> takes two inputs of type integer and compares them with 0. If
+both are not 0, the output will be 1, if either or both are 0, the output will
+be 0. </p>
+<p>This is useful to combine checks, in particular with the <a href="#logic/nodes/compare/:">Integer
+Compare</a> node.</p>
+
+<hr/>
+<h4 id="logic/nodes/and/:ports">Ports</h4>
+<dl>
+<dt>A and B</dt>
+<dd>The two input values, they must be linked for the node to be operational and
+  can only be connected to sources that provide an integer value, such as
+  <a href="#logic/nodes/get_variable/:">Get</a>.</dd>
+<dt>Out</dt>
+<dd>The output of the node, will be either 1 or 0 depending on the result of
+  the compare.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/animation_event/" id="logic/nodes/animation_event/:">
+<h3 id="logic/nodes/animation_event/:animation-event"><span class="pdf-order">4.3.3 </span>Animation Event</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/animation_event.png"><img alt="Animation Event Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/animation_event.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Animation Event Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Animation Event</em>
+trigger is connected to the timeline animation feature in the <a href="#interface/room_editor/:">Rooms
+Editor</a>. It will run the flow that follows on
+from it's <strong>Flow Out</strong> port when a the current timeline animation for this
+object hits a keyframe that has the <em>Trigger Event</em> checkbox selected. The
+<strong>Frame</strong> and <strong>T</strong> output ports provide the frame number of the keyframe in
+the timeline, and the <em>T</em> value specified in the editor respectively.</p>
+
+<hr/>
+<h4 id="logic/nodes/animation_event/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Animation Event Node</em> has only a single flow
+  port on the output side. There is no input flow to a trigger node as it is the
+  origin of a flow.</dd>
+<dt>Frame</dt>
+<dd>An integer output port that provides the frame number of the triggering
+  keyframe in the timeline.</dd>
+<dt>T</dt>
+<dd>An integer output port that provides the <em>T</em> value set in the timeline editor,
+  in the range 0-127.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/beep_fx/" id="logic/nodes/beep_fx/:">
+<h3 id="logic/nodes/beep_fx/:beep-fx"><span class="pdf-order">4.3.4 </span>Beep FX</h3>
+<h4 id="logic/nodes/beep_fx/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/beep_fx.png"><img alt="Beep FX Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/beep_fx.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Beep FX Node</em> is used to play a beeper sound effect defined in the Beep FX
+panel of the <a href="#interface/sound_editor/:">Sound Editor</a>. </p>
+
+<hr/>
+<h4 id="logic/nodes/beep_fx/:ports">Ports</h4>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>FX</dt>
+<dd>An integer input port used to provide the index of the Beep FX sound effect in
+  the list as defined by the <a href="#interface/sound_editor/:">Sound Editor</a>.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/beep_fx/:parameters">Parameters</h4>
+<dl>
+<dt>FX</dt>
+<dd>A dropdown selection of existing sound effects from the Beep FX tab of the
+  <a href="#interface/sound_editor/:">Sound Editor</a>. Use this if you wish to
+  trigger a specific sound effect, use the port at the same level in the node if
+  you wish to trigger a sound effect based on some calculations elsewhere in the
+  logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/change_location/" id="logic/nodes/change_location/:">
+<h3 id="logic/nodes/change_location/:change-location"><span class="pdf-order">4.3.5 </span>Change Location</h3>
+<h4 id="logic/nodes/change_location/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/change_location.png"><img alt="Change Location Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/change_location.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Change Location Node</em> is used to switch to another
+<a href="#introduction/terminology/:locations">Location</a> on the map. The
+location to change to will be wither the numerical index of the location on the
+map, you can find this by looking at the <a href="#interface/map_editor/:">Map
+Editor</a> and noting the number of the location
+displayed in the top left corner, or the location name if chosed from the
+provided dropdown.</p>
+<p>The <em>Change Location</em> node is only reqiured to switch to a new location if not
+using <a href="#introduction/terminology/:auto-navigate">Auto Navigate</a>, or in
+combination with Auto Navigate to transport to a new location that isn't 
+adjacent on the map, such as a hidden room or interior space for example.</p>
+
+<hr/>
+<h4 id="logic/nodes/change_location/:ports">Ports</h4>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>Location</dt>
+<dd>An integer input port used to provide the index of the map location as defined
+  in the <a href="#interface/map_editor/:">Map Editor</a>.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/change_location/:parameters">Parameters</h4>
+<dl>
+<dt>Location</dt>
+<dd>A dropdown selection of existing location names from the <a href="#interface/map_editor/:">Map
+  Editor</a>. Use this if you wish to change to a
+  specific location, use the port at the same level in the node if you wish to
+  use a location index based on some calculations elsewhere in the logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/change_variable/" id="logic/nodes/change_variable/:">
+<h3 id="logic/nodes/change_variable/:change-variable"><span class="pdf-order">4.3.6 </span>Change Variable</h3>
+<h4 id="logic/nodes/change_variable/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/change_variable.png"><img alt="Change Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/change_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Change Variable Node</em> is a simple way to modify the value of a variable on the
+current logic graph in one operation, avoiding the need for a
+<a href="#logic/nodes/get_variable/:">Get</a>, <a href="#logic/nodes/math/:">Math</a> and <a href="#logic/nodes/set_variable/:">Set</a>
+sequence.</p>
+
+<hr/>
+<h4 id="logic/nodes/change_variable/:ports">Ports</h4>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>By</dt>
+<dd>An integer input port used to provide the amount that the variable will be 
+  changed by, this can be positive or negative. </dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/change_variable/:parameters">Parameters</h4>
+<dl>
+<dt>By</dt>
+<dd>A constant integer amount that the variable will be changed by, used when the 
+  <strong>By</strong> port is not connected.</dd>
+<dt><em>Variable</em></dt>
+<dd>A dropdown listing the defined variables associated with the current logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/clamp/" id="logic/nodes/clamp/:">
+<h3 id="logic/nodes/clamp/:clamp"><span class="pdf-order">4.3.7 </span>Clamp</h3>
+<h4 id="logic/nodes/clamp/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/clamp.png"><img alt="Clamp Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/clamp.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Clamp Node</em> takes an integer value on the <strong>In</strong> port, if the value is
+less than or equal to the <strong>Min</strong> port/parameter the <strong>Min</strong> port/parameter
+value is output, if it is greater than or equal to the <strong>Max</strong> port/parameter
+the <strong>Max</strong> port/parameter value is output, otherwise the value is output
+unmodified. </p>
+
+<hr/>
+<h4 id="logic/nodes/clamp/:ports">Ports</h4>
+<dl>
+<dt>In</dt>
+<dd>An integer input port used to provide the input value for testing. This must be
+  connected for the node to operate correctly.</dd>
+<dt>Out</dt>
+<dd>An integer output port, the result of the comparison detailed in the
+  description is output on this port.</dd>
+<dt>Min</dt>
+<dd>An integer input port, using this allows you to specify the minimum value from
+  elsewhere in the logic graph, such as via an <a href="#logic/nodes/number/:">Number</a> node.</dd>
+<dt>Max</dt>
+<dd>An integer input port, using this allows you to specify the maximum value from
+  elsewhere in the logic graph, such as via an <a href="#logic/nodes/number/:">Number</a> node.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/clamp/:parameters">Parameters</h4>
+<dl>
+<dt>Min</dt>
+<dd>A constant integer value for the minimum, used when the <strong>Min</strong> port is not
+  connected.</dd>
+<dt>Max</dt>
+<dd>A constant integer value for the maximum, used when the <strong>Max</strong> port is not
+  connected.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/collided/" id="logic/nodes/collided/:">
+<h3 id="logic/nodes/collided/:collided"><span class="pdf-order">4.3.8 </span>Collided</h3>
+<h4 id="logic/nodes/collided/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/collided.png"><img alt="Collided Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/collided.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Collided Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Collided</em>
+trigger will get triggered when the object it is on has collided with the 
+tilemap as a result of being moved with a <a href="#logic/nodes/move_object/:">Move Object</a>
+node.</p>
+
+<hr/>
+<h4 id="logic/nodes/collided/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, a <em>Collided Node</em> has only a single flow
+  port on the output side. There is no input flow to a trigger node as it is the
+  origin of a flow.</dd>
+<dt>Sides</dt>
+<dd>An integer output port that provides the sides that the collision occurred. 
+  Typically this will be a single side, but to accommodate the potential of 
+  simultaneously colliding with two sides, the value is encoded as a bit field.
+  That is, the first 4 bits of the binary representation encode the up, down,
+  left and right sides. Bit 0 is up, bit 1, down, bit 2 left and bit 3 right. </dd>
+</dl>
+<p>An Example:
+  <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/collided.png"><img alt="Collided Example" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/collided.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+  In this image, the object is moving in the direction of the green arrow, which 
+  will result in it colliding in both right and up directions, as the tilemap has
+  collision information indicating that the tiles cannot be passed in all directions,
+  the resulting value will be bit 0 set and bit 3 set, bit 0 set results in a
+  value of 1, bit 3 set results in a value of 8, add them together and the output
+  of the Sides port would be 9.</p>
+<p>Bits:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIDE</td>
+<td>UP</td>
+<td>DOWN</td>
+<td>LEFT</td>
+<td>RIGHT</td>
+</tr>
+<tr>
+<td>VALUE</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</section><section class="md-typeset" data-url="/logic/nodes/comment/" id="logic/nodes/comment/:">
+<h3 id="logic/nodes/comment/:comment"><span class="pdf-order">4.3.9 </span>Comment</h3>
+<h4 id="logic/nodes/comment/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/comment.png"><img alt="Comment Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/comment.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Comment Node</em> is a non-operational node, it doesn't connect to any flow or
+have any input or output ports or parameters. It has a single multi-line text
+field that you can enter any text into. The text will be saved with the game
+data, but typically has no bearing on the exported data. This node is usually
+used to provide some useful information in more complex logic graphs, a
+description of the operation of a certain part of the graph, or instructions on
+how to use a subgraph etc.</p>
+<p>It is resizable and will retain its size, allowing you to place it and size it
+to your requirements.</p>
+
+</section><section class="md-typeset" data-url="/logic/nodes/compare/" id="logic/nodes/compare/:">
+<h3 id="logic/nodes/compare/:compare"><span class="pdf-order">4.3.10 </span>Compare</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/compare.png"><img alt="Compare Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/compare.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/controller/" id="logic/nodes/controller/:">
+<h3 id="logic/nodes/controller/:controller-input"><span class="pdf-order">4.3.11 </span>Controller Input</h3>
+<h4 id="logic/nodes/controller/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/controller.png"><img alt="Controller Input Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/controller.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Controller Input Node</em> reports on the status of the configured controller
+for left, right, up, down and jump/fire. This node will adapt to whatever has
+been configured for the input method in your game, joystick, keyboard etc. The
+node allows you to define which values to return when each input is activated,
+defaulting to 1 for each, so that you can define the appropriate values for
+your needs. For example, it might be common to use -1 for left and 1 for right,
+to be used directly later in the graph as directions on the X axis to avoid
+having to convert the input to a direction manually.</p>
+<p>The controller reports the status in one of four modes, <em>Pressed</em>, <em>Released</em>,
+<em>Just Pressed</em> and <em>Just Released</em>. The <em>Pressed</em> and <em>Released</em> modes will
+report continuously while the input is in the appropriate state, either pressed
+or not pressed. The <em>Just Pressed</em> and <em>Just Released</em> will report only for the
+frame after the input changes to the appropriate state, pressed or released.
+For example, <em>Just Pressed</em> will report only once when the player presses the
+key or joystick control, commonly used for fire actions, it will not report
+again until the player releases that input and then activates it again.</p>
+
+<hr/>
+<h4 id="logic/nodes/controller/:ports">Ports</h4>
+<dl>
+<dt>Left</dt>
+<dd>An integer output port that will report the result of checking the state of the
+  left controller input based on the mode.</dd>
+<dt>Right</dt>
+<dd>An integer output port that will report the result of checking the state of the
+  right controller input based on the mode.</dd>
+<dt>Up</dt>
+<dd>An integer output port that will report the result of checking the state of the
+  up controller input based on the mode.</dd>
+<dt>Down</dt>
+<dd>An integer output port that will report the result of checking the state of the
+  down controller input based on the mode.</dd>
+<dt>Jump/Fire</dt>
+<dd>An integer output port that will report the result of checking the state of the
+  jump/fire controller input based on the mode.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/controller/:parameters">Parameters</h4>
+<dl>
+<dt>Left</dt>
+<dd>A constant integer value that will be output on the <strong>Left</strong> port if the input
+  check matches the mode for the left input.</dd>
+<dt>Right</dt>
+<dd>A constant integer value that will be output on the <strong>Right</strong> port if the input
+  check matches the mode for the right input.</dd>
+<dt>Up</dt>
+<dd>A constant integer value that will be output on the <strong>Up</strong> port if the input
+  check matches the mode for the up input.</dd>
+<dt>Down</dt>
+<dd>A constant integer value that will be output on the <strong>Down</strong> port if the input
+ check matches the mode for the down input.</dd>
+<dt>Jump/Fire</dt>
+<dd>A constant integer value that will be output on the <strong>Jump/Fire</strong> port if the
+  input check matches the mode for the jump/fire input.</dd>
+<dt>Mode</dt>
+<dd>Define the mode of operation between <em>Pressed</em>, <em>Released</em>, <em>Just Pressed</em> and
+  <em>Just Released</em>. See the description of the node operation for an explanation
+  of the difference between the modes.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/current_location/" id="logic/nodes/current_location/:">
+<h3 id="logic/nodes/current_location/:current-location"><span class="pdf-order">4.3.12 </span>Current Location</h3>
+<p><img alt="Current Location
+Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/current_location.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></p>
+</section><section class="md-typeset" data-url="/logic/nodes/direction/" id="logic/nodes/direction/:">
+<h3 id="logic/nodes/direction/:direction"><span class="pdf-order">4.3.13 </span>Direction</h3>
+<h4 id="logic/nodes/direction/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/direction.png"><img alt="Direction Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/direction.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Direction Node</em> is used to convert the typical four directional movement
+input into a single value representing the primary direction of movement. This
+is useful for things like switching sprite animation on
+<a href="#introduction/terminology/:objects">Objects</a> to show the correct
+animation for the movement. If the input suggests a diagonal movement, the
+output will be a single value representing the "dominant" axis as defined by
+the <strong>Vertical Priority</strong> parameter, if this is checked, then up/down will be
+chosen over left/right if diagonal movement is indicated, if it is not checked,
+left/right will get priority.</p>
+<p>Note: unlike other nodes with port/parameter pairs, in this node the direction
+rows are not port <strong>or</strong> parameter, both are required. The port is the input,
+usually from a <a href="#logic/nodes/controller/:">Controller</a> node, while the parameter
+represents the output value that will be used if that direction is determined
+to be the dominant direction. In the example here, if only the <em>right</em>
+controller is non-0, the <strong>Direction</strong> value output will be 2.</p>
+
+<hr/>
+<h4 id="logic/nodes/direction/:ports">Ports</h4>
+<dl>
+<dt>Left</dt>
+<dd>An integer input port providing the input value for the left direction, any
+  non-0 value will be considered movement in that direction. </dd>
+<dt>Right</dt>
+<dd>An integer input port providing the input value for the right direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Up</dt>
+<dd>An integer input port providing the input value for the up direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Down</dt>
+<dd>An integer input port providing the input value for the down direction, any
+  non-0 value will be considered movement in that direction.</dd>
+<dt>Direction</dt>
+<dd>An integer output port, one of the four direction parameter values will be
+  output on this port depending on the input data and the <strong>Vertical Priority</strong>
+  parameter.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/direction/:parameters">Parameters</h4>
+<dl>
+<dt>Vertical Priority</dt>
+<dd>A boolean value indicating which axis to give priority to if diagonal
+  movement is indicated. If checked, up/down will get priority, otherwise
+  left/right will.</dd>
+<dt>Left</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement left.</dd>
+<dt>Right</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement right.</dd>
+<dt>Up</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement up.</dd>
+<dt>Down</dt>
+<dd>A constant integer value that will be output on the <strong>Output</strong> port if the 
+  inputs indicate movement down.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/flow_in/" id="logic/nodes/flow_in/:">
+<h3 id="logic/nodes/flow_in/:flow-in"><span class="pdf-order">4.3.14 </span>Flow In</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/flow_in.png"><img alt="Flow In Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/flow_in.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/get_global_object/" id="logic/nodes/get_global_object/:">
+<h3 id="logic/nodes/get_global_object/:get-global-object"><span class="pdf-order">4.3.15 </span>Get Global Object</h3>
+<h4 id="logic/nodes/get_global_object/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_global_object.png"><img alt="Get Global Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_global_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Get Global Object Node</em> is used to get an <a href="#introduction/terminology/:objects">Object
+Reference</a> to a global object for
+use further down the graph in other nodes that accept a <em>Ref</em> input. This
+allows you to directly affect global objects, moving them, etc.</p>
+
+<hr/>
+<h4 id="logic/nodes/get_global_object/:ports">Ports</h4>
+<dl>
+<dt>Ref</dt>
+<dd>An Object Ref output port that will provide the reference to the requested
+  global object.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/get_global_object/:parameters">Parameters</h4>
+<dl>
+<dt>Object</dt>
+<dd>A dropdown selector that will list all the currently available global objects.
+  The value selected will dictate which Ref is returned.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/get_location/" id="logic/nodes/get_location/:">
+<h3 id="logic/nodes/get_location/:get-location"><span class="pdf-order">4.3.16 </span>Get Location</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_location.png"><img alt="Get Location Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_location.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/get_object_flags/" id="logic/nodes/get_object_flags/:">
+<h3 id="logic/nodes/get_object_flags/:get-object-flags"><span class="pdf-order">4.3.17 </span>Get Object Flags</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_object_flags.png"><img alt="Get Object Flags Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_object_flags.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/get_room_object/" id="logic/nodes/get_room_object/:">
+<h3 id="logic/nodes/get_room_object/:get-room-object"><span class="pdf-order">4.3.18 </span>Get Room Object</h3>
+<h4 id="logic/nodes/get_room_object/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_room_object.png"><img alt="Get Room Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_room_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Get Room Object Node</em> is used to get an <a href="#introduction/terminology/:objects">Object
+Reference</a> to an object in a room
+for use further down the graph in other nodes that accept a <em>Ref</em> input. This
+allows you to directly affect room objects, moving them, etc.</p>
+
+<hr/>
+<h4 id="logic/nodes/get_room_object/:ports">Ports</h4>
+<dl>
+<dt>Ref</dt>
+<dd>An Object Ref output port that will provide the reference to the requested
+  global object.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/get_room_object/:parameters">Parameters</h4>
+<dl>
+<dt>Room</dt>
+<dd>A dropdown selector that will list all the currently available rooms.
+  When a room is selected, the contents of the <strong>Object</strong> selector will update
+  to list the object references in that room.</dd>
+<dt>Object</dt>
+<dd>A dropdown selector that will list all the currently available objects in the
+  selected room. The value selected will dictate which Ref is returned.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/get_tile_information/" id="logic/nodes/get_tile_information/:">
+<h3 id="logic/nodes/get_tile_information/:get-tile-information"><span class="pdf-order">4.3.19 </span>Get Tile Information</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_tile_information.png"><img alt="Get Tile Information Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_tile_information.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/get_variable/" id="logic/nodes/get_variable/:">
+<h3 id="logic/nodes/get_variable/:get-variable"><span class="pdf-order">4.3.20 </span>Get Variable</h3>
+<h4 id="logic/nodes/get_variable/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/get_variable.png"><img alt="Get Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/get_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Get Variable Node</em> is used to get the integer value of a variable on
+whatever the current logic graph is running, i.e. a
+<a href="#introduction/terminology/:screens">Screen</a>, a
+<a href="#introduction/terminology/:rooms">Room</a> or an
+<a href="#introduction/terminology/:objects">Object</a>.</p>
+<p>It's important to understand that, in the case of
+<a href="#introduction/terminology/:rooms">rooms</a> and
+<a href="#introduction/terminology/:objects">objects</a> the value being accessed
+is the value for the chosen variable in the <a href="#introduction/terminology/:objects">Object
+Reference</a> or
+<a href="#introduction/terminology/:locations">Location</a>, that is running the logic
+code, each reference has it's own copy of the variables, they are independent.</p>
+
+<hr/>
+<h4 id="logic/nodes/get_variable/:ports">Ports</h4>
+<dl>
+<dt><em>Output</em></dt>
+<dd>An integer output port that will provide the value of the chosen variable.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/get_variable/:parameters">Parameters</h4>
+<dl>
+<dt><em>Variable</em></dt>
+<dd>A dropdown listing the defined variables associated with the current logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/global_variable/" id="logic/nodes/global_variable/:">
+<h3 id="logic/nodes/global_variable/:global-variable"><span class="pdf-order">4.3.21 </span>Global Variable</h3>
+<h4 id="logic/nodes/global_variable/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/global_variable.png"><img alt="Global Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/global_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Global Variable Node</em> is used to get the integer value of a variable on
+the global <a href="#introduction/terminology/:logic">Logic</a>.</p>
+
+<hr/>
+<h4 id="logic/nodes/global_variable/:ports">Ports</h4>
+<dl>
+<dt><em>Output</em></dt>
+<dd>An integer output port that will provide the value of the chosen variable.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/global_variable/:parameters">Parameters</h4>
+<dl>
+<dt>Variable</dt>
+<dd>A dropdown listing the defined variables associated with the global logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/go_to_location_at/" id="logic/nodes/go_to_location_at/:">
+<h3 id="logic/nodes/go_to_location_at/:go-to-location-at"><span class="pdf-order">4.3.22 </span>Go To Location At</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/go_to_location_at.png"><img alt="Go To Location At Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/go_to_location_at.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/if/" id="logic/nodes/if/:">
+<h3 id="logic/nodes/if/:if"><span class="pdf-order">4.3.23 </span>If</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/if.png"><img alt="If Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/if.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/initialise/" id="logic/nodes/initialise/:">
+<h3 id="logic/nodes/initialise/:initialise"><span class="pdf-order">4.3.24 </span>Initialise</h3>
+<h4 id="logic/nodes/initialise/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/initialise.png"><img alt="Initialise Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/initialise.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Initialise Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The
+<em>Initialise</em> trigger will run the flow that follows on from it's <strong>Flow Out</strong>
+port only once at the start of the game.</p>
+
+<hr/>
+<h4 id="logic/nodes/initialise/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Initialse Node</em> has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/input/" id="logic/nodes/input/:">
+<h3 id="logic/nodes/input/:input"><span class="pdf-order">4.3.25 </span>Input</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/input.png"><img alt="Input Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/input.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/instance_data/" id="logic/nodes/instance_data/:">
+<h3 id="logic/nodes/instance_data/:instance-data"><span class="pdf-order">4.3.26 </span>Instance Data</h3>
+<h4 id="logic/nodes/instance_data/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/instance_data.png"><img alt="Instance Data Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/instance_data.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Instance Data Node</em> provides useful information about the current <a href="#introduction/terminology/:objects">Object
+Reference</a> that the logic graph is
+running on. This is information that is unique to each reference of the object
+type, much like variables, but for accessing common data that all object
+references have.</p>
+<p>Note: the position data is returned in the appropriate coordinate system for
+the object being referenced. A global or dynamic object will return coordinates
+in "map" space, a room object will return coordinates in the local space of the
+room.</p>
+
+<hr/>
+<h4 id="logic/nodes/instance_data/:ports">Ports</h4>
+<dl>
+<dt>Ref</dt>
+<dd>An Object Reference input port that can provide an object that will be used
+  to lookup the instance data. If this is not connected and the logic is on
+  an <a href="#introduction/terminology/:objects">Object</a>, the current object
+  will be used instead. If the logic is not on an object, 0 will be returned
+  on all output ports.</dd>
+<dt>Start X</dt>
+<dd>The initial X position of the object, this is constant, and used to reset the 
+  object's position at the start of the game.</dd>
+<dt>Start Y</dt>
+<dd>The initial Y position of the object, this is constant, and used to reset the 
+  object's position at the start of the game.</dd>
+<dt>X</dt>
+<dd>The current X position of the object, this is the live position of the object
+  as set by any <a href="#logic/nodes/move_object/:">Move Object</a> nodes, or other nodes that can
+  modify an object's position. </dd>
+<dt>Y</dt>
+<dd>The current Y position of the object, this is the live position of the object
+  as set by any <a href="#logic/nodes/move_object/:">Move Object</a> nodes, or other nodes that can
+  modify an object's position. </dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/is_on_screen/" id="logic/nodes/is_on_screen/:">
+<h3 id="logic/nodes/is_on_screen/:is-on-screen"><span class="pdf-order">4.3.27 </span>Is On Screen?</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/is_on_screen.png"><img alt="Is On Screen? Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/is_on_screen.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/is_type/" id="logic/nodes/is_type/:">
+<h3 id="logic/nodes/is_type/:is-type"><span class="pdf-order">4.3.28 </span>Is Type?</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/is_type.png"><img alt="Is Type? Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/is_type.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/keyframe_animation/" id="logic/nodes/keyframe_animation/:">
+<h3 id="logic/nodes/keyframe_animation/:keyframe-animation"><span class="pdf-order">4.3.29 </span>Keyframe Animation</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/keyframe_animation.png"><img alt="Keyframe Animation Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/keyframe_animation.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/kill_object/" id="logic/nodes/kill_object/:">
+<h3 id="logic/nodes/kill_object/:kill-object"><span class="pdf-order">4.3.30 </span>Kill Object</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/kill_object.png"><img alt="Kill Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/kill_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/location_to_map/" id="logic/nodes/location_to_map/:">
+<h3 id="logic/nodes/location_to_map/:location-to-map"><span class="pdf-order">4.3.31 </span>Location To Map</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/location_to_map.png"><img alt="Location To Map Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/location_to_map.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/location_variable/" id="logic/nodes/location_variable/:">
+<h3 id="logic/nodes/location_variable/:location-variable"><span class="pdf-order">4.3.32 </span>Location Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/location_variable.png"><img alt="Location Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/location_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/map_to_location/" id="logic/nodes/map_to_location/:">
+<h3 id="logic/nodes/map_to_location/:map-to-location"><span class="pdf-order">4.3.33 </span>Map To Location</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/map_to_location.png"><img alt="Map To Location Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/map_to_location.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/marker_position/" id="logic/nodes/marker_position/:">
+<h3 id="logic/nodes/marker_position/:marker-position"><span class="pdf-order">4.3.34 </span>Marker Position</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/marker_position.png"><img alt="Marker Position Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/marker_position.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/math/" id="logic/nodes/math/:">
+<h3 id="logic/nodes/math/:math"><span class="pdf-order">4.3.35 </span>Math</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/math.png"><img alt="Math Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/math.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/message_global_logic/" id="logic/nodes/message_global_logic/:">
+<h3 id="logic/nodes/message_global_logic/:message-global-logic"><span class="pdf-order">4.3.36 </span>Message Global Logic</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/message_global_logic.png"><img alt="Message Global Logic Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/message_global_logic.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/message_location/" id="logic/nodes/message_location/:">
+<h3 id="logic/nodes/message_location/:message-location"><span class="pdf-order">4.3.37 </span>Message Location</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/message_location.png"><img alt="Message Location Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/message_location.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/message_object/" id="logic/nodes/message_object/:">
+<h3 id="logic/nodes/message_object/:message-object"><span class="pdf-order">4.3.38 </span>Message Object</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/message_object.png"><img alt="Message Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/message_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/message_screen/" id="logic/nodes/message_screen/:">
+<h3 id="logic/nodes/message_screen/:message-screen"><span class="pdf-order">4.3.39 </span>Message Screen</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/message_screen.png"><img alt="Message Screen Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/message_screen.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/modify_tiles/" id="logic/nodes/modify_tiles/:">
+<h3 id="logic/nodes/modify_tiles/:modify-tiles"><span class="pdf-order">4.3.40 </span>Modify Tiles</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/modify_tiles.png"><img alt="Modify Tiles Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/modify_tiles.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/move_object/" id="logic/nodes/move_object/:">
+<h3 id="logic/nodes/move_object/:move-object"><span class="pdf-order">4.3.41 </span>Move Object</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/move_object.png"><img alt="Move Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/move_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/number/" id="logic/nodes/number/:">
+<h3 id="logic/nodes/number/:number"><span class="pdf-order">4.3.42 </span>Number</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/number.png"><img alt="Number Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/number.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/object_hit/" id="logic/nodes/object_hit/:">
+<h3 id="logic/nodes/object_hit/:object-hit"><span class="pdf-order">4.3.43 </span>Object Hit</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/object_hit.png"><img alt="Object Hit Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/object_hit.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a> 
+The <em>Object Hit Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Object
+Hit</em> trigger is triggered automatically when any object that is configured to
+detect intersections with other objects is moved into a position where it
+intersects another that is also flagged to detect intersections with other
+objects. Any defined <em>Object Hit</em> flows on both objects involved in the
+intersection will be triggered.</p>
+
+<hr/>
+<h4 id="logic/nodes/object_hit/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Animation Event Node</em> has only a single flow
+  port on the output side. There is no input flow to a trigger node as it is the
+  origin of a flow.</dd>
+<dt>Ref</dt>
+<dd>An object reference output port that provides a reference to the other object
+  involved in the intersection.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/object_variable/" id="logic/nodes/object_variable/:">
+<h3 id="logic/nodes/object_variable/:object-variable"><span class="pdf-order">4.3.44 </span>Object Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/object_variable.png"><img alt="Object Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/object_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/on_message/" id="logic/nodes/on_message/:">
+<h3 id="logic/nodes/on_message/:on-message"><span class="pdf-order">4.3.45 </span>On Message</h3>
+<h4 id="logic/nodes/on_message/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/on_message.png"><img alt="On Message Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/on_message.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>On Message Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>On
+Message</em> trigger is triggered manually within another flow by using the
+<a href="#logic/nodes/on_message/message_room/:">Message Room</a>, <a href="#logic/nodes/message_object/:">Message Object</a>,
+<a href="#logic/nodes/message_screen/:">Message Screen</a> or <a href="#logic/nodes/on_message/message_global/:">Message Global</a>
+nodes.  </p>
+<p>A message consists of 3 parts, an ID and two optional parameters. The send
+message nodes have ports and parameters to set these values which control
+how this flow responds. The ID sent must match the ID defined in this flow for
+the flow to run. The parameters are typically used to control what the flow
+does. For example, a flow on a room that opens a door might take the side of
+the room that the door is on in P1 and the type of door in P2.</p>
+<p>The text field at the bottom of this node can be used to give a name to this
+message flow, it is used for informational purposes only, as a reminder to the
+designer of what this flow is responsible for.</p>
+
+<hr/>
+<h4 id="logic/nodes/on_message/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>On Message Node</em> has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow. This flow is only followed if the ID of the message sent 
+  matches the ID of this flow.</dd>
+<dt>P1</dt>
+<dd>The value of the first parameter sent with the message, the <em>Message</em> nodes
+  have ports and parameters to define this, so each use of the message flow 
+  can have different results based on the information passed in.</dd>
+<dt>P2</dt>
+<dd>The value of the second parameter sent with the message, the <em>Message</em> nodes
+  have ports and parameters to define this, so each use of the message flow 
+  can have different results based on the information passed in.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/on_message/:parameters">Parameters</h4>
+<dl>
+<dt>ID</dt>
+<dd><em>On Message Nodes</em> have a single additional parameter, __ID. This is the 
+  message ID that the flow will respond to. It is sent as part of the <em>Message</em>
+  send nodes. Using this ID it is possible to have multiple flows on an object,
+  room, screen or in the global logic that respond to different messages,
+  multiple "functions" if you will.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/or/" id="logic/nodes/or/:">
+<h3 id="logic/nodes/or/:or"><span class="pdf-order">4.3.46 </span>Or</h3>
+<h4 id="logic/nodes/or/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/or.png"><img alt="Or Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/or.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Or Node</em> takes two inputs of type integer and compares them with 0. If
+either or both are not 0, the output will be 1, if both are 0, the output will
+be 0. </p>
+<p>This is useful to combine checks, in particular with the <a href="#logic/nodes/compare/:">Compare</a> node.</p>
+<h4 id="logic/nodes/or/:ports" style="clear:left">Ports</h4>
+<h5 id="logic/nodes/or/:a-and-b">A and B</h5>
+<p>The two input values, they must be linked for the node to be operational and
+can only be connected to sources that provide an integer value, such as
+<a href="#logic/nodes/get_variable/:">Get</a>.</p>
+<h5 id="logic/nodes/or/:out">Out</h5>
+<p>The output of the node, will be either 1 or 0 depending on the result of the
+compare.</p>
+</section><section class="md-typeset" data-url="/logic/nodes/output/" id="logic/nodes/output/:">
+<h3 id="logic/nodes/output/:output"><span class="pdf-order">4.3.47 </span>Output</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/output.png"><img alt="Output Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/output.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/paste_brush/" id="logic/nodes/paste_brush/:">
+<h3 id="logic/nodes/paste_brush/:paste-brush"><span class="pdf-order">4.3.48 </span>Paste Brush</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/paste_brush.png"><img alt="Paste Brush Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/paste_brush.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/pixel_to_tile/" id="logic/nodes/pixel_to_tile/:">
+<h3 id="logic/nodes/pixel_to_tile/:pixel-to-tile"><span class="pdf-order">4.3.49 </span>Pixel To Tile</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/pixel_to_tile.png"><img alt="Pixel To Tile Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/pixel_to_tile.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/random/" id="logic/nodes/random/:">
+<h3 id="logic/nodes/random/:random"><span class="pdf-order">4.3.50 </span>Random</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/random.png"><img alt="Random Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/random.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/repeat/" id="logic/nodes/repeat/:">
+<h3 id="logic/nodes/repeat/:repeat"><span class="pdf-order">4.3.51 </span>Repeat</h3>
+<h4 id="logic/nodes/repeat/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/repeat.png"><img alt="Repeat Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/repeat.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+ The <em>Repeat Node</em> will run the node flow that is connected to its <em>Body</em> output port
+ repeatedly while an index is between the <em>Start</em> and <em>Until</em> values provided, altering
+ the index value each time around the loop by the <em>Step</em> value.</p>
+<p>The index is first set to the <em>Start</em> value, and then it is compared to the <em>Until</em>
+ value, if the <em>Step</em> is positive and the index is greater than or equal to the <em>Until</em>
+ value, the loop exits, similarly, if <em>Step</em> is negative and the index is less than or
+ equal to the <em>Until</em> value, the loop exits. That is, the loop runs while the index is
+ <em>before</em> the <em>Until</em> value, it is "exclusive".</p>
+<p>During the looping, the current value of the index can be accessed by nodes in the <em>Body</em>
+ using the <em>Index</em> port. Before execution, the index port is undefined, after execution
+ it will contain the last value of the index before exiting the loop.</p>
+<p>When the loop is complete, the logic graph will continue with the flow connected to the
+ <em>Exit</em> port.</p>
+
+<hr/>
+<h4 id="logic/nodes/repeat/:ports">Ports</h4>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Body</dt>
+<dd>The nodes that are to be repeatedly executed during the loop. Execution will 
+  continue while there is a node connected to the Flow Out of the last node
+  executed, the body ends when there is no connection to the Flow Out, at which
+  point the index is updated and the node will check if it is to run the loop 
+  again or exit.</dd>
+<dt>Start</dt>
+<dd>An integer port providing the start value of the index, this will be the value
+  of the index during the first run of the <em>Body</em>, it is "inclusive".</dd>
+<dt>Until</dt>
+<dd>An integer port providing the value to check the index against for exiting the
+  loop. The loop is exited before the index reaches this value.</dd>
+<dt>Step</dt>
+<dd>An integer port providing the value to add to the index each iteration through
+  the loop. This value can be positive or negative, allowing loops where the index
+  increases or decreases with each iteration.</dd>
+<dt>Index</dt>
+<dd>An integer output port that provides the current value of the index in the loop, 
+  typically used by nodes within the <em>Body</em> flow.</dd>
+<dt>Exit</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/repeat/:parameters">Parameters</h4>
+<dl>
+<dt>Start</dt>
+<dd>An integer input to specify a fixed value for the start of the loop index.</dd>
+<dt>Until</dt>
+<dd>An integer input to specify a fixed value for the exit point of the loop.</dd>
+<dt>Step</dt>
+<dd>An integer input to specify a fixed value to be added to the index each iteration
+  through the loop.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/reset_game/" id="logic/nodes/reset_game/:">
+<h3 id="logic/nodes/reset_game/:reset-game"><span class="pdf-order">4.3.52 </span>Reset Game</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/reset_game.png"><img alt="Reset Game Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/reset_game.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/room_entered_trigger/" id="logic/nodes/room_entered_trigger/:">
+<h3 id="logic/nodes/room_entered_trigger/:room-entered"><span class="pdf-order">4.3.53 </span>Room Entered</h3>
+<h4 id="logic/nodes/room_entered_trigger/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/room_entered_trigger.png"><img alt="Room Entered Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/room_entered_trigger.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Room Entered Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Room
+Entered</em> trigger will run the flow that follows on from it's <strong>Flow Out</strong> port
+upon entering a <a href="#introduction/terminology/:locations">location</a> that
+uses the room definition that this logic flow is defined on.  </p>
+
+<hr/>
+<h4 id="logic/nodes/room_entered_trigger/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Room Entered Node</em> has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/room_exited_trigger/" id="logic/nodes/room_exited_trigger/:">
+<h3 id="logic/nodes/room_exited_trigger/:room-exited"><span class="pdf-order">4.3.54 </span>Room Exited</h3>
+<h4 id="logic/nodes/room_exited_trigger/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/room_exited_trigger.png"><img alt="Room Exited Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/room_exited_trigger.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Room Exited Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A
+trigger <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Room
+Entered</em> trigger will run the flow that follows on from it's <strong>Flow Out</strong> port
+upon exiting a <a href="#introduction/terminology/:locations">location</a> that
+uses the room definition that this logic flow is defined on.  </p>
+
+<hr/>
+<h4 id="logic/nodes/room_exited_trigger/:ports">Ports</h4>
+<dl>
+<dt>Flow Out</dt>
+<dd>As with all trigger nodes, an <em>Room Entered Node</em> has only a single flow port
+  on the output side. There is no input flow to a trigger node as it is
+  the origin of a flow.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/screen_variable/" id="logic/nodes/screen_variable/:">
+<h3 id="logic/nodes/screen_variable/:screen-variable"><span class="pdf-order">4.3.55 </span>Screen Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/screen_variable.png"><img alt="Screen Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/screen_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/select/" id="logic/nodes/select/:">
+<h3 id="logic/nodes/select/:select"><span class="pdf-order">4.3.56 </span>Select</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/select.png"><img alt="Select Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/select.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_global_variable/" id="logic/nodes/set_global_variable/:">
+<h3 id="logic/nodes/set_global_variable/:set-global-variable"><span class="pdf-order">4.3.57 </span>Set Global Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_global_variable.png"><img alt="Set Global Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_global_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_instrument_value/" id="logic/nodes/set_instrument_value/:">
+<h3 id="logic/nodes/set_instrument_value/:set-instrument"><span class="pdf-order">4.3.58 </span>Set Instrument</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_instrument_value.png"><img alt="Set Instrument Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_instrument_value.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_location_variable/" id="logic/nodes/set_location_variable/:">
+<h3 id="logic/nodes/set_location_variable/:set-location-variable"><span class="pdf-order">4.3.59 </span>Set Location Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_location_variable.png"><img alt="Set Location Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_location_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_object_colour/" id="logic/nodes/set_object_colour/:">
+<h3 id="logic/nodes/set_object_colour/:set-object-colour"><span class="pdf-order">4.3.60 </span>Set Object Colour</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_object_colour.png"><img alt="Set Object Colour Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_object_colour.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_object_flags/" id="logic/nodes/set_object_flags/:">
+<h3 id="logic/nodes/set_object_flags/:set-object-flags"><span class="pdf-order">4.3.61 </span>Set Object Flags</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_object_flags.png"><img alt="Set Object Flags Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_object_flags.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_object_variable/" id="logic/nodes/set_object_variable/:">
+<h3 id="logic/nodes/set_object_variable/:set-object-variable"><span class="pdf-order">4.3.62 </span>Set Object Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_object_variable.png"><img alt="Set Object Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_object_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_screen_variable/" id="logic/nodes/set_screen_variable/:">
+<h3 id="logic/nodes/set_screen_variable/:set-screen-variable"><span class="pdf-order">4.3.63 </span>Set Screen Variable</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_screen_variable.png"><img alt="Set Screen Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_screen_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/set_variable/" id="logic/nodes/set_variable/:">
+<h3 id="logic/nodes/set_variable/:set-variable"><span class="pdf-order">4.3.64 </span>Set Variable</h3>
+<h4 id="logic/nodes/set_variable/:description">Description</h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/set_variable.png"><img alt="Set Variable Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/set_variable.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a>
+The <em>Set Variable Node</em> is used to set the integer value of a variable on
+whatever the current logic graph is running, i.e. a
+<a href="#introduction/terminology/:screens">Screen</a>, a
+<a href="#introduction/terminology/:rooms">Room</a> or an
+<a href="#introduction/terminology/:objects">Object</a>.</p>
+<p>It's important to understand that, in the case of
+<a href="#introduction/terminology/:rooms">rooms</a> and
+<a href="#introduction/terminology/:objects">objects</a> the value being modified
+is the value for the chosen variable in the <a href="#introduction/terminology/:objects">Object
+Reference</a> or
+<a href="#introduction/terminology/:locations">Location</a>, that is running the logic
+code, each reference has it's own version of the variables, so changing a
+variable on one reference for a particular object type will not affect the
+value on other references, they are independent.</p>
+
+<hr/>
+<h4 id="logic/nodes/set_variable/:ports">Ports</h4>
+<dl>
+<dt>Flow In</dt>
+<dd>In order for this node to perform its operation, it must be connected into an
+  active flow using this input port. The flow will ultimately originate at a
+  <strong>Trigger</strong> node but can come from the <strong>Flow Out</strong> port of any other flow
+  node.</dd>
+<dt>Flow Out</dt>
+<dd>A node connected to the <strong>Flow Out</strong> port will be executed in sequence
+  following the completion of this node's operation.</dd>
+<dt>Value</dt>
+<dd>An integer input port used to provide the value that will be applied to the
+  chosen variable.</dd>
+</dl>
+<hr/>
+<h4 id="logic/nodes/set_variable/:parameters">Parameters</h4>
+<dl>
+<dt>Value</dt>
+<dd>A constant integer value to assign to the chosen variable. If the port is 
+  connected to another node, this option will become unavailable, the node
+  will use the value provided on the input port.</dd>
+<dt><em>Variable</em></dt>
+<dd>A dropdown listing the defined variable names on the current logic graph.</dd>
+</dl>
+</section><section class="md-typeset" data-url="/logic/nodes/spawn_object/" id="logic/nodes/spawn_object/:">
+<h3 id="logic/nodes/spawn_object/:spawn-object"><span class="pdf-order">4.3.65 </span>Spawn Object</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/spawn_object.png"><img alt="Spawn Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/spawn_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/sprite_animation/" id="logic/nodes/sprite_animation/:">
+<h3 id="logic/nodes/sprite_animation/:sprite-animation"><span class="pdf-order">4.3.66 </span>Sprite Animation</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/sprite_animation.png"><img alt="Sprite Animation Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/sprite_animation.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/store_value/" id="logic/nodes/store_value/:">
+<h3 id="logic/nodes/store_value/:store-value"><span class="pdf-order">4.3.67 </span>Store Value</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/store_value.png"><img alt="Store Value Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/store_value.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/sub_graph/" id="logic/nodes/sub_graph/:">
+<h3 id="logic/nodes/sub_graph/:subgraph"><span class="pdf-order">4.3.68 </span>Subgraph</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/sub_graph.png"><img alt="Subgraph Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/sub_graph.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/switch_screen/" id="logic/nodes/switch_screen/:">
+<h3 id="logic/nodes/switch_screen/:switch-screen"><span class="pdf-order">4.3.69 </span>Switch Screen</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/switch_screen.png"><img alt="Switch Screen Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/switch_screen.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/tile_to_pixel/" id="logic/nodes/tile_to_pixel/:">
+<h3 id="logic/nodes/tile_to_pixel/:tile-to-pixel"><span class="pdf-order">4.3.70 </span>Tile To Pixel</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/tile_to_pixel.png"><img alt="Tile To Pixel Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/tile_to_pixel.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/transport_object/" id="logic/nodes/transport_object/:">
+<h3 id="logic/nodes/transport_object/:transport-object"><span class="pdf-order">4.3.71 </span>Transport Object</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/transport_object.png"><img alt="Transport Object Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/transport_object.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/transport_to_marker/" id="logic/nodes/transport_to_marker/:">
+<h3 id="logic/nodes/transport_to_marker/:transport-to-marker"><span class="pdf-order">4.3.72 </span>Transport To Marker</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/transport_to_marker.png"><img alt="Transport To Marker Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/transport_to_marker.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/while_loop/" id="logic/nodes/while_loop/:">
+<h3 id="logic/nodes/while_loop/:while-loop"><span class="pdf-order">4.3.73 </span>While Loop</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/while_loop.png"><img alt="While Loop Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/while_loop.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/wrap/" id="logic/nodes/wrap/:">
+<h3 id="logic/nodes/wrap/:wrap"><span class="pdf-order">4.3.74 </span>Wrap</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/wrap.png"><img alt="Wrap Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/wrap.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section><section class="md-typeset" data-url="/logic/nodes/z80_out/" id="logic/nodes/z80_out/:">
+<h3 id="logic/nodes/z80_out/:z80-out"><span class="pdf-order">4.3.75 </span>Z80 Out</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../assets/nodes/z80_out.png"><img alt="Z80 Out Node" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/nodes/z80_out.png" style="float: left; padding-right: 1rem; padding-bottom: 0.5rem; width: 25%;"/></a></p>
+</section></section></article><article class="md-content__inner md-typeset" data-url="/KR2XI33SNFQWY4Y/" id="KR2XI33SNFQWY4Y/:"><h1 id="KR2XI33SNFQWY4Y/"><span class="pdf-order">5. </span>Tutorials</h1><section class="md-typeset" data-url="/tutorials/simple_platformer_controller/" id="tutorials/simple_platformer_controller/:">
+<h2 id="tutorials/simple_platformer_controller/:simple-platformer-controller"><span class="pdf-order">5.1 </span>Simple Platformer Controller</h2>
+<h3 id="tutorials/simple_platformer_controller/:how-to-create-a-simple-left-right-and-jump-platformer-controller"><span class="pdf-order">5.1.1 </span>How To Create A Simple, Left, Right and Jump Platformer Controller</h3>
+<p>One of the most common game genres for retro computers is the platformer, a
+game where the player typically has controls to move left and right, and to
+jump onto platforms and fall down when walking off a platform. This tutorial
+guides you through creating the logic nodes to create a player object in this
+style. While this very likely won't be adequate for a fully fledged game it
+should give some insights into some of the techniques that Kwyll offers to do
+this and serve as a starting point for customisation and improvement.</p>
+<h3 id="tutorials/simple_platformer_controller/:setup"><span class="pdf-order">5.1.2 </span>Setup</h3>
+<h4 id="tutorials/simple_platformer_controller/:sprite">Sprite</h4>
+<p>First, lets start by creating a sprite for our character, something simple as
+we're not focused on animation for this tutorial.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/player_sprite.png"><img alt="Player Sprite" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/player_sprite.png" style=""/></a></p>
+<h4 id="tutorials/simple_platformer_controller/:object">Object</h4>
+<p>Then we'll turn this sprite into a simple object, our Player, remember to name
+it appropriately and set the draw mode to mask if you've drawn a mask for your
+player sprite. Add a single animation with one frame and choose the sprite you
+created for your character.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/player_object.png"><img alt="Player Object" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/player_object.png" style=""/></a></p>
+<h4 id="tutorials/simple_platformer_controller/:room">Room</h4>
+<p>Next we'll setup a simple room to test out the player. Create a single simple
+tile, in the properties dialog, make sure to set the default collision to "top"
+as this will be the tile for our platforms, we want to be able to jump up
+through it, but then land on the top and not fall through.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/tile.png"><img alt="Tile" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/tile.png" style=""/></a></p>
+<p>Draw a ground and some platforms for our player to jump on using the tile we
+just created.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/room.png"><img alt="Room" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/room.png" style=""/></a></p>
+<p>Drag the Player object from the objects panel onto the room. Note: normally
+the player would be a "Map" object, which allows it to travel between rooms,
+but for the purposes of this tutorial, we'll just have a single room, so we can
+just place our player in the room directly. </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/player_in_room.png"><img alt="Player In Room" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/player_in_room.png" style=""/></a></p>
+<h4 id="tutorials/simple_platformer_controller/:map">Map</h4>
+<p>Finally, in order to be able to play the game, we must add the room to the map.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/map.png"><img alt="Map" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/map.png" style=""/></a></p>
+<h3 id="tutorials/simple_platformer_controller/:logic"><span class="pdf-order">5.1.3 </span>Logic</h3>
+<p>Now that we've got all the pieces in place, it's time to look at the core of
+this tutorial, the logic. In order to keep things clear, the different steps of
+the logic are implemented as separate flows, some of them could potentially be
+combined if you wanted to reduce the number of nodes, that is left as an
+exercise for the reader. </p>
+<p>We break the logic down into 5 steps, movement, jump triggering, fall
+processing and landing.</p>
+<p>Firstly, we'll need some variables to use during the logic, add the following
+variables to the Player object logic:</p>
+<ul>
+<li>speed</li>
+<li>can_jump</li>
+<li>y_velocity</li>
+<li>jump_strength</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/variables.png"><img alt="Variables" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/variables.png" style=""/></a></p>
+<h4 id="tutorials/simple_platformer_controller/:movement">Movement</h4>
+<p>This flow is triggered by an "Always" trigger so will run every frame. It
+serves two purposes, checking the left right keys and altering the player's
+position in the horizontal direction, and applying any jump/fall amounts to
+adjust the player's position in the vertical direction. Once this is done, it
+will attempt to move the player to the new location.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/move_logic.png"><img alt="Move Logic" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/move_logic.png" style=""/></a></p>
+<p>Following the flow connections (white) you can see the first thing that happens
+after the flow is triggered is to set the "can_jump" variable to 0, this is so
+that should the move cause the player to fall off a platform they won't be able
+to jump, if the move does not cause the player to start falling, this flag will
+be reset by the <a href="#tutorials/simple_platformer_controller/:landing">Landing</a> flow described below.</p>
+<p>The next thing in the flow is the actual move, this gets the X and Y position
+to move to from a set of calculations. Let's look at X first. </p>
+<p>The "Controller Input" node is configured to return -1 for left and 1 for
+right, if either button is not pressed, it will return 0 for that direction.
+These two values are added together in a "Math" node, this is to cancel out
+should the player press both left and right simultaneously, as 1 + -1 is 0, if
+only one button is pressed, the result will be either -1 or 1 depending on
+whether left or right is pressed.</p>
+<p>The result of this calculation is then fed into another "Math" node that
+multiplies the direction by the "speed" variable. The result of this
+calculation is then fed into a third "Math" node that adds it to the current X
+position of the player, moving it in the correct direction by the desired
+speed.</p>
+<p>The Y position is calculated by adding the "y_velocity" variable to the current
+Y position of the player.</p>
+<p>Finally, we try to move the player to the calculated new position.</p>
+<h4 id="tutorials/simple_platformer_controller/:jump-triggering">Jump Triggering</h4>
+<p>Next, in a separate "Always" flow, we check the jump button, note the
+"Controller Input" is set to "Just Pressed" for this, as we don't want the jump
+to be continuous as we do for the left/right movement, this is one good reason
+to keep the flows separate. </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/jump_logic.png"><img alt="Jump Logic" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/jump_logic.png" style=""/></a></p>
+<p>We get the result from the "Controller Input" to see if jump has just been
+pressed. We also get the value of the "can_jump" variable, and feed the result
+of both of these into an "AND" node. Only if the button is pressed, and the
+player can jump (both are 1), do we proceed to make the player jump. This is
+done by simply setting the "y_velocity" variable to minus the "jump_strength"
+variable, remember, negative in the Y direction is UP. We also set the
+"can_jump" to 0, this prevents the player from jumping again until they have
+landed.</p>
+<h4 id="tutorials/simple_platformer_controller/:fall-processing">Fall Processing</h4>
+<p>Next, in yet another "Always" flow, we continuously adjust the "y_velocity" to
+account for gravity. We clamp the value to always be between minus the
+"jump_strength" and 10, this ensures the player never goes up by more than the
+defined jump strength, and never falls faster than 10 pixels per frame.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/fall_logic.png"><img alt="Fall Processing" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/fall_logic.png" style=""/></a></p>
+<h4 id="tutorials/simple_platformer_controller/:landing">Landing</h4>
+<p>Finally for now, we have the logic flow that reacts when the player has
+collided with something. The "Collided" trigger is automatically run when the
+"Move Object" node in the <a href="#tutorials/simple_platformer_controller/:movement">Movement</a> flow results in the player
+hitting something. For the purposes of this tutorial, we know it can only be a
+platform or the ground, but we check the direction for completeness anyway and
+to ensure that collision in other directions is cleanly handled as you continue
+to develop your game around this controller.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/land_logic.png"><img alt="Landing" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/land_logic.png" style=""/></a></p>
+<p>The flow first checks if the sides includes "TOP" which is 2, it does this by
+logically ANDing the sides value with 2. Recall that the sides is a bit field,
+bit 0 (value 1 if collided) is UP, i.e. the move resulting in the object
+hitting something from below, bit 1 (value 2 if collided) is DOWN, bit 2 (value
+4 if collided) is LEFT and bit 3 (value 8 if collided) is RIGHT. The actual
+valud of sides is a potential combination of these values, for example, if the
+object collided in both the DOWN and LEFT directions, the value will be 2 + 4 =
+6, ANDing with 2, will remove any other directions from the value but the DOWN
+value, so if the player does collide both DOWN and LEFT, LEFT will be ignored,
+the output from 6 AND 2 is 2, as illustrated by the binary representation below. </p>
+<pre><code>            RLDU
+6       00000110
+2       00000010
+</code></pre>
+<p>Only if both "bits" in the binary number are 1, will the bit be 1 in the
+result, so the result of ANDing these two number will be 00000010 in binary,
+which is 2. This means we can just compare the result with 2 to check if the
+object collided in a downwards direction at all, irrespective of whether it
+collided in another direction as well or not.</p>
+<p>If this is true, we set "can_jump" variable to 1 to indicate that the player
+can now jump again as they have landed.</p>
+<h3 id="tutorials/simple_platformer_controller/:testing"><span class="pdf-order">5.1.4 </span>Testing</h3>
+<p>Back in the Room Editor, open the object properties dialog for the player and
+make sure the "Collide Bg" flag is set so that the player object will collide
+with our platform tiles. </p>
+<p>In the Variables section of the object properties, you'll need to set the
+values of "speed" and "jump_strength" to suitable values, 1 and 7 will be good
+for our example, but you can tweak those as you choose.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/tutorials/simple_platformer_controller/player_object_flags.png"><img alt="Player Object Flags" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/player_object_flags.png" style=""/></a></p>
+<p>That should be all that is required to get a basic platformer control working
+in Kwyll. Switch to the Preview tab and start the game, you should be able to
+move left and right, and jump up onto the platforms. When you walk off a
+platform the player should fall to the ground.</p>
+<video autoplay="true" controls="" height="480" loop="true" width="640">
+<source src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/play.webm" type="video/webm"/>
+<p>
+<a download="play.mov" href="#assets/tutorials/simple_platformer_controller/play.mov/:"><img alt="Preview" src="file:///Volumes/Projects/Kwyll/KwyllDocs/site/assets/tutorials/simple_platformer_controller/preview.png" style=""/></a>
+</p>
+</video>
+</section></article></body></html>

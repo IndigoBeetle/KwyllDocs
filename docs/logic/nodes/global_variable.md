@@ -5,7 +5,7 @@
 
 ## Description
 
-![Global Variable Node](../../assets/nodes/globalvariable_node.png){align=left}
+![Global Variable Node](../../assets/nodes/global_variable.png){align=left width="25%"}
 The *Global Variable Node* is used to get the integer value of a variable on
 the global [Logic](../../introduction/terminology.md#logic).
 

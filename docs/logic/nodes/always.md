@@ -2,11 +2,11 @@
 
 ## Description
 
-![Always Node](../../assets/nodes/always_node.png){align=left width="30%"} The *Always
-Node* is a specific type of *Node* called a __Trigger__. A trigger *Node* is an
-entrypoint into a flow in the Kwyll logic. The *Always* trigger is the most
-commonly used trigger node, it will run the flow that follows on from it's
-__Flow Out__ port every frame of the game.  
+![Always Node](../../assets/nodes/always.png){align=left width="25%"}
+The *Always Node* is a specific type of *Node* called a __Trigger__. A trigger
+*Node* is an entrypoint into a flow in the Kwyll logic. The *Always* trigger is
+the most commonly used trigger node, it will run the flow that follows on from
+it's __Flow Out__ port every frame of the game.  
 
 <br style="clear:left"/>
 

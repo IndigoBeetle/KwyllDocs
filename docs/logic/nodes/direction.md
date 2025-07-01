@@ -4,16 +4,16 @@
 
 ## Description
 
-![Direction Node](../../assets/nodes/direction_node.png){align=left} The
-*Direction Node* is used to convert the typical four directional movement input
-into a single value representing the primary direction of movement. This is
-useful for things like switching sprite animation on
+![Direction Node](../../assets/nodes/direction.png){align=left width="25%"}
+The *Direction Node* is used to convert the typical four directional movement
+input into a single value representing the primary direction of movement. This
+is useful for things like switching sprite animation on
 [Objects](../../introduction/terminology.md#objects) to show the correct
 animation for the movement. If the input suggests a diagonal movement, the
 output will be a single value representing the "dominant" axis as defined by
-the __Vertical Priority__ parameter, if this is checked, then up/down will
-be chosen over left/right if diagonal movement is indicated, if it is not
-checked, left/right will get priority.
+the __Vertical Priority__ parameter, if this is checked, then up/down will be
+chosen over left/right if diagonal movement is indicated, if it is not checked,
+left/right will get priority.
 
 Note: unlike other nodes with port/parameter pairs, in this node the direction
 rows are not port __or__ parameter, both are required. The port is the input,

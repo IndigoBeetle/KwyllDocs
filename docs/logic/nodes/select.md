@@ -1,4 +1,4 @@
 
 # Select
 
-![Select Node](../../assets/nodes/select_node.png){align=left}
+![Select Node](../../assets/nodes/select.png){align=left width="25%"}

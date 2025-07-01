@@ -4,9 +4,9 @@
 
 ## Description
 
-![Set Variable Node](../../assets/nodes/set_node.png){align=left} The *Set
-Variable Node* is used to set the integer value of a variable on whatever the
-current logic graph is running, i.e. a
+![Set Variable Node](../../assets/nodes/set_variable.png){align=left width="25%"}
+The *Set Variable Node* is used to set the integer value of a variable on
+whatever the current logic graph is running, i.e. a
 [Screen](../../introduction/terminology.md#screens), a
 [Room](../../introduction/terminology.md#rooms) or an
 [Object](../../introduction/terminology.md#objects).

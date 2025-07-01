@@ -2,9 +2,10 @@
 
 ## Description
 
-![And Node](../../assets/nodes/and_node.png){align=left width="30%"} The *And Node* takes
-two inputs of type integer and compares them with 0. If both are not 0, the
-output will be 1, if either or both are 0, the output will be 0. 
+![And Node](../../assets/nodes/and.png){align=left width="25%"}
+The *And Node* takes two inputs of type integer and compares them with 0. If
+both are not 0, the output will be 1, if either or both are 0, the output will
+be 0. 
 
 This is useful to combine checks, in particular with the [Integer
 Compare](compare.md) node.

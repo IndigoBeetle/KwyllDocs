@@ -1,4 +1,4 @@
 
 # Reset Game
 
-![Reset Game Node](../../assets/nodes/resetgame_node.png){align=left}
+![Reset Game Node](../../assets/nodes/reset_game.png){align=left width="25%"}

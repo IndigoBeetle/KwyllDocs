@@ -1,4 +1,4 @@
 
 # Switch Screen
 
-![Switch Screen Node](../../assets/nodes/switchscreen_node.png){align=left}
+![Switch Screen Node](../../assets/nodes/switch_screen.png){align=left width="25%"}

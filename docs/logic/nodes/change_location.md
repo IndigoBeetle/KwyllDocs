@@ -3,8 +3,8 @@
 
 ## Description
 
-![Change Location Node](../../assets/nodes/changeroom_node.png){align=left} The
-*Change Location Node* is used to switch to another
+![Change Location Node](../../assets/nodes/change_location.png){align=left width="25%"}
+The *Change Location Node* is used to switch to another
 [Location](../../introduction/terminology.md#locations) on the map. The
 location to change to will be wither the numerical index of the location on the
 map, you can find this by looking at the [Map

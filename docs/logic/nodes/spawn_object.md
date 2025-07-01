@@ -1,4 +1,4 @@
 
 # Spawn Object
 
-![Spawn Object Node](../../assets/nodes/spawnobject_node.png){align=left}
+![Spawn Object Node](../../assets/nodes/spawn_object.png){align=left width="25%"}

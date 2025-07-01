@@ -4,11 +4,11 @@
 
 ## Description
 
-![Controller Input Node](../../assets/nodes/controllerinput_node.png){align=left} The
-*Controller Input Node* reports on the status of the configured controller for left,
-right, up, down and jump/fire. This node will adapt to whatever has been
-configured for the input method in your game, joystick, keyboard etc. The node
-allows you to define which values to return when each input is activated,
+![Controller Input Node](../../assets/nodes/controller.png){width="25%" align=left}
+The *Controller Input Node* reports on the status of the configured controller
+for left, right, up, down and jump/fire. This node will adapt to whatever has
+been configured for the input method in your game, joystick, keyboard etc. The
+node allows you to define which values to return when each input is activated,
 defaulting to 1 for each, so that you can define the appropriate values for
 your needs. For example, it might be common to use -1 for left and 1 for right,
 to be used directly later in the graph as directions on the X axis to avoid

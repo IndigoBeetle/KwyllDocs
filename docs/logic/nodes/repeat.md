@@ -3,7 +3,7 @@
 
 ## Description
 
- ![Repeat Node](../../assets/nodes/repeat_node.png){align=left}
+ ![Repeat Node](../../assets/nodes/repeat.png){align=left width="25%"}
  The *Repeat Node* will run the node flow that is connected to its *Body* output port
  repeatedly while an index is between the *Start* and *Until* values provided, altering
  the index value each time around the loop by the *Step* value.

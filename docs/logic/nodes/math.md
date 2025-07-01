@@ -1,4 +1,4 @@
 
 # Math
 
-![Math Node](../../assets/nodes/math_node.png){align=left}
+![Math Node](../../assets/nodes/math.png){align=left width="25%"}

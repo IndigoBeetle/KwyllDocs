@@ -4,9 +4,9 @@
 
 ## Description
 
-![Get Variable Node](../../assets/nodes/get_node.png){align=left} The *Get
-Variable Node* is used to get the integer value of a variable on whatever the
-current logic graph is running, i.e. a
+![Get Variable Node](../../assets/nodes/get_variable.png){align=left width="25%"}
+The *Get Variable Node* is used to get the integer value of a variable on
+whatever the current logic graph is running, i.e. a
 [Screen](../../introduction/terminology.md#screens), a
 [Room](../../introduction/terminology.md#rooms) or an
 [Object](../../introduction/terminology.md#objects).

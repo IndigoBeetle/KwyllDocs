@@ -1,4 +1,4 @@
 
 # Modify Tiles
 
-![Modify Tiles Node](../../assets/nodes/modifytiles_node.png){align=left}
+![Modify Tiles Node](../../assets/nodes/modify_tiles.png){align=left width="25%"}

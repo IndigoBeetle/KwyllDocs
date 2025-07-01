@@ -1,5 +1,5 @@
 
 # Store Value 
 
-![Store Value Node](../../assets/nodes/storevalue_node.png){align=left}
+![Store Value Node](../../assets/nodes/store_value.png){align=left width="25%"}
 

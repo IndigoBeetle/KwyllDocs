@@ -4,8 +4,8 @@
 
 ## Description
 
-![Instance Data Node](../../assets/nodes/instancedata_node.png){align=left} The
-*Instance Data Node* provides useful information about the current [Object
+![Instance Data Node](../../assets/nodes/instance_data.png){align=left width="25%"}
+The *Instance Data Node* provides useful information about the current [Object
 Reference](../../introduction/terminology.md#objects) that the logic graph is
 running on. This is information that is unique to each reference of the object
 type, much like variables, but for accessing common data that all object

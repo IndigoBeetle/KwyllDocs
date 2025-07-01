@@ -1,5 +1,5 @@
 
 # Tile To Pixel 
 
-![Tile To Pixel Node](../../assets/nodes/tiletopixel_node.png){align=left}
+![Tile To Pixel Node](../../assets/nodes/tile_to_pixel.png){align=left width="25%"}
 

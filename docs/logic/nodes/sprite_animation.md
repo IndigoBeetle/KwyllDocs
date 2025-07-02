@@ -54,7 +54,7 @@ Anim
 : A constant integer value for the animation index, used when the __Anim__ port is not
   connected.
 
-Frame 
+Rate 
 : A constant integer value for the animation rate, used when the __Rate__ port is not
   connected.
 

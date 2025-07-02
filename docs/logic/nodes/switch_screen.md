@@ -28,8 +28,7 @@ Flow Out
 ## Parameters
 
 Screen 
-: The screen to get the variable value from, a dropdown will present a list of
-  available screens to choose from.
+: The screen to switch to.
 
 
 

@@ -48,7 +48,7 @@ P2
 ## Parameters
 
 ID 
-: *On Message Nodes* have a single additional parameter, __ID. This is the 
+: *On Message Nodes* have a single additional parameter, __ID__. This is the 
   message ID that the flow will respond to. It is sent as part of the *Message*
   send nodes. Using this ID it is possible to have multiple flows on an object,
   room, screen or in the global logic that respond to different messages,

@@ -32,7 +32,7 @@ Flow Out
 ID 
 : An integer input port used to provide ID of the message, this controls which
   flow on the global object will handle the message, only [On Message](./on_message.md)
-  flows with a matchin ID will be executed.
+  flows with a matching ID will be executed.
 
 P1 
 : An integer input port used to provide an arbitrary parameter to the handler, the

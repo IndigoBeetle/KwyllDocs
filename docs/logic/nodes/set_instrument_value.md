@@ -4,10 +4,9 @@
 ## Description
 
 ![Set Instrument Node](../../assets/nodes/set_instrument_value.png){align=left width="25%"}
-The *Set Instrument Node* takes input values X and Y that specify a position 
-on the map and will change to the [Location](../../introduction/terminology.md#locations)
-at that point on the map if there is one. If there is no location at the specified
-coordinates, nothing happens.
+The *Set Instrument Node* sets the value of an instrument on a screen. The 
+screen is chosen from a fixed list of screens, the instrument is referenced 
+by an index into the list of instruments on that screen.
 
 <br style="clear:left"/>
   

@@ -42,7 +42,7 @@ Paper
 : An integer input port used to provide the paper colour index.
 
 Bright 
-: An integer input port used to provide the brightness setting, 0 is non-bright, and
+: An integer input port used to provide the brightness setting, 0 is non-bright, any
   other value is bright.
 
 -------
@@ -59,5 +59,5 @@ Paper
 
 Bright
 : A checkbox to select whether the object will be bright or not. The checkbox
-  with the __X__ above indicates that the brightness of the tiles should not be changed.
+  with the __X__ above indicates that the brightness of the object should not be changed.
 

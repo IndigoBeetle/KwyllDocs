@@ -8,8 +8,8 @@ The *Tile To Pixel Node* takes input values X and Y that specify a position
 in tile coordinates and converts them into pixel coordinates.
 
 The coordinate system of the input, room or map, is not important, the conversion
-simply takes the pixel coordinate and returns the pixel coordinate for the tile
-at the position, irrespective of whether it is on screen, in the room, or not.
+simply takes the tile coordinate and returns the pixel coordinate for the top left
+pixel of the tile, irrespective of whether it is on screen, in the room, or not.
 
 <br style="clear:left"/>
   

@@ -5,7 +5,7 @@
 
 ![Compare Node](../../assets/nodes/compare.png){align=left width="25%"}
 The *Compare Node* performs a comparison between two input values and 
-returns 0 if the comparison is fails, or 1 if it succeeds. 
+returns 0 if the comparison fails, or 1 if it succeeds. 
 
 <br style="clear:left"/>
   
@@ -34,8 +34,8 @@ B
   connected.
 
 Comparison
-: The type of comparison to perform, this can be any one of "equals", 
-  "greater than", "less than", "greater or equal", "less or equal", or
-  "not equal".
+: The type of comparison to perform, this can be any one of __Equals__, 
+  __Greater Than__, __Less Than__, __Greater or Equal__, __Less or Equal__, or
+  __Not Equal__.
 
 

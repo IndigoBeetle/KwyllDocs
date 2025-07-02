@@ -21,9 +21,9 @@ Ref
   used.
 
 Location 
-: A location reference port that provides a reference to the location that the
-  provided coordinates are relative to. If not connected, and the logic is on
-  a location, the current location will be used.
+: A location reference port that provides a reference to the 
+  [Location](../../introduction/terminology#locations) contains the marker to query.
+  If not connected, and the logic is on a location, the current location will be used.
 
 Marker
 : An integer input port that provides the index of the marker to query.

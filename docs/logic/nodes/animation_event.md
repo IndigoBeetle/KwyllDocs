@@ -6,7 +6,7 @@ The *Animation Event Node* is a specific type of *Node* called a __Trigger__. A
 trigger *Node* is an entrypoint into a flow in the Kwyll logic. The *Animation Event*
 trigger is connected to the timeline animation feature in the [Rooms
 Editor](../../interface/room_editor.md). It will run the flow that follows on
-from it's __Flow Out__ port when a the current timeline animation for this
+from it's __Flow Out__ port when the current timeline animation for this
 object hits a keyframe that has the *Trigger Event* checkbox selected. The
 __Frame__ and __T__ output ports provide the frame number of the keyframe in
 the timeline, and the *T* value specified in the editor respectively.

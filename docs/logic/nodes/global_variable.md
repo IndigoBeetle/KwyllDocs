@@ -2,7 +2,6 @@
 # Global Variable
 
 
-
 ## Description
 
 ![Global Variable Node](../../assets/nodes/global_variable.png){align=left width="25%"}
@@ -24,6 +23,6 @@ the global [Logic](../../introduction/terminology.md#logic).
 
 ## Parameters
 
-Variable 
+*Variable*
 : A dropdown listing the defined variables associated with the global logic graph.
 

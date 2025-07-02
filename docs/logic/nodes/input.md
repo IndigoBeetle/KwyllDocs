@@ -18,10 +18,9 @@ the use of sub graphs.
 
 ## Ports
 
-Out
+*Out*
 : An output port, the value passed into the matching named port on the sub graph
-  node will be provided here to the rest of the nodes in the sub graph that need
-  it.
+  node will be provided here to the rest of the nodes in the sub graph.
 
 
 -------

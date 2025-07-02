@@ -43,7 +43,7 @@ B
 : A constant integer value for the B operand, used when the __B__ port is not
   connected.
 
-Comparison
+*Comparison*
 : The type of comparison to perform, this can be any one of "equals", 
   "greater than", "less than", "greater or equal", "less or equal", or
   "not equal".

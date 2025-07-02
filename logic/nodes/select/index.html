@@ -2525,18 +2525,13 @@
 <h1 id="select">Select<a class="headerlink" href="#select" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="../../../assets/nodes/select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Select Node" src="../../../assets/nodes/select.png" width="25%" /></a>
-The <em>Select Node</em> takes an index value and returns the corrent entry from
+The <em>Select Node</em> takes an index value and returns the appropriate entry from
 a fixed list of integer values added to the node. Values are added using the 
 plus button, and can be reordered and removed using the buttons next to each
 list entry.</p>
 <p>The <strong>Mode</strong> parameter defines what the node will do if the provided index 
-is out of range for the number of items in the list. If it is set to <strong>Wrap</strong>
-any index greater than or equal to the number of items, as the index is zero
-based, will roll back round to the start again, so in a list with 3 items, if the 
-index provided was 4, the list entry at index 1 (the second in the list) will 
-be returned. Similarly, values less than 0 will roll round to the end of the list.
-If the <strong>Mode</strong> is <strong>Clamp</strong>, out of range values will be limited to 0 and 
-the number of items minus 1.</p>
+is out of range for the number of items in the list. See the <a href="../wrap/">Wrap</a>
+and <a href="../clamp/">Clamp</a> nodes for details of how the two modes work.</p>
 <p><br style="clear:left"/></p>
 <hr />
 <h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>

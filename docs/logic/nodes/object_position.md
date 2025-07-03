@@ -1,20 +1,19 @@
 
-# Instance Data
+# Object Position
 
 
 ## Description
 
-![Instance Data Node](../../assets/nodes/instance_data.png){align=left width="25%"}
-The *Instance Data Node* provides useful information about the current [Object
+![Object Position Node](../../assets/nodes/object_position.png){align=left width="25%"}
+The *Object Position Node* provides position information about the current [Object
 Reference](../../introduction/terminology.md#objects) that the logic graph is
-running on. This is information that is unique to each reference of the object
-type, much like variables, but for accessing common data that all object
-references have.
+running on. 
 
-Note: the position data is returned in the appropriate coordinate system for
-the object being referenced. A global or dynamic object will return coordinates
-in "map" space, a room object will return coordinates in the local space of the
-room.
+!!! note
+    The position data is returned in the appropriate coordinate system for
+    the object being referenced. A global or dynamic object will return coordinates
+    in "map" space, a room object will return coordinates in the local space of the
+    room.
 
 <br style="clear:left"/>
   

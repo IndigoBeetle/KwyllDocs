@@ -10,13 +10,13 @@
         <meta name="author" content="Paul Gregory">
       
       
-        <link rel="canonical" href="https://docs.kwyll.com/logic/nodes/instance_data/">
+        <link rel="canonical" href="https://docs.kwyll.com/logic/nodes/object_position/">
       
       
-        <link rel="prev" href="../input/">
+        <link rel="prev" href="../object_hit/">
       
       
-        <link rel="next" href="../is_on_screen/">
+        <link rel="next" href="../object_variable/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Instance Data - Kwyll User Documentation</title>
+        <title>Object Position - Kwyll User Documentation</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#instance-data" class="md-skip">
+        <a href="#object-position" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Instance Data
+              Object Position
             
           </span>
         </div>
@@ -1263,85 +1263,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Instance Data
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Instance Data
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ports
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -1690,6 +1611,85 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Object Position
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Object Position
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2504,18 +2504,19 @@
                   
 
 
-<h1 id="instance-data">Instance Data<a class="headerlink" href="#instance-data" title="Permanent link">&para;</a></h1>
+<h1 id="object-position">Object Position<a class="headerlink" href="#object-position" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="../../../assets/nodes/instance_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Instance Data Node" src="../../../assets/nodes/instance_data.png" width="25%" /></a>
-The <em>Instance Data Node</em> provides useful information about the current <a href="../../../introduction/terminology/#objects">Object
+<p><a class="glightbox" href="../../../assets/nodes/object_position.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Object Position Node" src="../../../assets/nodes/object_position.png" width="25%" /></a>
+The <em>Object Position Node</em> provides position information about the current <a href="../../../introduction/terminology/#objects">Object
 Reference</a> that the logic graph is
-running on. This is information that is unique to each reference of the object
-type, much like variables, but for accessing common data that all object
-references have.</p>
-<p>Note: the position data is returned in the appropriate coordinate system for
+running on. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The position data is returned in the appropriate coordinate system for
 the object being referenced. A global or dynamic object will return coordinates
 in "map" space, a room object will return coordinates in the local space of the
 room.</p>
+</div>
 <p><br style="clear:left"/></p>
 <hr />
 <h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>

@@ -22,7 +22,7 @@ Each node has an optional set of input and output *Ports* which can be
 of different types depending on their purpose, and a set of
 *Parameters* which configure the operation of the *Node*.
 
-![A Node](../assets/nodes/intcomparison_node.png){ align=left width="30%"} This 
+![A Node](../assets/nodes/if.png){ align=left width="30%"} This 
 is a relatively simple *Node* that demonstrates most of the key features of a
 logic Node. Here you can see on the left of the *Node*; 3 input *Ports*, one
 with a double arrow at the top, and two green ones below. The double arrow port
@@ -39,7 +39,7 @@ another *Node* to the input *Port* B, the numerical input field will be hidden
 as it is no longer necessary. On the right of the *Node* are the output ports,
 in this example there are two *Flow Ports*, True and False. This *Node* is a
 "branching" node, it will perform a comparison of the two values A and B using
-the specified comparison type, for example "equal". If the comparison results
+the specified comparison type, for example "Equals". If the comparison results
 in a true result, i.e. the two values are equal, the flow will follow whatever
 is connected to the True output *Port*, if anything. If the comparison is
 false, A and B are not equal, the flow will follow the False output *Port*.
@@ -53,18 +53,19 @@ __or__ *Parameter* you can choose how this value is set depeneding upon your
 needs, and the comparison type is a *Parameter*, you must choose this value
 when editing and it cannot change at runtime.
 
-![Math Node](../assets/nodes/math_node.png){align=right width="30%"} Some nodes
+![Math Node](../assets/nodes/math.png){align=right width="30%"} Some nodes
 will have no *Flow* ports at all, this means the *Node* is not meant to be part
 of the flow, but instead is meant to provide data to other nodes that are part
 of the flow. These *Nodes* will have output data *Ports* that can be connected
-to the input data *Ports* of other *Nodes*, when a *Node* that is part of a
+to the input data *Ports* of other *Nodes*. When a *Node* that is part of a
 flow has a wire connecting one of its input *Ports* to the output *Port* of
 another *Node*, it will request the value from the other *Node* when it needs
 it.
 
 *Nodes* that are in a logic graph but not connected to a valid *Flow* or
 have output *Ports* that are not connected to anything, will not
-contribute to the program and will not be exported.
+contribute to the program and will not be exported, but they will be saved with
+the game data should you need to access them in the future.
 
 There are several types of data that can be passed between logic nodes in Kwyll, 
 each with a unique colour for the port and wires that connect them.
@@ -81,7 +82,17 @@ Location
 : Shown as <span style="color:magenta;">magenta</span>, a reference to a location 
   on the map.
 
+Typically a *Port* will only allow connections from other *Ports* that have a
+matching type. However, some nodes do allow any type to be connected. Most 
+notable among these are the various variable access nodes. This is because it is
+possible in Kwyll to store any value type in a variable, not just a numeric
+value. The facility allows you to store references to objects and locations in
+variables for future reference.
 
+When two *Ports* of different types are connected, which Kwyll will only allow
+where it is valid, the wire connecting them will fade from one colour to the 
+other to indicate that the value being passed is different to what is normally
+expected but is valid all the same.
 
 ## Editing Nodes
 

@@ -47,8 +47,8 @@ menu functions, in order from left to right:
 ![](../assets/settings.png){width="32px"} Settings
 : Edit game settings. 
 
-![](../assets/about.png){width="32px"} Settings
-: Show information about the version and satus of your Kwyll installation. 
+![](../assets/about.png){width="32px"} Information
+: Show information about the version and status of your Kwyll installation. 
 
 
 ## Tabbed Area

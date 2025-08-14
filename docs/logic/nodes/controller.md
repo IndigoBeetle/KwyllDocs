@@ -76,5 +76,5 @@ Jump/Fire
 
 Mode
 : Define the mode of operation between *Pressed*, *Released*, *Just Pressed* and
-  *Just Released*. See the description of the node operation for an explanation
-  of the difference between the modes.
+  *Just Released*. See above for an explanation of the difference between the 
+  modes.

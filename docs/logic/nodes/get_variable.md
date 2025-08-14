@@ -8,16 +8,18 @@
 The *Get Variable Node* is used to get the integer value of a variable on
 whatever the current logic graph is running, i.e. a
 [Screen](../../introduction/terminology.md#screens), a
-[Room](../../introduction/terminology.md#rooms) or an
-[Object](../../introduction/terminology.md#objects).
+[Room](../../introduction/terminology.md#rooms), an
+[Object](../../introduction/terminology.md#objects), or the 
+[Global Logic](../../introduction/terminology.md#global-logic).
 
 It's important to understand that, in the case of
 [rooms](../../introduction/terminology.md#rooms) and
 [objects](../../introduction/terminology.md#objects) the value being accessed
-is the value for the chosen variable in the [Object
-Reference](../../introduction/terminology.md#objects) or
-[Location](../../introduction/terminology.md#locations), that is running the logic
-code, each reference has it's own copy of the variables, they are independent.
+is the value for the chosen variable in the 
+[Object Instance](../../introduction/terminology.md#objects) or
+[Location](../../introduction/terminology.md#locations), that is running the 
+logic code, each instance has its own copy of the variables, they are 
+independent.
 
 
 <br style="clear:left"/>

@@ -38,8 +38,11 @@ However, an *Object Definition* does not contribute to the game iself, it has to
 be used. Objects can be used in Rooms and the Map, each use shares the visual
 representation and logic code from the *Object Definition*, but each use 
 has its own position, values for the variables defined in the logic, [Timeline
-Animations](#timeline-animation), and any other information that might be
-specific to a particular platform. Objects can be used in the following ways.
+Animations](#timeline-animation), flags, and any other information that might be
+specific to a particular platform. Each use of a defined object is called an
+*Object Instance*.  
+
+Objects can be used in the following ways.
 
  - Map Objects - these are created in the [Map
    Editor](../interface/map_editor.md) and are constant throughout the game,
@@ -133,6 +136,59 @@ screen accordingly, a menu screen, instructions, and many others.
 
 
 ## Logic
+
+In a Kwyll game, much of the way a game plays is controlled by the game *Logic*.
+Kwyll provides a node based system for creating logic that is easy to 
+use and provides a more visual approach to programming than typical text based
+programming languages. It is described in more detail in the 
+[Logic](../logic/intro.md) section of this manual. 
+
+Logic can be used in various places in a kwyll game allowing lots of flexibility
+in how you structure your game. 
+
+### Object Logic
+
+Each [Object Definition](#objects) can have *Logic* assigned to it, this
+logic is shared with each *Object Instance* that uses the definition, allowing
+you to very efficiently define behaviour that is shared among many objects. 
+Object logic only runs for objects that are currently active, that includes any
+[Map](#map) level objects which are global and active all the time, any dynamic
+objects, and any room objects for the current location only.
+
+### Room Logic
+
+Each [Room Definition](#rooms) can have *Logic* assigned to it in the same way
+as an [Object Definition](#objects). Each [Location](#locations) that uses the
+room definition shares the logic in the same way an [Object Instance](#objects)
+does. Room logic only runs for the current [Location](#locations).
+
+### Screen Logic
+
+Each [Screen](#screens) can have *Logic* assigned to it, this is typically used 
+to manage the elements in the screen, primarily the instruments. Screen logic 
+only runs for the current screen.
+
+### Global Logic
+
+In addition to each of the individual locations listed above, a Kwyll game can 
+have some global logic that will execute all the time irrespective of location
+and screen.
+
+### Shared Logic
+
+Each of the logic locations listed above are potentially active logic sections,
+that means that Kwyll will run certain flows on them at the appropriate time, 
+for example the [Always](../logic/nodes/always.md) flows will run ever frame,
+the [Object Hit](../logic/nodes/object_hit.md) flows will run when an object
+intersection is detected. Shared logic is different. It offers a means to 
+created sections of logic that can be reused, effectively creating custom nodes.
+Shared logic consists of *Subgraphs* which are equivalent to subroutines in 
+many common programming languages. They can take an arbitrary number of inputs
+and output an arbitrary number of results.
+
+Subgraphs are a very powerful concept in Kwyll that gives both the ability to
+optimise and streamline your logic creation with custom nodes, and share those
+custom nodes with others.
 
 
 ## Timeline Animation

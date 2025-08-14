@@ -17,6 +17,6 @@ the sub graph node.
 
 Flow Out
 : The flow for the sub graph will begin with the node connected to this port.
-  The Flow Out nodes acts in a similar manner to __Trigger__ nodes, in that it has
+  The Flow In nodes acts in a similar manner to __Trigger__ nodes, in that it has
   no input flow, as it defines the entrypoint to a sub graph flow.
 

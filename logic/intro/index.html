@@ -1355,6 +1355,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/key_input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Key Input
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/keyframe_animation/" class="md-nav__link">
         
   
@@ -2504,7 +2525,7 @@ and parameters.</p>
 <p>Each node has an optional set of input and output <em>Ports</em> which can be
 of different types depending on their purpose, and a set of
 <em>Parameters</em> which configure the operation of the <em>Node</em>.</p>
-<p><a class="glightbox" href="../assets/nodes/intcomparison_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="A Node" src="../assets/nodes/intcomparison_node.png" width="30%" /></a> This 
+<p><a class="glightbox" href="../../assets/nodes/if.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="A Node" src="../../assets/nodes/if.png" width="30%" /></a> This 
 is a relatively simple <em>Node</em> that demonstrates most of the key features of a
 logic Node. Here you can see on the left of the <em>Node</em>; 3 input <em>Ports</em>, one
 with a double arrow at the top, and two green ones below. The double arrow port
@@ -2521,7 +2542,7 @@ another <em>Node</em> to the input <em>Port</em> B, the numerical input field wi
 as it is no longer necessary. On the right of the <em>Node</em> are the output ports,
 in this example there are two <em>Flow Ports</em>, True and False. This <em>Node</em> is a
 "branching" node, it will perform a comparison of the two values A and B using
-the specified comparison type, for example "equal". If the comparison results
+the specified comparison type, for example "Equals". If the comparison results
 in a true result, i.e. the two values are equal, the flow will follow whatever
 is connected to the True output <em>Port</em>, if anything. If the comparison is
 false, A and B are not equal, the flow will follow the False output <em>Port</em>.
@@ -2534,17 +2555,18 @@ is a <em>Port</em> only, it requires an input wire to work, B is an input <em>Po
 <strong>or</strong> <em>Parameter</em> you can choose how this value is set depeneding upon your
 needs, and the comparison type is a <em>Parameter</em>, you must choose this value
 when editing and it cannot change at runtime.</p>
-<p><a class="glightbox" href="../assets/nodes/math_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Math Node" src="../assets/nodes/math_node.png" width="30%" /></a> Some nodes
+<p><a class="glightbox" href="../../assets/nodes/math.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Math Node" src="../../assets/nodes/math.png" width="30%" /></a> Some nodes
 will have no <em>Flow</em> ports at all, this means the <em>Node</em> is not meant to be part
 of the flow, but instead is meant to provide data to other nodes that are part
 of the flow. These <em>Nodes</em> will have output data <em>Ports</em> that can be connected
-to the input data <em>Ports</em> of other <em>Nodes</em>, when a <em>Node</em> that is part of a
+to the input data <em>Ports</em> of other <em>Nodes</em>. When a <em>Node</em> that is part of a
 flow has a wire connecting one of its input <em>Ports</em> to the output <em>Port</em> of
 another <em>Node</em>, it will request the value from the other <em>Node</em> when it needs
 it.</p>
 <p><em>Nodes</em> that are in a logic graph but not connected to a valid <em>Flow</em> or
 have output <em>Ports</em> that are not connected to anything, will not
-contribute to the program and will not be exported.</p>
+contribute to the program and will not be exported, but they will be saved with
+the game data should you need to access them in the future.</p>
 <p>There are several types of data that can be passed between logic nodes in Kwyll, 
 each with a unique colour for the port and wires that connect them.</p>
 <dl>
@@ -2558,6 +2580,16 @@ each with a unique colour for the port and wires that connect them.</p>
 <dd>Shown as <span style="color:magenta;">magenta</span>, a reference to a location 
   on the map.</dd>
 </dl>
+<p>Typically a <em>Port</em> will only allow connections from other <em>Ports</em> that have a
+matching type. However, some nodes do allow any type to be connected. Most 
+notable among these are the various variable access nodes. This is because it is
+possible in Kwyll to store any value type in a variable, not just a numeric
+value. The facility allows you to store references to objects and locations in
+variables for future reference.</p>
+<p>When two <em>Ports</em> of different types are connected, which Kwyll will only allow
+where it is valid, the wire connecting them will fade from one colour to the 
+other to indicate that the value being passed is different to what is normally
+expected but is valid all the same.</p>
 <h2 id="editing-nodes">Editing Nodes<a class="headerlink" href="#editing-nodes" title="Permanent link">&para;</a></h2>
 <p>See the <a href="../../interface/logic_editor/">Logic Editor</a> for a detailed explanation
 of the tools for creating and editing logic graphs in Kwyll.</p>

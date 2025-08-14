@@ -420,6 +420,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1429,6 +1480,27 @@
   
   <span class="md-ellipsis">
     Is Type?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/nodes/key_input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Key Input
   </span>
   
 
@@ -2620,6 +2692,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2696,8 +2819,10 @@ colour and draw mode, and any <a href="#logic">Logic</a>. </p>
 be used. Objects can be used in Rooms and the Map, each use shares the visual
 representation and logic code from the <em>Object Definition</em>, but each use 
 has its own position, values for the variables defined in the logic, <a href="#timeline-animation">Timeline
-Animations</a>, and any other information that might be
-specific to a particular platform. Objects can be used in the following ways.</p>
+Animations</a>, flags, and any other information that might be
+specific to a particular platform. Each use of a defined object is called an
+<em>Object Instance</em>.  </p>
+<p>Objects can be used in the following ways.</p>
 <ul>
 <li>Map Objects - these are created in the <a href="../../interface/map_editor/">Map
    Editor</a> and are constant throughout the game,
@@ -2777,6 +2902,46 @@ include the main game screen which will have the game window positioned on the
 screen accordingly, a menu screen, instructions, and many others.</p>
 <h2 id="instruments">Instruments<a class="headerlink" href="#instruments" title="Permanent link">&para;</a></h2>
 <h2 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">&para;</a></h2>
+<p>In a Kwyll game, much of the way a game plays is controlled by the game <em>Logic</em>.
+Kwyll provides a node based system for creating logic that is easy to 
+use and provides a more visual approach to programming than typical text based
+programming languages. It is described in more detail in the 
+<a href="../../logic/intro/">Logic</a> section of this manual. </p>
+<p>Logic can be used in various places in a kwyll game allowing lots of flexibility
+in how you structure your game. </p>
+<h3 id="object-logic">Object Logic<a class="headerlink" href="#object-logic" title="Permanent link">&para;</a></h3>
+<p>Each <a href="#objects">Object Definition</a> can have <em>Logic</em> assigned to it, this
+logic is shared with each <em>Object Instance</em> that uses the definition, allowing
+you to very efficiently define behaviour that is shared among many objects. 
+Object logic only runs for objects that are currently active, that includes any
+<a href="#map">Map</a> level objects which are global and active all the time, any dynamic
+objects, and any room objects for the current location only.</p>
+<h3 id="room-logic">Room Logic<a class="headerlink" href="#room-logic" title="Permanent link">&para;</a></h3>
+<p>Each <a href="#rooms">Room Definition</a> can have <em>Logic</em> assigned to it in the same way
+as an <a href="#objects">Object Definition</a>. Each <a href="#locations">Location</a> that uses the
+room definition shares the logic in the same way an <a href="#objects">Object Instance</a>
+does. Room logic only runs for the current <a href="#locations">Location</a>.</p>
+<h3 id="screen-logic">Screen Logic<a class="headerlink" href="#screen-logic" title="Permanent link">&para;</a></h3>
+<p>Each <a href="#screens">Screen</a> can have <em>Logic</em> assigned to it, this is typically used 
+to manage the elements in the screen, primarily the instruments. Screen logic 
+only runs for the current screen.</p>
+<h3 id="global-logic">Global Logic<a class="headerlink" href="#global-logic" title="Permanent link">&para;</a></h3>
+<p>In addition to each of the individual locations listed above, a Kwyll game can 
+have some global logic that will execute all the time irrespective of location
+and screen.</p>
+<h3 id="shared-logic">Shared Logic<a class="headerlink" href="#shared-logic" title="Permanent link">&para;</a></h3>
+<p>Each of the logic locations listed above are potentially active logic sections,
+that means that Kwyll will run certain flows on them at the appropriate time, 
+for example the <a href="../../logic/nodes/always/">Always</a> flows will run ever frame,
+the <a href="../../logic/nodes/object_hit/">Object Hit</a> flows will run when an object
+intersection is detected. Shared logic is different. It offers a means to 
+created sections of logic that can be reused, effectively creating custom nodes.
+Shared logic consists of <em>Subgraphs</em> which are equivalent to subroutines in 
+many common programming languages. They can take an arbitrary number of inputs
+and output an arbitrary number of results.</p>
+<p>Subgraphs are a very powerful concept in Kwyll that gives both the ability to
+optimise and streamline your logic creation with custom nodes, and share those
+custom nodes with others.</p>
 <h2 id="timeline-animation">Timeline Animation<a class="headerlink" href="#timeline-animation" title="Permanent link">&para;</a></h2>
 <h2 id="locations">Locations<a class="headerlink" href="#locations" title="Permanent link">&para;</a></h2>
 <h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>

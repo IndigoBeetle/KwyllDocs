@@ -951,6 +951,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../configure_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controller/" class="md-nav__link">
         
   
@@ -1429,27 +1450,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_to_map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location To Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../location_variable/" class="md-nav__link">
         
   
@@ -1471,11 +1471,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../map_to_location/" class="md-nav__link">
+      <a href="../map_to_room/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Map To Location
+    Map To Room
   </span>
   
 
@@ -1639,11 +1639,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../modulo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../move_object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Move Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../not/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Not
   </span>
   
 
@@ -1686,6 +1728,27 @@
   
   <span class="md-ellipsis">
     Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_left/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Left
   </span>
   
 
@@ -1938,6 +2001,27 @@
   
   <span class="md-ellipsis">
     Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
   </span>
   
 
@@ -2332,6 +2416,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../wait_no_key/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wait No Key
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../while_loop/" class="md-nav__link">
         
   
@@ -2540,9 +2645,6 @@ output port.</p>
 <dd>An object reference port that provides a reference to the object to query the flags on.
   If this is not connected, and the logic is on an object, the current object will be
   used.</dd>
-<dt>Intersect Objects</dt>
-<dd>The value of the intersect objects flag. This is bit 2, if the flag is set the result
-  will be 4.</dd>
 <dt>Collide Bg</dt>
 <dd>The value of the collides with background flag. This is bit 1, if the flag is set the result
   will be 2.</dd>
@@ -2552,6 +2654,12 @@ output port.</p>
 <dt>Active</dt>
 <dd>The value of the active flag. This is bit 4, if the flag is set the result
   will be 16.</dd>
+<dt>On Layers</dt>
+<dd>A bit field representing the intersection layers this object belongs to, bits 0 to 7 represent
+  layers 0 to 7.</dd>
+<dt>Checks Layers</dt>
+<dd>A bit field representing the intersection layers this object will check for intersections with, 
+  bits 0 to 7 represent layers 0 to 7.</dd>
 </dl>
 
 

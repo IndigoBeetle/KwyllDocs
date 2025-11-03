@@ -951,6 +951,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../configure_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controller/" class="md-nav__link">
         
   
@@ -1371,27 +1392,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_to_map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location To Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../location_variable/" class="md-nav__link">
         
   
@@ -1413,11 +1413,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../map_to_location/" class="md-nav__link">
+      <a href="../map_to_room/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Map To Location
+    Map To Room
   </span>
   
 
@@ -1581,11 +1581,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../modulo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../move_object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Move Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../not/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Not
   </span>
   
 
@@ -1628,6 +1670,27 @@
   
   <span class="md-ellipsis">
     Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_left/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Left
   </span>
   
 
@@ -1880,6 +1943,27 @@
   
   <span class="md-ellipsis">
     Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
   </span>
   
 
@@ -2341,6 +2425,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../wait_no_key/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wait No Key
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../while_loop/" class="md-nav__link">
         
   
@@ -2571,9 +2676,6 @@ modified from its current state.</p>
 <dt>Ref</dt>
 <dd>An object reference port that provides a reference to the object to change ths flags
   of. If not connected, and the logic is on an object, the current object will be used.</dd>
-<dt>Intersect Objects</dt>
-<dd>An integer input port used to provide the value of the <em>Intersect Objects</em> flag, 0
-  is off, any other value is on.</dd>
 <dt>Collide Bg</dt>
 <dd>An integer input port used to provide the value of the <em>Collide Bg</em> flag, 0
   is off, any other value is on.</dd>
@@ -2583,6 +2685,12 @@ modified from its current state.</p>
 <dt>Active</dt>
 <dd>An integer input port used to provide the value of the <em>Active</em> flag, 0
   is off, any other value is on.</dd>
+<dt>On Layers</dt>
+<dd>A bit field representing the intersection layers this object belongs to, 
+  bits 0 to 7 represent layers 0 to 7.</dd>
+<dt>Checks Layers</dt>
+<dd>A bit field representing the intersection layers this object will check for intersections with, 
+  bits 0 to 7 represent layers 0 to 7.</dd>
 </dl>
 <hr />
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
@@ -2599,6 +2707,10 @@ modified from its current state.</p>
 <dt>Active</dt>
 <dd>A constant value for the <em>Active</em> flag, used when the <strong>Active</strong> 
   port is not connected. If the value is <strong>Leave</strong>, the flag state will not be changed.</dd>
+<dt>Ignore On Layers <em>(checkbox labelled 'x' next to the On Layers settings)</em></dt>
+<dd>If this flag is set, no changes will be made to the "On Layers" property of the object.</dd>
+<dt>Ignore Checks Layers <em>(checkbox labelled 'x' next to the Checks Layers settings)</em></dt>
+<dd>If this flag is set, no changes will be made to the "Checks Layers" property of the object.</dd>
 </dl>
 
 

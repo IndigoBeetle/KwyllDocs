@@ -1018,6 +1018,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../configure_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controller/" class="md-nav__link">
         
   
@@ -1438,27 +1459,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_to_map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location To Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../location_variable/" class="md-nav__link">
         
   
@@ -1480,11 +1480,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../map_to_location/" class="md-nav__link">
+      <a href="../map_to_room/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Map To Location
+    Map To Room
   </span>
   
 
@@ -1648,11 +1648,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../modulo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../move_object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Move Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../not/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Not
   </span>
   
 
@@ -1695,6 +1737,27 @@
   
   <span class="md-ellipsis">
     Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_left/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Left
   </span>
   
 
@@ -1947,6 +2010,27 @@
   
   <span class="md-ellipsis">
     Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
   </span>
   
 
@@ -2341,6 +2425,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../wait_no_key/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wait No Key
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../while_loop/" class="md-nav__link">
         
   
@@ -2549,7 +2654,9 @@
 The <em>Always Node</em> is a specific type of <em>Node</em> called a <strong>Trigger</strong>. A trigger
 <em>Node</em> is an entrypoint into a flow in the Kwyll logic. The <em>Always</em> trigger is
 the most commonly used trigger node, it will run the flow that follows on from
-it's <strong>Flow Out</strong> port every frame of the game.  </p>
+it's <strong>Flow Out</strong> port every update of the game unless the <em>Skip</em> parameter is
+set to a non-zero positive value, in which case it will skip that many updates
+before running the flow, and then start again.</p>
 <p><br style="clear:left"/></p>
 <hr />
 <h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
@@ -2563,11 +2670,15 @@ it's <strong>Flow Out</strong> port every frame of the game.  </p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <dl>
 <dt>Order</dt>
-<dd><em>Always Nodes</em> have a single additional parameter, <strong>order</strong>. This is
-  used to define the order in which multiple <em>Always Nodes</em> in a single
-  logic program will be processed, in case there is some dependency
-  between flows. If there are multiple <em>Always Nodes</em> with the same order,
-  they will be processed together in an arbitrary order.</dd>
+<dd>This is used to define the order in which multiple <em>Always Nodes</em> in a single
+  logic program will be processed, in case there is some dependency between
+  flows. If there are multiple <em>Always Nodes</em> with the same order, they will be
+  processed together in an arbitrary order.</dd>
+<dt>Skip</dt>
+<dd>This parameter is used to delay the execution of the flow for a specified 
+  number of frames. If it is zero, the flow will run on every update as normal,
+  any non-zero positive number will skip that many updates before running the
+  flow.</dd>
 </dl>
 
 

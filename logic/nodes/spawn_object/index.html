@@ -951,6 +951,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../configure_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controller/" class="md-nav__link">
         
   
@@ -1371,27 +1392,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_to_map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location To Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../location_variable/" class="md-nav__link">
         
   
@@ -1413,11 +1413,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../map_to_location/" class="md-nav__link">
+      <a href="../map_to_room/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Map To Location
+    Map To Room
   </span>
   
 
@@ -1581,11 +1581,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../modulo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../move_object/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Move Object
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../not/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Not
   </span>
   
 
@@ -1628,6 +1670,27 @@
   
   <span class="md-ellipsis">
     Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_left/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Left
   </span>
   
 
@@ -1880,6 +1943,27 @@
   
   <span class="md-ellipsis">
     Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
   </span>
   
 
@@ -2341,6 +2425,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../wait_no_key/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wait No Key
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../while_loop/" class="md-nav__link">
         
   
@@ -2575,6 +2680,10 @@ the spawn fails, this port value is undefined and should not be used.</p>
 <dd>An integer input port used to provide the X value of the map coordinate.</dd>
 <dt>Y</dt>
 <dd>An integer input port used to provide the Y value of the map coordinate.</dd>
+<dt>Plane</dt>
+<dd>An integer input port used to provide the plane on which the object's sprite
+  will render. See <a href="../../../introduction/terminology/#planes">Planes</a> for 
+  more information about sprite planes.</dd>
 <dt>Spawn Ref</dt>
 <dd>An object reference output port that provides a reference to the spawned object
   if the operation succeeded.</dd>
@@ -2588,6 +2697,9 @@ the spawn fails, this port value is undefined and should not be used.</p>
 <dt>Y</dt>
 <dd>A constant integer value for the Y coordinate, used when the <strong>Y</strong> port is not
   connected.</dd>
+<dt>Plane</dt>
+<dd>A constant integer value for the plane, used when the <strong>Plane</strong> port is not
+  connected</dd>
 <dt><em>Object Definition</em></dt>
 <dd>A dropdown will provide a list of possible object types to choose from to spawn.</dd>
 </dl>

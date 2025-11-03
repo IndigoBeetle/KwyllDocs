@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://docs.kwyll.com/logic/nodes/move_object/">
       
       
-        <link rel="prev" href="../modify_tiles/">
+        <link rel="prev" href="../modulo/">
       
       
-        <link rel="next" href="../number/">
+        <link rel="next" href="../not/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -951,6 +951,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../configure_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../controller/" class="md-nav__link">
         
   
@@ -1371,27 +1392,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_to_map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location To Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../location_variable/" class="md-nav__link">
         
   
@@ -1413,11 +1413,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../map_to_location/" class="md-nav__link">
+      <a href="../map_to_room/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Map To Location
+    Map To Room
   </span>
   
 
@@ -1578,6 +1578,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1669,6 +1690,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../not/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Not
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../number/" class="md-nav__link">
         
   
@@ -1695,6 +1737,27 @@
   
   <span class="md-ellipsis">
     Object Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object_left/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Left
   </span>
   
 
@@ -1947,6 +2010,27 @@
   
   <span class="md-ellipsis">
     Room Exited
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room_to_map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Room To Map
   </span>
   
 
@@ -2341,6 +2425,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../wait_no_key/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wait No Key
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../while_loop/" class="md-nav__link">
         
   
@@ -2551,11 +2656,7 @@ to move the specified object to. </p>
 <p>When moving an object using this node, if the object has the <em>Collide Bg</em>
 <a href="../../object_flags.md">flag</a> enabled, the node will check if the movement
 results in a collision with the background tilemap and prevent it, resulting
-in a different endpoint to the requested one. If the object has the
-<em>Intersect Objects</em> <a href="../../object_flags.md">flag</a> enabled, the node will check
-if the final position results in it intersecting any other objects that have
-the same flag enabled. Any such intersections will result in the
-<a href="../object_hit/">Object Hit</a> flows on both objects being executed immediately.</p>
+in a different endpoint to the requested one. </p>
 <p>The X and Y coordinates are in the coordinate system that is appropriate for the
 object being moved. If the object is a room object, it expects the position to
 be in room coordinates, if it is a map object, it expects it to be in map 

@@ -611,6 +611,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1056,6 +1077,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../for_each_tile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Each Tile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get_global_object/" class="md-nav__link">
         
   
@@ -1392,27 +1434,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../map_to_room/" class="md-nav__link">
         
   
@@ -1560,27 +1581,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../modify_tiles/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Modify Tiles
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../modulo/" class="md-nav__link">
         
   
@@ -1712,27 +1712,6 @@
   
   <span class="md-ellipsis">
     Object Position
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../object_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Object Variable
   </span>
   
 
@@ -1980,27 +1959,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../screen_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Screen Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../select/" class="md-nav__link">
         
   
@@ -2064,27 +2022,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_location_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Set Location Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../set_object_colour/" class="md-nav__link">
         
   
@@ -2127,11 +2064,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_object_variable/" class="md-nav__link">
+      <a href="../set_tile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set Object Variable
+    Set Tile
   </span>
   
 
@@ -2148,11 +2085,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_screen_variable/" class="md-nav__link">
+      <a href="../set_tile_collision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set Screen Variable
+    Set Tile Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set_tile_colour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Tile Colour
   </span>
   
 
@@ -2300,6 +2258,27 @@
   
   <span class="md-ellipsis">
     Tile To Pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../touch_tile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Touch Tile
   </span>
   
 
@@ -2652,7 +2631,7 @@
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="../../../assets/nodes/transport_to_marker.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Transport To Marker Node" src="../../../assets/nodes/transport_to_marker.png" width="25%" /></a>
 The <em>Transport To Marker Node</em> queries the position of a 
-<a href="../../../introduction/terminology/#rooms">Marker</a> in a given location, and immediately
+<a href="../../../introduction/terminology/#room-types">Marker</a> in a given location, and immediately
 transports the given object to that location, taking into account whether the object is
 a room object or a map object.</p>
 <p><br style="clear:left"/></p>
@@ -2665,7 +2644,7 @@ a room object or a map object.</p>
   used.</dd>
 <dt>Location</dt>
 <dd>A location reference port that provides a reference to the 
-  <a href="../../introduction/terminology#locations">Location</a> contains the marker to query.
+  <a href="../../../introduction/terminology/#locations">Location</a> contains the marker to query.
   If not connected, and the logic is on a location, the current location will be used.</dd>
 <dt>Marker</dt>
 <dd>An integer input port that provides the index of the marker to query.</dd>

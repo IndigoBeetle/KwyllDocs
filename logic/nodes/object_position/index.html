@@ -16,7 +16,7 @@
         <link rel="prev" href="../object_left/">
       
       
-        <link rel="next" href="../object_variable/">
+        <link rel="next" href="../on_message/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -611,6 +611,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interface/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1056,6 +1077,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../for_each_tile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Each Tile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../get_global_object/" class="md-nav__link">
         
   
@@ -1392,27 +1434,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../location_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Location Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../map_to_room/" class="md-nav__link">
         
   
@@ -1544,27 +1565,6 @@
   
   <span class="md-ellipsis">
     Message Screen
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../modify_tiles/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Modify Tiles
   </span>
   
 
@@ -1774,27 +1774,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../object_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Object Variable
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2038,27 +2017,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../screen_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Screen Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../select/" class="md-nav__link">
         
   
@@ -2122,27 +2080,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_location_variable/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Set Location Variable
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../set_object_colour/" class="md-nav__link">
         
   
@@ -2185,11 +2122,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_object_variable/" class="md-nav__link">
+      <a href="../set_tile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set Object Variable
+    Set Tile
   </span>
   
 
@@ -2206,11 +2143,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../set_screen_variable/" class="md-nav__link">
+      <a href="../set_tile_collision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set Screen Variable
+    Set Tile Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set_tile_colour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Tile Colour
   </span>
   
 
@@ -2358,6 +2316,27 @@
   
   <span class="md-ellipsis">
     Tile To Pixel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../touch_tile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Touch Tile
   </span>
   
 
@@ -2633,8 +2612,8 @@
 <h1 id="object-position">Object Position<a class="headerlink" href="#object-position" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="../../../assets/nodes/object_position.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Object Position Node" src="../../../assets/nodes/object_position.png" width="25%" /></a>
-The <em>Object Position Node</em> provides position information about the current <a href="../../../introduction/terminology/#objects">Object
-Reference</a> that the logic graph is
+The <em>Object Position Node</em> provides position information about the current 
+<a href="../../../introduction/terminology/#object-instances">Object Instance</a> that the logic graph is
 running on. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2650,7 +2629,7 @@ room.</p>
 <dt>Ref</dt>
 <dd>An Object Reference input port that can provide an object that will be used
   to lookup the instance data. If this is not connected and the logic is on
-  an <a href="../../../introduction/terminology/#objects">Object</a>, the current object
+  an <a href="../../../introduction/terminology/#object-instances">Object</a>, the current object
   will be used instead. If the logic is not on an object, 0 will be returned
   on all output ports.</dd>
 <dt>Start X</dt>

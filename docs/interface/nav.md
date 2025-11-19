@@ -10,3 +10,4 @@
  * [Preview](preview.md)
  * [Assets Panel](assets_panel.md)
  * [Tilemap Editor](tilemap_editor.md)
+ * [Settings](settings.md)

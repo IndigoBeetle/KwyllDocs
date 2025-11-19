@@ -5,17 +5,12 @@
 ## Description
 
 ![Sub Graph Node](../../assets/nodes/sub_graph.png){align=left width="25%"}
-The *Subgraph Node* is a dynamic node that represents a separate graph contained
-within it. The input and output ports on the *Sub Graph Node* will depend on the
-contents of the contained graph, specifically the use of [Input](./input.md) and
-[Output](./output.md) nodes. 
+The *Subgraph Node* is a means to "call" a subgraph flow defined in the Shared
+Logic editor. The input and output ports on the *Sub Graph Node* will depend on the
+contents of the Subgraph it is calling. 
 
-The node has an additional button not present on any other nodes, the down arrow
-on the top right of the node. Selecting this will open the graph contained within
-the sub graph for editing.
-
-See [Sub Graphs](../../concepts/logic.md#subgraphs) for more information regarding
-the use of sub graphs.
+See [Shared Logic](../../introduction/logic/logic.md#shared-logic) for more
+information regarding the use of Subgraphs.
 
 <br style="clear:left"/>
   

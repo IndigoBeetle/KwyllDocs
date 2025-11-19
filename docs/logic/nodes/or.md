@@ -1,26 +1,38 @@
-
 # Or
 
 ## Description
 
 ![Or Node](../../assets/nodes/or.png){align=left width="25%"}
-The *Or Node* takes two inputs of type integer and compares them with 0. If
-either or both are not 0, the output will be 1, if both are 0, the output will
-be 0. 
+The *Or Node* takes two inputs of type integer and performs either a logical
+or bitwise OR operation on them before providing the result on the *Out* port.
 
-This is useful to combine checks, in particular with the [Compare](compare.md) node.
+If the *Logical* flag is set, the node will consider any non-zero value as "true" 
+and 0 as false for both parameters, and output a 1 if either are true otherwise 0.
+
+If the *Logical* flag is clear, the node will peform a bitwise OR on the two 
+16 bit integer parameters, resulting in a 16 bit integer where each bit is set 
+if either parameters have that same bit set.
+
+-------
+
+## Ports
+
+A and B
+: The two input values, they must be linked for the node to be operational and
+  can only be connected to sources that provide an integer value, such as
+  [Get](get_variable.md).
+
+Out  
+: The output of the node.
 
 
-## Ports {: style="clear:left" }
+-------
 
-### A and B
+## Parameters
 
-The two input values, they must be linked for the node to be operational and
-can only be connected to sources that provide an integer value, such as
-[Get](get_variable.md).
+B 
+: A constant integer value for the right operand, used when the __B__ port is not
+  connected.
 
-### Out
-
-The output of the node, will be either 1 or 0 depending on the result of the
-compare.
-
+*Logical*
+: This defines whether the OR is to be performed as a logical or bitwise OR. 

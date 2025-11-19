@@ -8,13 +8,10 @@ The *Move Object Node* takes input values X and Y that specify a position
 to move the specified object to. 
 
 When moving an object using this node, if the object has the *Collide Bg*
-[flag](../../object_flags.md) enabled, the node will check if the movement
-results in a collision with the background tilemap and prevent it, resulting
-in a different endpoint to the requested one. If the object has the
-*Intersect Objects* [flag](../../object_flags.md) enabled, the node will check
-if the final position results in it intersecting any other objects that have
-the same flag enabled. Any such intersections will result in the
-[Object Hit](./object_hit.md) flows on both objects being executed immediately.
+[flag](../../introduction/objects/object_instances.md#object-properties)
+enabled, the node will check if the movement results in a collision with the
+background tilemap and prevent it, resulting in a different endpoint to the
+requested one. 
 
 The X and Y coordinates are in the coordinate system that is appropriate for the
 object being moved. If the object is a room object, it expects the position to

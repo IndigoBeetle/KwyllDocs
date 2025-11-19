@@ -36,10 +36,6 @@ Ref
 : An object reference port that provides a reference to the object to change ths flags
   of. If not connected, and the logic is on an object, the current object will be used.
 
-Intersect Objects
-: An integer input port used to provide the value of the *Intersect Objects* flag, 0
-  is off, any other value is on.
-
 Collide Bg
 : An integer input port used to provide the value of the *Collide Bg* flag, 0
   is off, any other value is on.
@@ -51,6 +47,14 @@ Visible
 Active
 : An integer input port used to provide the value of the *Active* flag, 0
   is off, any other value is on.
+
+On Layers
+: A bit field representing the intersection layers this object belongs to, 
+  bits 0 to 7 represent layers 0 to 7.
+
+Checks Layers
+: A bit field representing the intersection layers this object will check for intersections with, 
+  bits 0 to 7 represent layers 0 to 7.
 
 -------
 
@@ -71,3 +75,9 @@ Visible
 Active 
 : A constant value for the *Active* flag, used when the __Active__ 
   port is not connected. If the value is __Leave__, the flag state will not be changed.
+
+Ignore On Layers *(checkbox labelled 'x' next to the On Layers settings)*
+: If this flag is set, no changes will be made to the "On Layers" property of the object.
+
+Ignore Checks Layers *(checkbox labelled 'x' next to the Checks Layers settings)*
+: If this flag is set, no changes will be made to the "Checks Layers" property of the object.

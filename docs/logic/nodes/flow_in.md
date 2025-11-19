@@ -3,10 +3,11 @@
 
 ## Description
 
-![Flow In Node](../../assets/nodes/flow_in.png){align=left width="25%"}
-The *Flow In Node* is only used in [Sub Graphs](../../concepts/logic.md#subgraphs). 
-It marks the entrypoint for a flow contained in a sub graph. When a sub graph is used
-in another flow, this is the point that the execution continues when entering
+![Flow In Node](../../assets/nodes/flow_in.png){align=left width="25%"} The
+*Flow In Node* is only used in [Sub
+Graphs](../../introduction/logic/logic.md#shared-logic). It marks the
+entrypoint for a flow contained in a sub graph. When a sub graph is used in
+another flow, this is the point that the execution continues when entering
 the sub graph node. 
 
 <br style="clear:left"/>

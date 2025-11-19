@@ -5,7 +5,7 @@
 
 ![Is Type? Node](../../assets/nodes/is_type.png){align=left width="25%"}
 The *Is Type Node* takes a reference to an object and checks if it uses
-the given [object definition](../../concepts/objects.md). It will continue
+the given [object definition](../../introduction/terminology.md#object-types). It will continue
 executing in one of the __True__ or __False__ paths depending on the 
 outcome of the test.
 

@@ -3,13 +3,13 @@
 
 ## Description
 
-![Input Node](../../assets/nodes/input.png){align=left width="25%"}
-The *Input Node* represents an input value to a 
-[Sub Graph](../../concepts/logic.md#subgraphs). The provided name is used on the 
-sub graph node as the name for the input port that provides the value into the
-rest of the sub graph flow.
+![Input Node](../../assets/nodes/input.png){align=left width="25%"} The *Input
+Node* represents an input value to a [Sub
+Graph](../../introduction/logic/logic.md#shared-logic). The provided name is
+used on the sub graph node as the name for the input port that provides the
+value into the rest of the sub graph flow.
 
-See [Sub Graphs](../../concepts/logic.md#subgraphs) for more information regarding
+See [Shared Logic](../../introduction/logic/logic.md#shared-logic) for more information regarding
 the use of sub graphs.
 
 <br style="clear:left"/>

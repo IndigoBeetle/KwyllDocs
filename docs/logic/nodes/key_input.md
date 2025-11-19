@@ -26,7 +26,7 @@ again until the player releases that input and then activates it again.
 : An integer output port that will report the result of checking the state of the
   key based on the mode. If node is configured to check for a specific key, the
   output will be 0 or 1. If the node is configured to check for any key, the
-  output will be the [Keycode](../../introduction/terminology.md#keycode) of 
+  output will be the [Keycode](../../introduction/terminology.md#keycodes) of 
   the first key that is found to be in the configured state, *Pressed*, 
   *Released*, *Just Pressed* or *Just Released*.
 

@@ -5,8 +5,8 @@
 ## Description
 
 ![Get Global Object Node](../../assets/nodes/get_global_object.png){align=left width="25%"}
-The *Get Global Object Node* is used to get an [Object
-Reference](../../introduction/terminology.md#objects) to a global object for
+The *Get Global Object Node* is used to get an 
+[Object Instance](../../introduction/terminology.md#object-instances) to a global object for
 use further down the graph in other nodes that accept a *Ref* input. This
 allows you to directly affect global objects, moving them, etc.
 

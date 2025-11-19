@@ -8,14 +8,14 @@
 The *Set Variable Node* is used to set the integer value of a variable on
 whatever the current logic graph is running, i.e. a
 [Screen](../../introduction/terminology.md#screens), a
-[Room](../../introduction/terminology.md#rooms) or an
-[Object](../../introduction/terminology.md#objects).
+[Room](../../introduction/terminology.md#room-types) or an
+[Object](../../introduction/terminology.md#object-types).
 
 It's important to understand that, in the case of
-[rooms](../../introduction/terminology.md#rooms) and
-[objects](../../introduction/terminology.md#objects) the value being modified
-is the value for the chosen variable in the [Object
-Reference](../../introduction/terminology.md#objects) or
+[rooms](../../introduction/terminology.md#room-types) and
+[objects](../../introduction/terminology.md#object-types) the value being modified
+is the value for the chosen variable in the 
+[Object Instance](../../introduction/terminology.md#object-instances) or
 [Location](../../introduction/terminology.md#locations), that is running the logic
 code, each reference has it's own version of the variables, so changing a
 variable on one reference for a particular object type will not affect the

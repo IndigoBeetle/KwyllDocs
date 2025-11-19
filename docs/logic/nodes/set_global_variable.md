@@ -28,6 +28,10 @@ Value
 : An integer input port used to provide the value that will be applied to the
   chosen variable.
 
+Index
+: An integer value for choosing which element in an Array variable to change. If the
+  variable being accessed is not an Array variable, this parameter is ignored.
+
 
 -------
 
@@ -41,3 +45,5 @@ Value
 *Variable*
 : A dropdown listing the defined variable names on the global logic graph.
 
+Index
+: A constant integer for the Array index if the __Index__ port is not connected.

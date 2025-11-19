@@ -30,6 +30,10 @@ By
 : An integer input port used to provide the amount that the variable will be 
   changed by, this can be positive or negative. 
 
+Index
+: An integer value for choosing which element in an Array variable to change. If the
+  variable being accessed is not an Array variable, this parameter is ignored.
+
 
 -------
 
@@ -42,3 +46,5 @@ By
 *Variable*
 : A dropdown listing the defined variables associated with the current logic graph.
 
+Index
+: A constant integer for the Array index if the __Index__ port is not connected.

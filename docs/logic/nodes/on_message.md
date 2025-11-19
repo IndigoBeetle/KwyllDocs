@@ -6,8 +6,8 @@
 The *On Message Node* is a specific type of *Node* called a __Trigger__. A
 trigger *Node* is an entrypoint into a flow in the Kwyll logic. The *On
 Message* trigger is triggered manually within another flow by using the
-[Message Room](./message_room.md), [Message Object](./message_object.md),
-[Message Screen](./message_screen.md) or [Message Global](./message_global.md)
+[Message Location](./message_location.md), [Message Object](./message_object.md),
+[Message Screen](./message_screen.md) or [Message Game Logic](./message_global_logic.md)
 nodes.  
 
 A message consists of 3 parts, an ID and two optional parameters. The send

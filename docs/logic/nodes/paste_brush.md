@@ -6,7 +6,12 @@
 ![Paste Brush Node](../../assets/nodes/paste_brush.png){align=left width="25%"}
 The *Paste Brush Node* takes input values X and Y that specify a position 
 on the room tilemap in tile coordinates and will paste the contents of the 
-brush at the specified index into that location.
+[brush](../../introduction/terminology.md#brushes) at the specified index into 
+that location on the tilemap.
+
+!!! note
+    Pasting brushes only applies to 
+    [Room](../../introduction/terminology.md#room-types) tilemaps.
 
 <br style="clear:left"/>
   

@@ -5,8 +5,8 @@
 ## Description
 
 ![Get Room Object Node](../../assets/nodes/get_room_object.png){align=left width="25%"}
-The *Get Room Object Node* is used to get an [Object
-Reference](../../introduction/terminology.md#objects) to an object in a room
+The *Get Room Object Node* is used to get an 
+[Object Instance](../../introduction/terminology.md#object-instances) to an object in a room
 for use further down the graph in other nodes that accept a *Ref* input. This
 allows you to directly affect room objects, moving them, etc.
 

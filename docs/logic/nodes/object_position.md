@@ -5,8 +5,8 @@
 ## Description
 
 ![Object Position Node](../../assets/nodes/object_position.png){align=left width="25%"}
-The *Object Position Node* provides position information about the current [Object
-Reference](../../introduction/terminology.md#objects) that the logic graph is
+The *Object Position Node* provides position information about the current 
+[Object Instance](../../introduction/terminology.md#object-instances) that the logic graph is
 running on. 
 
 !!! note
@@ -24,7 +24,7 @@ running on.
 Ref 
 : An Object Reference input port that can provide an object that will be used
   to lookup the instance data. If this is not connected and the logic is on
-  an [Object](../../introduction/terminology.md#objects), the current object
+  an [Object](../../introduction/terminology.md#object-instances), the current object
   will be used instead. If the logic is not on an object, 0 will be returned
   on all output ports.
 

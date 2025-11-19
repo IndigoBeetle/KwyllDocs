@@ -5,7 +5,7 @@
 
 ![Marker Position Node](../../assets/nodes/marker_position.png){align=left width="25%"}
 The *Marker Position Node* queries the position of a 
-[Marker](../../introduction/terminology.md#rooms) in a given location, returning
+[Marker](../../introduction/terminology.md#room-types) in a given location, returning
 the position in room coordinates.
 
 <br style="clear:left"/>

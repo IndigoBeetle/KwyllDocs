@@ -49,7 +49,7 @@ Start Screen?
 : This toggles if the screen should be the initial screen visible when starting 
   your game. Only one screen can have this flag set, so selecting it here will
   automatically clear it on all other screens. The start screen is also shown in 
-  the [Screens List](#the_screens_list) with a flag icon.
+  the [Screens List](#the-screens-list) with a flag icon.
 
 Ink, Paper and Bright
 : These combined set the default colours for the current screen. Instruments
@@ -82,7 +82,7 @@ properties of an instrument.
 
 Name
 : The name of the instrument. This is used in logic for example when selecting to 
-  update an instrument value, the [Set Instrument](../logic/nodes/set_instrument.md)
+  update an instrument value, the [Set Instrument](../logic/nodes/set_instrument_value.md)
   node will list the instrument names in a dropdown control to make it easy to select
   which instrument to update.
 
@@ -97,14 +97,14 @@ Size
   specified in terms of cells, each 8x8 pixels in size.
 
 Type
-: The type of the instrument. An instrument will display its [Value](#value) in 
+: The type of the instrument. An instrument will display its Value in 
   different ways depending on the type of instrument. A text instrument will display
   a string from the strings list, an integer instrument will display a numerical 
   value, and a tile instrument will show a single tile from the tileset.
 
 Value
 : The initial value of the instrument, the meaning of the value depends on the
-  instrument [type](#type).
+  instrument type.
 
 Color
 : These controls allow you to override the default colour information defined by the

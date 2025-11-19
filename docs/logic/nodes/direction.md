@@ -8,7 +8,7 @@
 The *Direction Node* is used to convert the typical four directional movement
 input into a single value representing the primary direction of movement. This
 is useful for things like switching sprite animation on
-[Objects](../../introduction/terminology.md#objects) to show the correct
+[Objects](../../introduction/terminology.md#object-instances) to show the correct
 animation for the movement. If the input suggests a diagonal movement, the
 output will be a single value representing the "dominant" axis as defined by
 the __Vertical Priority__ parameter, if this is checked, then up/down will be
@@ -73,3 +73,7 @@ Up
 Down 
 : A constant integer value that will be output on the __Output__ port if the 
   inputs indicate movement down.
+
+None
+: A constant integer value that will be output on the __Output__ port if none
+  of the inputs indicate any movement.

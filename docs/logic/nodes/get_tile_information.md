@@ -29,17 +29,18 @@ Tile
 Collision
 : An integer output port providing the collision flags at the specified coordinates. 
   The value is a bit field representing the sides of the tile that are marked as
-  preventing object movement. See [collision](../../concepts/collision.md).
+  preventing object movement. See 
+  [collision](../../introduction/backgrounds/tilemaps.md#tilemap-collision-data).
 
 Colour
 : An integer output port providing the colour information at the specified
   coordinates. The colour is a combination of ink, paper and bright data as
-  described in [colour](../../concepts/colour.md).
+  described in [colour](../../introduction/terminology.md#colour).
 
 Type
 : An integer output port providing the custom type of the tile at the specified
   coordinates. If there is no tile at the specified location, the output value will
-  be 0. See [tilemaps](../../concepts/tilemaps.md) for details of tile types.
+  be 0. See [tilemaps](../../introduction/terminology.md#tilemap) for details of tile types.
 
 -------
 

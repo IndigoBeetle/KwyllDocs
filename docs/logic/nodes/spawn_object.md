@@ -43,6 +43,11 @@ X
 Y 
 : An integer input port used to provide the Y value of the map coordinate.
 
+Plane
+: An integer input port used to provide the plane on which the object's sprite
+  will render. See [Planes](../../introduction/objects/sprites.md#planes) for 
+  more information about sprite planes.
+
 Spawn Ref
 : An object reference output port that provides a reference to the spawned object
   if the operation succeeded.
@@ -58,6 +63,10 @@ X
 Y 
 : A constant integer value for the Y coordinate, used when the __Y__ port is not
   connected.
+
+Plane
+: A constant integer value for the plane, used when the __Plane__ port is not
+  connected
 
 *Object Definition*
 : A dropdown will provide a list of possible object types to choose from to spawn.

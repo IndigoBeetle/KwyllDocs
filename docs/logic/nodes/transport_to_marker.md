@@ -5,7 +5,7 @@
 
 ![Transport To Marker Node](../../assets/nodes/transport_to_marker.png){align=left width="25%"}
 The *Transport To Marker Node* queries the position of a 
-[Marker](../../introduction/terminology.md#rooms) in a given location, and immediately
+[Marker](../../introduction/terminology.md#room-types) in a given location, and immediately
 transports the given object to that location, taking into account whether the object is
 a room object or a map object.
 
@@ -22,7 +22,7 @@ Ref
 
 Location 
 : A location reference port that provides a reference to the 
-  [Location](../../introduction/terminology#locations) contains the marker to query.
+  [Location](../../introduction/terminology.md#locations) contains the marker to query.
   If not connected, and the logic is on a location, the current location will be used.
 
 Marker

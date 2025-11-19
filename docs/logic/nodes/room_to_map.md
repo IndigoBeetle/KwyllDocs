@@ -1,12 +1,13 @@
 
-# Location To Map
+# Room To Map
 
 ## Description
 
-![Location To Map Node](../../assets/nodes/location_to_map.png){align=left width="25%"}
-The *Location To Map Node* takes input values X and Y that define a position 
-in the room coordinates of a specified [Location](../../introduction/terminology.md#locations) 
-and converts the position into map coordinates.
+![Room To Map Node](../../assets/nodes/room_to_map.png){align=left width="25%"}
+The *Room To Map Node* takes input values X and Y that define a position 
+in the room coordinates of a specified 
+[Location](../../introduction/terminology.md#locations) and converts the 
+position into map coordinates.
 
 This is particularly useful for positioning a map level object so that it is at a 
 chosen point within a location.
@@ -28,6 +29,13 @@ X
 Y 
 : An integer input port used to provide the Y value of the location coordinate.
 
+_X Out_
+: An integer output port that provides the X value of the position in map
+  coordinates.
+
+_Y Out_
+: An integer output port that provides the Y value of the position in map
+  coordinates.
 
 -------
 

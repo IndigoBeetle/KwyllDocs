@@ -16,10 +16,11 @@ the <span style="color: blue;">Instruments List</span>, the
 
 This is where you can select, add and remove the various
 [screens](../introduction/terminology.md#screens) that you have in your game.
-The local toolbar below the list includes buttons to create a new screen,
-delete the currently selected screen, and duplicate the currently selected
-screen, to the left side. It also has a button to edit the screen properties to
-the right. 
+The toolbar below the list includes buttons on the left hand side to create a
+new screen, delete the currently selected screen, and duplicate the currently
+selected screen. And on the right hand side, it also has a button to edit the
+screen properties.
+ 
 
 <br style="clear:left"/>
 
@@ -58,6 +59,12 @@ Ink, Paper and Bright
   the screen tilemap unless replaced by painting attributes in the tilemap, or by
   assigning colours to tiles.
 
+Variables
+: In this section you can set the default values for any variables declared in the
+  logic for this screen. Each screen can have its own logic, and in that logic you
+  can declare a number of variables, they will be listed here for you to set the
+  initial value that will be assigned to them when the game starts or restarts.
+
 
 <br style="clear:right"/>
 
@@ -67,9 +74,10 @@ Ink, Paper and Bright
 
 This is where you can select, add and remove the various
 [Instruments](../introduction/terminology.md#instruments) defined in the
-currently selected screen. The local toolbar below the list includes buttons to
-create a new instrument and delete the currently selected instrument, to the
-left side. It also has a button to edit the instrument properties to the right. 
+currently selected screen. The toolbar below the list includes buttons on the
+left hand side to create a new instrument, delete the currently selected
+instrument, and duplicate the selected instrument. And on the right hand side,
+it also has a button to edit the instrument properties. 
 
 <br style="clear:left"/>
 
@@ -97,10 +105,9 @@ Size
   specified in terms of cells, each 8x8 pixels in size.
 
 Type
-: The type of the instrument. An instrument will display its Value in 
-  different ways depending on the type of instrument. A text instrument will display
-  a string from the strings list, an integer instrument will display a numerical 
-  value, and a tile instrument will show a single tile from the tileset.
+: The type of the instrument. An instrument will display its Value in different
+  ways depending on the type of instrument. See
+  [Instruments](../introduction/screens/instruments.md) for more information..
 
 Value
 : The initial value of the instrument, the meaning of the value depends on the
@@ -122,7 +129,7 @@ Color
 
 The *Assets Panel* provides access to assets that can be placed in the screen editor
 view in addition to [Instruments](../introduction/terminology.md#instruments). It is a
-common element used in more than one editor in Kwyll, and as such has its ow separate 
+common element used in more than one editor in Kwyll, and as such has its own separate 
 section of the documentation [here](./assets_panel.md). 
 
 
@@ -139,10 +146,10 @@ standard [Logic Editor](./logic_editor.md) component that is used to edit logic
 that applies to the current room, see
 [Logic](../introduction/terminology.md#logic) for more details.
 
-The Layout tab contains the screen layout editing tools. It consists of two parts, a 
-standard [Tilemap Editor](./tilemap_editor.md) component, and layered on top of it a
-specific set of editing features for Screens. The Tilemap Editor is documented 
-separately as a common component.
+The Layout tab contains the screen layout editing tools. It consists of two
+parts, a standard [Tilemap Editor](./tilemap_editor.md), and layered
+on top of it a specific set of editing features for Screens. 
+
 
 ### Layout
 
@@ -152,13 +159,13 @@ interactively placing screen elements such as
 [Instruments](../introduction/terminology.md#instruments) and the *Game
 Window*.
 
-An [Instrument](../introduction/terminology.md#instruments) is represented on the 
-grid as a yellow rectangle with a small triangle in the bottom right corner
-![Instrument](../assets/instrument.png){width="100px"}. You can click and drag the
-instrument on the grid, it will automatically conform to the grid cells, snapping
-to 8x8 increments. By carefully clicking on the small triangle in the corner, you can
-drag out the rectangle to change its size, again, it will automatically conform to 
-the grid.
+An [Instrument](../introduction/terminology.md#instruments) is represented on
+the grid as a yellow rectangle with a small triangle in the bottom right corner
+![Instrument](../assets/instrument.png){width="100px"}. You can click and drag
+the instrument on the grid, it will automatically snap to the grid cells of 8x8
+pixel increments. By carefully clicking on the small triangle in the corner,
+you can drag out the rectangle to change its size, again, it will automatically
+snap to the grid.
 
 If the screen being edited has the *Game Screen* flag set in the
 [properties](#screen-properties), a blue rectangle will show to represent the
@@ -168,7 +175,7 @@ fixed on all screens, the only way to modify the game window size is in the
 [Settings](./settings.md) dialog. However, the game window can be positioned
 independently on each screen it is used, so dragging the blue rectangle
 representing the game window works in much the same way as an *Instrument*, it
-will also conform to the grid as appropriate. 
+will also snap its position to the grid. 
 
 
 <br style="clear:left"/>

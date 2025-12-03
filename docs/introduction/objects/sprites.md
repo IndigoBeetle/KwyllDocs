@@ -13,6 +13,40 @@ Kwyll, it's just an image, it has no position, it isn't by default drawn
 to the screen anywhere, in order to get a Sprite onto the screen, it
 must be used by an __Object__.
 
+## Draw Modes
+
+When assigned to an __Object__, the object can choose which mode to use to
+draw the __Sprite__ to the screen, which is best depends on the particular
+use case in your game. The optons are:
+
+LOAD
+: The sprite is just placed into each 8x8 cell that it touches, completely
+  overwriting anything that might already be there in the 
+  [Tilemap](../backgrounds/tilemaps.md) or any other __Objects__.
+  This is normally only used if you know there will be no background where
+  the object is used.
+  This is the fastes sprite rendering mode.
+
+OR/XOR
+: These two modes combine the pixels of the __Sprite__ with those in the
+  background using bitwise OR and XOR operations. The result is that the 
+  background isn't completely wiped out in 8x8 blocks like LOAD mode, but
+  depending on the nature of the __Sprite__ and the tiled background, can 
+  result in objects becoming difficult to see.
+
+MASK
+: This requires that a __Sprite__ is defined with a "Mask" layer, see the
+  [Sprite Editor](../interface/sprite_editor.md) for details of creating 
+  mask layers. This mode clears a part of the background in a user defined
+  shape before drawing the sprite pixels into that space. It is the most
+  effective draw mode, resulting in well defined pixels that can be easily
+  distinguished from the background, but is the most costly in terms of 
+  both memory use, requiring additional data for each __Sprite__, and in
+  terms of performance.
+
+
+
+
 ## Planes
 
 When a __Sprite__ is drawn to the screen it is possible that there will be

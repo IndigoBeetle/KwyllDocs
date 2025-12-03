@@ -36,7 +36,7 @@ OR/XOR
 
 MASK
 : This requires that a __Sprite__ is defined with a "Mask" layer, see the
-  [Sprite Editor](../interface/sprite_editor.md) for details of creating 
+  [Sprite Editor](../../interface/sprite_editor.md) for details of creating 
   mask layers. This mode clears a part of the background in a user defined
   shape before drawing the sprite pixels into that space. It is the most
   effective draw mode, resulting in well defined pixels that can be easily

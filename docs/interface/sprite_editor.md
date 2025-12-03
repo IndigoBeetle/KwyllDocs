@@ -46,7 +46,7 @@ Flags
 : The "Mask" flag defines whether the sprites in this sprite sheet can have a mask defined.
   This is used when the sprite is to be drawn using the "MASK" mode. If the sprites in a 
   particular sheet are only going to be drawn using "LOAD", "OR", or "XOR" mode, disable this
-  flag to reduce wasted memory. See [Sprites](../introduction/objects/sprites.md#draw_modes) for more
+  flag to reduce wasted memory. See [Sprites](../introduction/objects/sprites.md#draw-modes) for more
   information about draw modes.
 
 

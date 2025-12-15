@@ -164,10 +164,10 @@ to develop your game around this controller.
 
 The flow first checks if the sides includes "TOP" which is 2, it does this by
 logically ANDing the sides value with 2. Recall that the sides is a bit field,
-bit 0 (value 1 if collided) is UP, i.e. the move resulting in the object
+bit 0 (value 1 if collided) is UP, i.e. the move resulted in the object
 hitting something from below, bit 1 (value 2 if collided) is DOWN, bit 2 (value
 4 if collided) is LEFT and bit 3 (value 8 if collided) is RIGHT. The actual
-valud of sides is a potential combination of these values, for example, if the
+value of sides is a potential combination of these values, for example, if the
 object collided in both the DOWN and LEFT directions, the value will be 2 + 4 =
 6, ANDing with 2, will remove any other directions from the value but the DOWN
 value, so if the player does collide both DOWN and LEFT, LEFT will be ignored,
@@ -175,7 +175,9 @@ the output from 6 AND 2 is 2, as illustrated by the binary representation below.
 
                 RLDU
     6       00000110
+    AND
     2       00000010
+    result  00000010
 
 Only if both "bits" in the binary number are 1, will the bit be 1 in the
 result, so the result of ANDing these two number will be 00000010 in binary,

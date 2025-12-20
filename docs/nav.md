@@ -1,4 +1,5 @@
  * [Welcome](index.md)
+ * [Getting Started](getting_started/)
  * [Introduction](introduction/)
  * [Interface](interface/)
  * [Logic](logic/)

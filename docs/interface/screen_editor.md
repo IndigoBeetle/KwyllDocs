@@ -24,7 +24,8 @@ screen properties.
 
 <br style="clear:left"/>
 
-### Screen Properties
+
+## Screen Properties
 
 ![Screen Properties](../assets/screen_properties.png){align=right width="30%"}
 
@@ -32,6 +33,7 @@ The *Screen Properties* dialog is shown when double clicking a screen in the
 screens list, or clicking the screen properties button. This is where you can 
 modify various properties of the currently selected screen that are not editable
 in the main area layout and logic tabs.
+
 
 Name
 : The name of the screen. This is used in logic for example when selecting to 

@@ -29,9 +29,6 @@ plugins:
   - glightbox
   - literate-nav:
       nav_file: nav.md
-  - with-pdf:
-      enabled_if_env: ENABLE_PDF_EXPORT
-      debug_html: true
 markdown_extensions:
   - toc:
       permalink: true

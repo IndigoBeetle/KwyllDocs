@@ -6,7 +6,14 @@ executable is contained within the archive. It is entirely self-contained,
 no installation is required, simply run the executable, and copy it to 
 your preferred location for applications.
 
+
 ## Export Toolchain
+
+!!! note
+    As of v0.1.0.9, Kwyll no longer requires the installation of a build
+    toolchain, this section is left for anyone still using an earlier 
+    version, but the recommendation is to update to the latest version
+    for faster export, no dependencies, and more available memory.
 
 The only additional requirement is the build toolchain, this is delivered
 separately, it is based on a custom build of the z88dk compiler and is 
